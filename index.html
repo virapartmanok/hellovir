@@ -115,6 +115,7 @@ html:not([lang=hu]) .warn{display:flex}
 .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(4,40,60,.45),rgba(4,40,60,.5) 55%,rgba(4,40,60,.72))}
 .hero .wrap{z-index:2}.hero h1,.hero p{text-shadow:0 2px 18px rgba(0,0,0,.45)}
+#apts .ph{height:280px;background-size:cover}
 </style>
 </head>
 <body>
@@ -209,16 +210,16 @@ html:not([lang=hu]) .warn{display:flex}
 
 <script>
 const APTS=[
-{id:"viric1",tab:"Viric 1 (4 fős)",name:"„Viric 1” Apartman",n:130,cls:"i1",tag:"4 személyes",desc:"Ideális kisebb családoknak vagy pároknak: 1 hálószoba, nappali kihúzható kanapéval, amerikai konyha, saját erkély.",extra:"Saját erkély"},
-{id:"viric2",tab:"Viric 2 (4 fős)",name:"„Viric 2” Apartman",n:130,cls:"i2",tag:"4 személyes",desc:"Kényelmes, világos elrendezés 4 fő részére: 2 külön légtér, felszerelt konyha, saját terasz.",extra:"Saját terasz"},
-{id:"horizont",tab:"Horizont (6–8 fős)",name:"„Horizont” Apartman",n:170,cls:"i3",tag:"6–8 személyes",hl:"🌊 Tengerre néző kilátás",desc:"A Miljkovica apartmanház emeleti apartmanja, ahonnan látható a tenger. 3 hálószoba és nappali, kb. 6–8 főnek ideális.",extra:"Saját udvarrész és privát terasz"},
-{id:"harmonia",tab:"Harmónia (4–6 fős)",name:"„Harmónia” Apartman",n:170,cls:"i1",tag:"4–6 személyes",desc:"A Miljkovica apartmanház alsó szinti apartmanja. 2 hálószoba és nappali, kb. 4–6 főnek ideális.",extra:"Saját udvarrész és privát terasz"}];
+{id:"viric1",img:"viric1.jpg",pos:"center 85%",tab:"Viric 1 (4 fős)",name:"„Viric 1” Apartman",n:130,cls:"i1",tag:"4 személyes",desc:"Ideális kisebb családoknak vagy pároknak: 1 hálószoba, nappali kihúzható kanapéval, amerikai konyha, saját erkély.",extra:"Saját erkély"},
+{id:"viric2",img:"viric2.jpg",pos:"center 80%",tab:"Viric 2 (4 fős)",name:"„Viric 2” Apartman",n:130,cls:"i2",tag:"4 személyes",desc:"Kényelmes, világos elrendezés 4 fő részére: 2 külön légtér, felszerelt konyha, saját terasz.",extra:"Saját terasz"},
+{id:"horizont",img:"miljkovica.jpg",pos:"center",tab:"Horizont (6–8 fős)",name:"„Horizont” Apartman",n:170,cls:"i3",tag:"6–8 személyes",hl:"🌊 Tengerre néző kilátás",desc:"A Miljkovica apartmanház emeleti apartmanja, ahonnan látható a tenger. 3 hálószoba és nappali, kb. 6–8 főnek ideális.",extra:"Saját udvarrész és privát terasz"},
+{id:"harmonia",img:"miljkovica.jpg",pos:"center",tab:"Harmónia (4–6 fős)",name:"„Harmónia” Apartman",n:170,cls:"i1",tag:"4–6 személyes",desc:"A Miljkovica apartmanház alsó szinti apartmanja. 2 hálószoba és nappali, kb. 4–6 főnek ideális.",extra:"Saját udvarrész és privát terasz"}];
 const FE=["❄️|Légkondicionáló (klíma)","📶|Ingyenes, gyors Wi-Fi","🚗|Saját, zárt parkolóhely az udvarban","🍳|Teljesen felszerelt konyha (hűtő, főzőlap, mikró, kávéfőző)","🔥|Kerti grillezés és bográcsozás","🌿|{x} kerti bútorokkal","🏖️|Strand: 250 m, kényelmes séta"];
 // Foglalások: [érkezés hó, érkezés nap, távozás hó, távozás nap], pl. [7,3,7,10]
 const BUSY={viric1:[],viric2:[],horizont:[],harmonia:[]};
 const MN=["","","","","","Május","Június","Július","Augusztus","Szeptember"],YEAR=2027;
 let cur="viric1";
-document.getElementById("apts").innerHTML=APTS.map(a=>`<article class="card"><div class="ph ${a.cls}"><b>${a.tag}</b></div><div class="cb"><h3>${a.name}</h3>${a.hl?`<div class="hl">${a.hl}</div>`:``}<p class="desc">${a.desc}</p><div class="price">${a.n} € <small>/ éj + idegenforgalmi adó</small></div><p class="wk"><span>7 éjszaka:</span> <b>${a.n*7} €</b> <span>+ idegenforgalmi adó</span></p><p style="font-size:13px">Rövidebb vagy hosszabb tartózkodás esetén egyedi árat egyeztetünk.</p><ul class="feat">${FE.map(f=>{const[i,t]=f.split("|");return`<li><span>${i}</span><span>${t.replace("{x}",a.extra)}</span></li>`}).join("")}</ul><button class="btn o" onclick="pick('${a.id}')">Ajánlatkérés</button></div></article>`).join("");
+document.getElementById("apts").innerHTML=APTS.map(a=>`<article class="card"><div class="ph ${a.cls}" style="background-image:url(${a.img}),var(--img);background-position:${a.pos}"><b>${a.tag}</b></div><div class="cb"><h3>${a.name}</h3>${a.hl?`<div class="hl">${a.hl}</div>`:``}<p class="desc">${a.desc}</p><div class="price">${a.n} € <small>/ éj + idegenforgalmi adó</small></div><p class="wk"><span>7 éjszaka:</span> <b>${a.n*7} €</b> <span>+ idegenforgalmi adó</span></p><p style="font-size:13px">Rövidebb vagy hosszabb tartózkodás esetén egyedi árat egyeztetünk.</p><ul class="feat">${FE.map(f=>{const[i,t]=f.split("|");return`<li><span>${i}</span><span>${t.replace("{x}",a.extra)}</span></li>`}).join("")}</ul><button class="btn o" onclick="pick('${a.id}')">Ajánlatkérés</button></div></article>`).join("");
 document.getElementById("aptSel").innerHTML=APTS.map(a=>`<option value="${a.id}">${a.name} –${a.tag}</option>`).join("");
 document.getElementById("tabs").innerHTML=APTS.map(a=>`<button class="tab" role="tab" data-id="${a.id}">${a.tab}</button>`).join("");
 function render(){
