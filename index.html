@@ -1,48 +1,338 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="hu">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<meta name="theme-color" content="#0b1a22">
-<title>Vir Apartmanok – Hamarosan</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🚧%3C/text%3E%3C/svg%3E">
-<style>html,body{margin:0;background:#070f14}</style>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vir-sziget apartmanok – Horvátország</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{--bg:#fffdf9;--sand:#f4ece0;--card:#fff;--ink:#16303d;--mute:#5d7480;--sea:#0b5d8a;--sea2:#06425f;--tq:#1fb5b0;--line:#e6dccb;--free:#d9f3ea;--freeInk:#146b55;--busy:#f1e4e4;--busyInk:#a14a4a;--sh:0 10px 30px rgba(11,70,100,.10);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a21;--sand:#14252e;--card:#182c36;--ink:#eaf2f5;--mute:#9bb3bf;--sea:#59b6e3;--sea2:#0a2f42;--tq:#3fd0c9;--line:#27414d;--free:#12372f;--freeInk:#6fe0bd;--busy:#3a2428;--busyInk:#e69a9a;--sh:0 10px 30px rgba(0,0,0,.35)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Plus Jakarta Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.15;margin:0 0 .5em}
+a{color:inherit}.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+section{padding:84px 0}.alt{background:var(--sand)}
+h2{font-size:clamp(28px,4vw,40px)}.lead{color:var(--mute);max-width:60ch;margin:0 0 36px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:999px;text-decoration:none;border:2px solid transparent;cursor:pointer;font:inherit;font-weight:600;transition:transform .22s ease,box-shadow .22s ease,filter .22s ease,background-color .22s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(11,93,138,.18)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn.p{background:var(--tq);color:#032b2a}.btn.p:hover{filter:brightness(1.07)}
+.btn.g{border-color:#fff;color:#fff}.btn.o{border-color:var(--sea);color:var(--sea);background:transparent}
+:focus-visible{outline:3px solid var(--tq);outline-offset:2px}
+header{position:fixed;top:0;left:0;right:0;z-index:20;padding-top:env(safe-area-inset-top,0px);background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px}
+.logo{font-family:Fraunces,serif;font-weight:600;font-size:20px;text-decoration:none;color:var(--sea)}
+nav{display:flex;gap:6px;align-items:center}nav a{text-decoration:none;padding:8px 12px;border-radius:999px;font-size:15px;font-weight:500;transition:background-color .2s ease,color .2s ease}
+nav a:hover{background:var(--sand)}nav a.cta{background:var(--sea);color:#fff}
+.burger{display:none;background:none;border:0;font-size:26px;color:var(--ink);cursor:pointer}
+@media(max-width:860px){.burger{display:block}nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);flex-direction:column;align-items:stretch;padding:12px 20px 20px;border-bottom:1px solid var(--line)}nav.open{display:flex}nav a{padding:12px}}
+.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;color:#fff;padding:120px 0 80px;position:relative;overflow:hidden;
+background:linear-gradient(180deg,rgba(4,40,60,.1),rgba(4,40,60,.6)),linear-gradient(180deg,#f6c98b 0%,#f2a679 22%,#5bb7d0 48%,#0b6f9a 70%,#06425f 100%)}
+.hero svg{position:absolute;left:0;right:0;bottom:0;width:100%;height:42%;opacity:.55}
+@keyframes sw{from{transform:translateX(-90px)}to{transform:translateX(90px)}}.w1{animation:sw 8s ease-in-out infinite alternate}.w2{animation:sw 12s ease-in-out infinite alternate-reverse}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hero .wrap{position:relative;animation:fadeUp .7s ease both}.hero h1{font-size:clamp(34px,6vw,64px);max-width:18ch}
+.hero p{font-size:clamp(17px,2vw,21px);max-width:52ch;margin:0 0 30px}.hero .btns{display:flex;gap:12px;flex-wrap:wrap}
+.grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.card{background:var(--card);border-radius:22px;box-shadow:var(--sh);overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line);transition:transform .28s ease,box-shadow .28s ease}
+.card:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(11,70,100,.16)}
+.ph{height:190px;background:var(--img);position:relative}
+.ph b{position:absolute;left:14px;bottom:12px;background:rgba(255,255,255,.92);color:#06425f;border-radius:999px;padding:4px 12px;font-size:13px}
+.i1{--img:linear-gradient(135deg,#9fe0e0,#3aa8c9 55%,#0b5d8a)}.i2{--img:linear-gradient(135deg,#fde3b8,#f2b38b 50%,#4aa9c7)}.i3{--img:linear-gradient(135deg,#dfeee4,#7fc7b5 50%,#1d7f9e)}
+.cb{padding:22px;display:flex;flex-direction:column;gap:12px;flex:1}.cb h3{font-size:22px;margin:0}.cb p{margin:0;color:var(--mute)}
+.cb .desc{min-height:4.8em}
+.price{font-size:22px;font-weight:700;color:var(--sea)}.price small{font-size:13px;color:var(--mute);font-weight:500}
+.feat{list-style:none;margin:0;padding:0;display:grid;gap:7px;font-size:14.5px}.feat li{display:flex;gap:10px;align-items:flex-start}.feat span:first-child{width:22px;text-align:center;flex-shrink:0}
+.cb .btn{margin-top:auto;text-align:center}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.tab{padding:11px 20px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-weight:600;cursor:pointer;transition:all .2s ease}
+.tab:hover{border-color:var(--sea)}
+.tab[aria-selected=true]{background:var(--sea);border-color:var(--sea);color:#fff;transform:translateY(-1px)}
+.legend{display:flex;gap:20px;flex-wrap:wrap;font-size:14px;margin-bottom:20px;color:var(--mute)}
+.legend i{display:inline-block;width:16px;height:16px;border-radius:5px;vertical-align:-3px;margin-right:7px}
+.months{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.m{background:var(--card);border-radius:20px;padding:18px;box-shadow:var(--sh);border:1px solid var(--line);animation:fadeUp .35s ease both}
+.m h3{font-size:20px;margin-bottom:10px}.dg{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center}
+.dg .h{font-size:12px;color:var(--mute);padding-bottom:4px}
+.d{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:9px;font-size:14px;font-weight:500;transition:transform .15s ease}
+.d:hover{transform:scale(1.08)}
+.d.f{background:var(--free);color:var(--freeInk)}.d.b{background:var(--busy);color:var(--busyInk);text-decoration:line-through}.d.a,.d.p,.d.c{color:var(--ink)}.d.a{background:linear-gradient(135deg,var(--free) 50%,var(--busy) 50%)}.d.p{background:linear-gradient(135deg,var(--busy) 50%,var(--free) 50%)}.d.c{background:linear-gradient(135deg,var(--busy) 46%,var(--bg) 46% 54%,var(--busy) 54%)}.est{display:none;padding:12px 14px;border-radius:12px;background:var(--sand);font-size:14px}
+.calcta{margin-top:26px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}.calcta span{color:var(--mute);font-size:14px}
+.why{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-bottom:40px}
+.why div{background:var(--card);border-radius:18px;padding:20px;border:1px solid var(--line);transition:transform .25s ease,box-shadow .25s ease}
+.why div:hover{transform:translateY(-3px);box-shadow:var(--sh)}
+.why b{display:block;font-size:17px;margin:4px 0}
+.gh{font-size:24px;margin:38px 0 16px}.guide h3{font-size:19px}
+.tip{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.tip div{background:var(--card);border-left:5px solid var(--tq);border-radius:14px;padding:18px 20px;box-shadow:var(--sh);transition:transform .25s ease}
+.tip div:hover{transform:translateX(4px)}
+.tip p{margin:4px 0 0;color:var(--mute);font-size:15px}
+.contact{display:grid;gap:36px;grid-template-columns:1.3fr 1fr}@media(max-width:860px){.contact{grid-template-columns:1fr}}
+form{background:var(--card);border-radius:22px;padding:26px;box-shadow:var(--sh);border:1px solid var(--line);display:grid;gap:14px;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+form .full{grid-column:1/-1}@media(max-width:560px){form{grid-template-columns:1fr}}
+label{font-size:14px;font-weight:600;display:grid;gap:6px}
+input,select,textarea{font:inherit;padding:12px 14px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);width:100%;transition:border-color .2s ease,box-shadow .2s ease}
+input:focus,select:focus,textarea:focus{border-color:var(--tq);box-shadow:0 0 0 3px rgba(31,181,176,.18);outline:none}
+.info{display:grid;gap:14px;align-content:start}.info .row{display:flex;gap:14px;align-items:center;background:var(--card);padding:16px 18px;border-radius:16px;text-decoration:none;border:1px solid var(--line);transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+.info .row:hover{transform:translateY(-2px);border-color:var(--tq);box-shadow:var(--sh)}
+.msg{display:none;padding:14px 16px;border-radius:14px;background:var(--free);color:var(--freeInk);font-size:14px;font-weight:600;align-items:center;gap:12px;border:1.5px solid var(--freeInk)}
+.msg.show{display:flex;animation:msgPop .5s cubic-bezier(.2,1.3,.3,1) both}
+.msg-ico{font-size:24px;display:inline-block;animation:planeFly 1.2s ease-in-out infinite alternate;flex-shrink:0}
+.btn.sending{background:var(--freeInk)!important;color:#fff!important;pointer-events:none}
+.plane-burst{position:fixed;z-index:999;font-size:34px;pointer-events:none;animation:flyAway .9s cubic-bezier(.2,.8,.3,1) forwards}
+@keyframes msgPop{0%{opacity:0;transform:translateY(12px) scale(.95)}60%{transform:translateY(-3px) scale(1.01)}100%{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes planeFly{from{transform:translateY(0) rotate(-4deg)}to{transform:translateY(-4px) rotate(6deg)}}
+@keyframes flyAway{0%{opacity:1;transform:translate(0,0) scale(.8) rotate(0deg)}100%{opacity:0;transform:translate(120px,-140px) scale(1.5) rotate(18deg)}}
+footer{background:var(--sea2);color:#d5eaf3;padding:32px 0;text-align:center;font-size:14px}
+.lang{display:flex;gap:6px;margin-left:auto;margin-right:10px;align-items:center}.lang button{min-width:40px;text-align:center;border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:5px 10px;font:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s ease}.lang button[aria-pressed=true]{background:var(--sea);border-color:var(--sea);color:#fff}
+@media(max-width:480px){.logo{font-size:17px}.lang{margin-right:4px;gap:4px}.lang button{min-width:34px;padding:4px 7px;font-size:11px}}
+.warn{display:none;gap:10px;align-items:flex-start;padding:12px 14px;border-radius:12px;border:2px solid #d62828;background:rgba(214,40,40,.10);color:#b00020;font-weight:700;font-size:14px;animation:vib 2.4s infinite,glow 1.6s ease-in-out infinite}
+html:not([lang=hu]) .warn{display:flex}
+@keyframes vib{0%,80%,100%{transform:translateX(0)}84%{transform:translateX(-4px)}88%{transform:translateX(4px)}92%{transform:translateX(-3px)}96%{transform:translateX(3px)}}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(214,40,40,.5)}50%{box-shadow:0 0 0 8px rgba(214,40,40,0)}}
+@media(prefers-color-scheme:dark){.warn{color:#ff9a9a}}
+.logo,nav a{white-space:nowrap}.hero .wrap{width:100%}
+@media(max-width:1180px){.burger{display:block}nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);flex-direction:column;align-items:stretch;padding:12px 20px 20px;border-bottom:1px solid var(--line)}nav.open{display:flex}nav a{padding:12px}}
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(6,50,75,.55);backdrop-filter:blur(8px)}
+.modal.show{display:flex;animation:fi .35s ease}
+.mbox{width:100%;max-width:520px;max-height:calc(100vh - 40px);overflow:auto;background:var(--card);border-radius:28px;box-shadow:0 30px 80px rgba(0,0,0,.4);animation:pop .5s cubic-bezier(.2,1.2,.3,1)}
+.mtop{background:linear-gradient(135deg,#0b5d8a,#1fb5b0);padding:24px 24px 34px;text-align:center;color:#fff}
+.mtop .lang{justify-content:center;margin:0 0 14px}
+.mico{font-size:56px;line-height:1.1;display:inline-block;animation:bob 2.2s ease-in-out infinite}
+.mtop h3{color:#fff;margin:6px 0 0;font-size:28px}
+.mbody{padding:24px 26px 28px;text-align:center}.mbody p{margin:0 0 12px;color:var(--mute)}
+.mail{display:inline-block;margin:0 0 18px;font-weight:700;color:var(--sea);text-decoration:none}
+@keyframes fi{from{opacity:0}}@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.94)}}@keyframes bob{50%{transform:translateY(-8px) rotate(-6deg)}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.w1,.w2,.warn,.modal,.mbox,.mico,.hero .wrap,.m,.msg.show,.msg-ico{animation:none}}
+</style>
 </head>
 <body>
-<style>
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Plus+Jakarta+Sans:wght@400;700&display=swap");
-#vir{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:48px 20px;color:#eaf2f5;text-align:center;font:16px/1.6 "Plus Jakarta Sans",system-ui,sans-serif;background:radial-gradient(ellipse at 50% 0%,#12394d 0,#0b1a22 55%,#070f14 100%)}
-#vir *{box-sizing:border-box}
-#vir input.l{position:absolute;opacity:0;width:0;height:0;padding:0;border:0;pointer-events:none}
-#vir .box{max-width:640px;width:100%}
-#vir .lg{display:flex;gap:8px;justify-content:center;margin-bottom:40px}
-#vir .lg label{cursor:pointer;border:1.5px solid #27414d;background:#14252e;color:#eaf2f5;border-radius:999px;padding:6px 14px;font-size:13px;font-weight:700;display:block}
-#vir .ico{font-size:56px;line-height:1.1;animation:vbob 3s ease-in-out infinite}
-@keyframes vbob{50%{transform:translateY(-8px)}}
-#vir .brand{letter-spacing:.2em;text-transform:uppercase;font-size:13px;color:#3fd0c9;font-weight:700;margin:14px 0 12px}
-#vir .h{font-family:Fraunces,Georgia,serif;font-weight:600;font-size:clamp(30px,6vw,52px);line-height:1.15;margin:0 0 14px;color:#fff}
-#vir .p{font-size:clamp(17px,2.2vw,21px);color:#9bb3bf;margin:0}
-#vir .tx{display:none}
-#vir #vl1:checked~.box .t1,#vir #vl2:checked~.box .t2,#vir #vl3:checked~.box .t3,#vir #vl4:checked~.box .t4{display:block}
-#vir #vl1:checked~.box label[for=vl1],#vir #vl2:checked~.box label[for=vl2],#vir #vl3:checked~.box label[for=vl3],#vir #vl4:checked~.box label[for=vl4]{background:#59b6e3;border-color:#59b6e3;color:#06222f}
-#vir input.l:focus-visible~.box .lg{outline:3px solid #3fd0c9;outline-offset:6px;border-radius:999px}
-@media(prefers-reduced-motion:reduce){#vir .ico{animation:none}}
-</style>
-<div id="vir" lang="hu">
-<input class="l" type="radio" name="vl" id="vl1" checked aria-label="Magyar">
-<input class="l" type="radio" name="vl" id="vl2" aria-label="English">
-<input class="l" type="radio" name="vl" id="vl3" aria-label="Deutsch">
-<input class="l" type="radio" name="vl" id="vl4" aria-label="Čeština">
-<div class="box">
-<div class="lg"><label for="vl1">HU</label><label for="vl2">EN</label><label for="vl3">DE</label><label for="vl4">CS</label></div>
-<div class="ico">🚧</div>
-<div class="brand">Vir Apartmanok</div>
-<div class="tx t1" lang="hu"><div class="h">Hamarosan elérhető lesz a weboldal</div><p class="p">Türelmüket köszönjük!</p></div>
-<div class="tx t2" lang="en"><div class="h">Our website will be available soon</div><p class="p">Thank you for your patience.</p></div>
-<div class="tx t3" lang="de"><div class="h">Unsere Website ist bald verfügbar</div><p class="p">Vielen Dank für Ihre Geduld.</p></div>
-<div class="tx t4" lang="cs"><div class="h">Naše webové stránky budou brzy k dispozici</div><p class="p">Děkujeme za trpělivost.</p></div>
+<header><div class="wrap nav">
+<a class="logo" href="#kezdolap">Vir Apartmanok</a>
+<div class="lang" role="group" aria-label="Language"><button data-l="hu">HU</button><button data-l="en">EN</button><button data-l="de">DE</button></div>
+<button class="burger" aria-label="Menü" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+<nav onclick="this.classList.remove('open')">
+<a href="#kezdolap">Kezdőlap</a><a href="#apartmanok">Apartmanjaink</a><a href="#naptar">Foglaltsági naptár</a><a href="#kisokos">„Először járok itt”</a><a class="cta" href="#kapcsolat">Kapcsolat &amp; ajánlatkérés</a>
+</nav></div></header>
+
+<main>
+<section class="hero" id="kezdolap">
+<svg viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true"><path class="w1" d="M-200 120 Q-50 60 100 110 T400 100 T700 120 T1000 90 T1300 110 T1600 100 V200 H-200Z" fill="#fff" opacity=".25"/><path class="w2" d="M-200 150 Q0 100 200 145 T600 140 T1000 130 T1400 145 T1600 135 V200 H-200Z" fill="#1fb5b0" opacity=".45"/></svg>
+<div class="wrap">
+<h1>Kikapcsolódás a napsütötte Vir-szigeten – találd meg a tökéletes apartmant!</h1>
+<p>Modern, teljesen felszerelt apartmanok családoknak és baráti társaságoknak, pár percre a kristálytiszta Adriától.</p>
+<div class="btns"><a class="btn p" href="#apartmanok">Apartmanok megtekintése</a><a class="btn g" href="#naptar">Szabad időpontok ellenőrzése</a></div>
+</div></section>
+
+<section id="apartmanok"><div class="wrap">
+<h2>Apartmanjaink</h2><p class="lead">Három egység, egy udvarban: válaszd azt, amelyik a társaságodhoz illik. Az alap egy 7 éjszakás turnus (szombattól szombatig), az árak erre vonatkoznak és tájékoztató jellegűek. Rövidebb vagy hosszabb tartózkodásnál a turnuson kívüli éjszakákra +20% felár jár.</p>
+<div class="grid" id="apts"></div>
+</div></section>
+
+<section class="alt" id="naptar"><div class="wrap">
+<h2>Foglaltsági naptár – 2027 nyár</h2><p class="lead">Válts az apartmanok között, és nézd meg, mikor szabad. A félbevágott napok az érkezést és a távozást jelölik, így látszik, mikor van turnusváltás. A mintaadatok tájékoztató jellegűek.</p>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="legend"><span><i style="background:var(--free)"></i>Szabad</span><span><i style="background:var(--busy)"></i>Foglalt</span><span><i style="background:linear-gradient(135deg,var(--free) 50%,var(--busy) 50%)"></i>Érkezés napja</span><span><i style="background:linear-gradient(135deg,var(--busy) 50%,var(--free) 50%)"></i>Távozás napja</span><span><i style="background:linear-gradient(135deg,var(--busy) 46%,var(--bg) 46% 54%,var(--busy) 54%)"></i>Turnusváltás</span></div>
+<div class="months" id="months"></div>
+<div class="calcta"><button class="btn p" id="calBtn">Ajánlatkérés erre az apartmanra</button><span id="calName"></span></div>
+</div></section>
+
+<section id="kisokos" class="guide"><div class="wrap">
+<h2>Először járok itt – Vir-sziget kisokos</h2><p class="lead">Minden, amit érdemes tudni az első látogatás előtt.</p>
+<div class="why">
+<div>🌉<b>Hídon át, komp nélkül</b>A szárazföldről ingyenes hídon érhető el a sziget.</div>
+<div>☀️<b>Évi ~300 napsütés</b>Hosszú, stabil nyári idő, ideális strandoláshoz.</div>
+<div>👨‍👩‍👧<b>Családbarát</b>Lassan mélyülő partok, nyugodt környezet, rövid távolságok.</div>
 </div>
+<h3 class="gh">Éttermek és gasztronómia</h3>
+<div class="grid">
+<div class="card"><div class="cb"><h3>Konoba Kod Spavalice</h3><p>Autentikus dalmát ételek, tenger gyümölcsei, hangulatos terasz.</p></div></div>
+<div class="card"><div class="cb"><h3>Restaurant Kotarina</h3><p>Központi elhelyezkedés, kiváló pizzák, grillételek és halak.</p></div></div>
+<div class="card"><div class="cb"><h3>Bistro Ibiza és tengerparti büfék</h3><p>Gyors ebéd, csevap és hideg csapolt sör a parton.</p></div></div>
 </div>
+<h3 class="gh">Legjobb strandok</h3>
+<div class="grid">
+<div class="card"><div class="ph i1"></div><div class="cb"><h3>Jadro strand</h3><p>A sziget legnépszerűbb, lassan mélyülő, aprókavicsos-homokos strandja – kisgyerekeseknek tökéletes.</p></div></div>
+<div class="card"><div class="ph i3"></div><div class="cb"><h3>Duboka Draga és a Vörös sziklák</h3><p>Vadregényes vörös sziklafalak (Crvene stijene), kristálytiszta víz – fotózáshoz és búvárkodáshoz.</p></div></div>
+<div class="card"><div class="ph i2"></div><div class="cb"><h3>Kastelina strand</h3><p>A 16. századi velencei erődrom mellett, festői környezetben.</p></div></div>
+</div>
+<h3 class="gh">Hasznos tippek</h3>
+<div class="tip">
+<div><b>🛒 Bevásárlás</b><p>Plodine, Konzum, Tommy, pékségek, reggeli hal- és gyümölcspiac a szigeten.</p></div>
+<div><b>🏰 Nin</b><p>Homokos Királynő strandja és óváros – kb. 15 perc autóval.</p></div>
+<div><b>⛲ Zadar</b><p>Tengeri orgona és óváros – kb. 30 perc autóval.</p></div>
+</div>
+</div></section>
+
+<section class="alt" id="kapcsolat"><div class="wrap">
+<h2>Kapcsolat és ajánlatkérés</h2><p class="lead">Add meg az utazás adatait, és hamarosan jelentkezünk.</p>
+<div class="contact">
+<form id="f">
+<div class="full warn"><span>⚠️</span><span>A telefonos egyeztetés kizárólag magyar nyelven érhető el. Kérjük, érdeklődjenek emailben – megértésüket köszönjük.</span></div>
+<label>Név<input name="nev" required autocomplete="name"></label>
+<label>Email cím<input type="email" name="email" required autocomplete="email"></label>
+<label>Telefonszám<input type="tel" name="tel" autocomplete="tel"></label>
+<label>Apartman<select name="apt" id="aptSel"></select></label>
+<label>Érkezés<input type="date" name="erk" required></label>
+<label>Távozás<input type="date" name="tav" required></label>
+<label>Vendégek száma<input type="number" name="fo" min="1" max="24" value="2"></label>
+<label class="full">Üzenet<textarea name="uz" rows="4"></textarea></label>
+<div class="full est" id="est"></div>
+<div class="full msg" id="msg"><span class="msg-ico">✈️</span><span id="msgTxt"></span></div>
+<button class="btn p full" id="subBtn" type="submit">Ajánlatkérés küldése</button>
+</form>
+<div class="info">
+<a class="row" href="tel:+385000000000">📞 <span><b>Telefon</b><br>+385 00 000 0000</span></a>
+<div class="warn"><span>⚠️</span><span>A telefonos egyeztetés kizárólag magyar nyelven érhető el. Kérjük, érdeklődjenek emailben – megértésüket köszönjük.</span></div>
+<a class="row" href="mailto:info@hellovir.com">✉️ <span><b>Email</b><br>info@hellovir.com</span></a>
+<a class="row" href="https://wa.me/385000000000">💬 <span><b>WhatsApp / Viber</b><br>Írj nekünk üzenetet</span></a>
+<a class="row" href="https://www.google.com/maps/search/?api=1&query=Vir+Croatia" target="_blank" rel="noopener">📍 <span><b>Vir-sziget, Horvátország</b><br>Megnyitás térképen</span></a>
+</div></div>
+</div></section>
+</main>
+<footer>© Vir Apartmanok – Vir-sziget, Horvátország</footer>
+<div class="modal show" id="wip" role="dialog" aria-modal="true" aria-labelledby="wipT"><div class="mbox">
+<div class="mtop"><div class="lang" role="group" aria-label="Language"><button data-l="hu">HU</button><button data-l="en">EN</button><button data-l="de">DE</button></div><div class="mico">🚧</div><h3 id="wipT">Fejlesztés alatt</h3></div>
+<div class="mbody"><p>Ez a weboldal fejlesztés alatt van. Ha bármilyen hibát észrevesz, kérjük, írjon emailben – megértésüket köszönjük!</p><a class="mail" href="mailto:info@hellovir.com">✉️ info@hellovir.com</a><br><button class="btn p ok">Rendben, értem</button></div>
+</div></div>
+
+<script>
+const APTS=[
+{id:"viric1",tab:"Viric 1 (4 fős)",name:"„Viric 1” Apartman",wk:560,cls:"i1",tag:"4 személyes",desc:"Ideális kisebb családoknak vagy pároknak: 1 hálószoba, nappali kihúzható kanapéval, amerikai konyha, saját erkély.",extra:"Saját erkély"},
+{id:"viric3",tab:"Viric 3 (4 fős)",name:"„Viric 3” Apartman",wk:630,cls:"i2",tag:"4 személyes",desc:"Kényelmes, világos elrendezés 4 fő részére: 2 külön légtér, felszerelt konyha, saját terasz.",extra:"Saját terasz"},
+{id:"miljkovica",tab:"Miljkovica (6 külön apartman)",name:"„Miljkovica” különálló apartmanház",wk:1050,cls:"i3",tag:"6 különálló apartman",desc:"Különálló apartmanház, amelyben 6 kisebb, külön-külön kiadó apartman található. Emailes érdeklődés esetén a létszámtól függően segítünk kiválasztani az elérhető apartmanokat.",extra:"Saját udvarrész és privát terasz"}];
+const FE=["❄️|Légkondicionáló (klíma)","📶|Ingyenes, gyors Wi-Fi","🚗|Saját, zárt parkolóhely az udvarban","🍳|Teljesen felszerelt konyha (hűtő, főzőlap, mikró, kávéfőző)","🔥|Kerti grillezés és bográcsozás","🌿|{x} kerti bútorokkal","🏖️|Strand: 250 m, kényelmes séta"];
+const BUSY={
+viric1:[[6,12,6,19],[6,19,6,26],[7,3,7,10],[7,10,7,17],[7,24,7,31],[8,7,8,14],[8,14,8,21],[8,28,9,4]],
+viric3:[[6,5,6,12],[7,3,7,10],[7,17,7,24],[7,24,7,31],[8,7,8,14],[8,21,8,28],[9,4,9,11],[9,11,9,18]],
+miljkovica:[[6,19,6,26],[6,26,7,3],[7,3,7,10],[7,17,7,31],[8,7,8,14],[8,14,8,21],[8,21,8,28],[9,11,9,18]]};
+const MN=["","","","","","","Június","Július","Augusztus","Szeptember"],YEAR=2027;
+let cur="viric1";
+document.getElementById("apts").innerHTML=APTS.map(a=>`<article class="card"><div class="ph ${a.cls}"><b>${a.tag}</b></div><div class="cb"><h3>${a.name}</h3><p class="desc">${a.desc}</p><div class="price">${a.wk} € <small>/ 7 éjszaka (szombat–szombat), irányár</small></div><p style="font-size:13px">Rövidebb vagy hosszabb tartózkodás: +20% felár a turnuson kívüli éjszakákra.</p><ul class="feat">${FE.map(f=>{const[i,t]=f.split("|");return`<li><span>${i}</span><span>${t.replace("{x}",a.extra)}</span></li>`}).join("")}</ul><button class="btn o" onclick="pick('${a.id}')">Ajánlatkérés</button></div></article>`).join("");
+document.getElementById("aptSel").innerHTML=APTS.map(a=>`<option value="${a.id}">${a.name} –${a.tag}</option>`).join("");
+document.getElementById("tabs").innerHTML=APTS.map(a=>`<button class="tab" role="tab" data-id="${a.id}">${a.tab}</button>`).join("");
+function render(){
+document.querySelectorAll(".tab").forEach(t=>t.setAttribute("aria-selected",t.dataset.id===cur));
+const a=APTS.find(x=>x.id===cur);document.getElementById("calName").innerHTML="Kiválasztva: <b>"+a.name+"</b>";
+let h="";
+for(let m=6;m<=9;m++){
+const first=(new Date(YEAR,m-1,1).getDay()+6)%7,days=new Date(YEAR,m,0).getDate();
+h+=`<div class="m"><h3>${MN[m]}${YEAR}</h3><div class="dg">${["H","K","Sze","Cs","P","Szo","V"].map(d=>`<div class="h">${d}</div>`).join("")}${"<div></div>".repeat(first)}`;
+const bk=BUSY[cur].map(r=>[new Date(YEAR,r[0]-1,r[1]).getTime(),new Date(YEAR,r[2]-1,r[3]).getTime()]);
+for(let d=1;d<=days;d++){const t=new Date(YEAR,m-1,d).getTime(),ar=bk.some(r=>r[0]===t),dp=bk.some(r=>r[1]===t),md=bk.some(r=>r[0]<t&&t<r[1]);const c=md?"b":ar&&dp?"c":ar?"a":dp?"p":"f";const tt={b:"Foglalt",c:"Turnusváltás: távozás és érkezés",a:"Érkezés napja",p:"Távozás napja",f:"Szabad"}[c];h+=`<div class="d ${c}" title="${tt}">${d}</div>`}
+h+="</div></div>"}
+document.getElementById("months").innerHTML=h;apply()}
+document.getElementById("tabs").onclick=e=>{const t=e.target.closest(".tab");if(t){cur=t.dataset.id;render()}};
+function pick(id){document.getElementById("aptSel").value=id;document.getElementById("kapcsolat").scrollIntoView();est()}
+document.getElementById("calBtn").onclick=()=>pick(cur);
+document.getElementById("f").onsubmit=e=>{
+e.preventDefault();
+const f=new FormData(e.target),a=APTS.find(x=>x.id===f.get("apt"));
+const body=`Név: ${f.get("nev")}\nEmail: ${f.get("email")}\nTelefon: ${f.get("tel")}\nApartman: ${a.name}\nÉrkezés: ${f.get("erk")}\nTávozás: ${f.get("tav")}\nVendégek: ${f.get("fo")}\nBecsült ár: ${est()}\nVendég nyelve: ${lang.toUpperCase()}\n\n${f.get("uz")}`;
+const m=document.getElementById("msg"),mt=document.getElementById("msgTxt"),btn=document.getElementById("subBtn");
+mt.textContent=MSG[li+1];
+m.classList.remove("show");void m.offsetWidth;m.classList.add("show");
+const r=btn.getBoundingClientRect(),fl=document.createElement("div");
+fl.className="plane-burst";fl.textContent="✈️";
+fl.style.left=(r.left+r.width/2-16)+"px";fl.style.top=(r.top-10)+"px";
+document.body.appendChild(fl);setTimeout(()=>fl.remove(),950);
+btn.classList.add("sending");
+setTimeout(()=>btn.classList.remove("sending"),1400);
+setTimeout(()=>{location.href="mailto:info@hellovir.com?subject="+encodeURIComponent("Ajánlatkérés – "+a.name)+"&body="+encodeURIComponent(body)},650);
+};
+["erk","tav","apt"].forEach(k=>document.getElementById("f")[k].addEventListener("change",est));
+let lang=`hu`,li=-1;
+const D={
+[`Vir Apartmanok`]:[`Vir Apartments`,`Vir Apartments`],
+[`Kezdőlap`]:[`Home`,`Startseite`],
+[`Apartmanjaink`]:[`Our apartments`,`Unsere Apartments`],
+[`Foglaltsági naptár`]:[`Availability calendar`,`Belegungskalender`],
+[`„Először járok itt”`]:[`“First time here”`,`„Zum ersten Mal hier“`],
+[`Kapcsolat & ajánlatkérés`]:[`Contact & enquiry`,`Kontakt & Anfrage`],
+[`Kikapcsolódás a napsütötte Vir-szigeten – találd meg a tökéletes apartmant!`]:[`Relax on the sunny island of Vir – find your perfect apartment!`,`Entspannen auf der sonnigen Insel Vir – finden Sie Ihr perfektes Apartment!`],
+[`Modern, teljesen felszerelt apartmanok családoknak és baráti társaságoknak, pár percre a kristálytiszta Adriától.`]:[`Modern, fully equipped apartments for families and groups of friends, just minutes from the crystal-clear Adriatic.`,`Moderne, voll ausgestattete Apartments für Familien und Freundesgruppen, nur wenige Minuten von der kristallklaren Adria entfernt.`],
+[`Apartmanok megtekintése`]:[`View apartments`,`Apartments ansehen`],
+[`Szabad időpontok ellenőrzése`]:[`Check available dates`,`Freie Termine prüfen`],
+[`Három egység, egy udvarban: válaszd azt, amelyik a társaságodhoz illik. Az alap egy 7 éjszakás turnus (szombattól szombatig), az árak erre vonatkoznak és tájékoztató jellegűek. Rövidebb vagy hosszabb tartózkodásnál a turnuson kívüli éjszakákra +20% felár jár.`]:[`Three units in one courtyard: choose the one that suits your group. The base unit is a 7-night stay (Saturday to Saturday); prices refer to it and are indicative. Shorter or longer stays carry a 20% surcharge on nights outside the weekly block.`,`Drei Einheiten in einem Hof: Wählen Sie die passende für Ihre Gruppe. Basis ist ein Aufenthalt von 7 Nächten (Samstag bis Samstag); die Preise beziehen sich darauf und sind Richtwerte. Bei kürzeren oder längeren Aufenthalten gilt für Nächte außerhalb des Wochenblocks ein Aufschlag von 20 %.`],
+[`Foglaltsági naptár – 2027 nyár`]:[`Availability calendar – summer 2027`,`Belegungskalender – Sommer 2027`],
+[`Válts az apartmanok között, és nézd meg, mikor szabad. A félbevágott napok az érkezést és a távozást jelölik, így látszik, mikor van turnusváltás. A mintaadatok tájékoztató jellegűek.`]:[`Switch between apartments to see when they are free. Half-split days show arrival and departure, so you can spot the changeover days. The data shown is sample data.`,`Wechseln Sie zwischen den Apartments, um freie Zeiten zu sehen. Halbierte Tage zeigen An- und Abreise, so erkennen Sie die Wechseltage. Die Daten sind Beispieldaten.`],
+[`Szabad`]:[`Available`,`Frei`],[`Foglalt`]:[`Booked`,`Belegt`],[`Érkezés napja`]:[`Arrival day`,`Anreisetag`],[`Távozás napja`]:[`Departure day`,`Abreisetag`],[`Turnusváltás`]:[`Changeover`,`Wechseltag`],[`Turnusváltás: távozás és érkezés`]:[`Changeover: departure and arrival`,`Wechseltag: Abreise und Anreise`],
+[`Ajánlatkérés erre az apartmanra`]:[`Request a quote for this apartment`,`Angebot für dieses Apartment anfragen`],
+[`Kiválasztva:`]:[`Selected:`,`Ausgewählt:`],
+[`Június 2027`]:[`June 2027`,`Juni 2027`],[`Július 2027`]:[`July 2027`,`Juli 2027`],[`Augusztus 2027`]:[`August 2027`,`August 2027`],[`Szeptember 2027`]:[`September 2027`,`September 2027`],
+[`H`]:[`M`,`Mo`],[`K`]:[`T`,`Di`],[`Sze`]:[`W`,`Mi`],[`Cs`]:[`T`,`Do`],[`P`]:[`F`,`Fr`],[`Szo`]:[`S`,`Sa`],[`V`]:[`S`,`So`],
+[`Viric 1 (4 fős)`]:[`Viric 1 (sleeps 4)`,`Viric 1 (4 Personen)`],[`Viric 3 (4 fős)`]:[`Viric 3 (sleeps 4)`,`Viric 3 (4 Personen)`],[`Miljkovica (6 külön apartman)`]:[`Miljkovica (6 separate apartments)`,`Miljkovica (6 separate Apartments)`],
+[`„Viric 1” Apartman`]:[`“Viric 1” Apartment`,`Apartment „Viric 1“`],[`„Viric 3” Apartman`]:[`“Viric 3” Apartment`,`Apartment „Viric 3“`],[`„Miljkovica” különálló apartmanház`]:[`“Miljkovica” detached apartment house`,`Freistehendes Apartmenthaus „Miljkovica“`],
+[`4 személyes`]:[`Sleeps 4`,`4 Personen`],[`6 különálló apartman`]:[`6 separate apartments`,`6 separate Apartments`],
+[`Ideális kisebb családoknak vagy pároknak: 1 hálószoba, nappali kihúzható kanapéval, amerikai konyha, saját erkély.`]:[`Ideal for small families or couples: 1 bedroom, living room with sofa bed, open-plan kitchen, private balcony.`,`Ideal für kleine Familien oder Paare: 1 Schlafzimmer, Wohnzimmer mit Schlafsofa, offene Küche, eigener Balkon.`],
+[`Kényelmes, világos elrendezés 4 fő részére: 2 külön légtér, felszerelt konyha, saját terasz.`]:[`Comfortable, bright layout for 4 guests: 2 separate living areas, equipped kitchen, private terrace.`,`Bequeme, helle Aufteilung für 4 Personen: 2 getrennte Bereiche, ausgestattete Küche, eigene Terrasse.`],
+[`Különálló apartmanház, amelyben 6 kisebb, külön-külön kiadó apartman található. Emailes érdeklődés esetén a létszámtól függően segítünk kiválasztani az elérhető apartmanokat.`]:[`Detached apartment house featuring 6 smaller, individually rented apartments. When you enquire by email, we will let you know which units are available depending on your group size.`,`Freistehendes Apartmenthaus mit 6 kleineren, einzeln vermieteten Apartments. Bei einer E-Mail-Anfrage teilen wir Ihnen je nach Gruppengröße gerne mit, welche Einheiten verfügbar sind.`],
+[`/ 7 éjszaka (szombat–szombat), irányár`]:[`/ 7 nights (Sat–Sat), indicative`,`/ 7 Nächte (Sa–Sa), Richtpreis`],
+[`Rövidebb vagy hosszabb tartózkodás: +20% felár a turnuson kívüli éjszakákra.`]:[`Shorter or longer stays: +20% surcharge on nights outside the weekly block.`,`Kürzere oder längere Aufenthalte: 20 % Aufschlag für Nächte außerhalb des Wochenblocks.`],
+[`Légkondicionáló (klíma)`]:[`Air conditioning`,`Klimaanlage`],[`Ingyenes, gyors Wi-Fi`]:[`Free fast Wi-Fi`,`Kostenloses, schnelles WLAN`],[`Saját, zárt parkolóhely az udvarban`]:[`Private, enclosed parking space in the courtyard`,`Eigener, geschlossener Parkplatz im Hof`],
+[`Teljesen felszerelt konyha (hűtő, főzőlap, mikró, kávéfőző)`]:[`Fully equipped kitchen (fridge, hob, microwave, coffee machine)`,`Voll ausgestattete Küche (Kühlschrank, Herd, Mikrowelle, Kaffeemaschine)`],
+[`Kerti grillezés és bográcsozás`]:[`Garden grill and cauldron (bogrács) cooking`,`Gartengrill und Kesselgulasch (Bogrács)`],
+[`Saját erkély kerti bútorokkal`]:[`Private balcony with garden furniture`,`Eigener Balkon mit Gartenmöbeln`],[`Saját terasz kerti bútorokkal`]:[`Private terrace with garden furniture`,`Eigene Terrasse mit Gartenmöbeln`],[`Saját udvarrész és privát terasz kerti bútorokkal`]:[`Own yard area and private terrace with garden furniture`,`Eigener Hofbereich und private Terrasse mit Gartenmöbeln`],
+[`Strand: 250 m, kényelmes séta`]:[`Beach: 250 m, an easy walk`,`Strand: 250 m, bequemer Spaziergang`],
+[`Ajánlatkérés`]:[`Request a quote`,`Angebot anfragen`],
+[`Először járok itt – Vir-sziget kisokos`]:[`First time here – Vir island guide`,`Zum ersten Mal hier – Inselführer Vir`],
+[`Minden, amit érdemes tudni az első látogatás előtt.`]:[`Everything worth knowing before your first visit.`,`Alles Wissenswerte vor Ihrem ersten Besuch.`],
+[`Hídon át, komp nélkül`]:[`By bridge, no ferry needed`,`Über die Brücke, ohne Fähre`],
+[`A szárazföldről ingyenes hídon érhető el a sziget.`]:[`The island is reached from the mainland by a free bridge.`,`Die Insel ist vom Festland über eine kostenlose Brücke erreichbar.`],
+[`Évi ~300 napsütés`]:[`~300 sunny days a year`,`Ca. 300 Sonnentage im Jahr`],
+[`Hosszú, stabil nyári idő, ideális strandoláshoz.`]:[`Long, stable summer weather, ideal for the beach.`,`Langer, beständiger Sommer, ideal zum Baden.`],
+[`Családbarát`]:[`Family-friendly`,`Familienfreundlich`],
+[`Lassan mélyülő partok, nyugodt környezet, rövid távolságok.`]:[`Gently sloping shores, a calm setting, short distances.`,`Flach abfallende Strände, ruhige Umgebung, kurze Wege.`],
+[`Éttermek és gasztronómia`]:[`Restaurants & food`,`Restaurants & Gastronomie`],
+[`Autentikus dalmát ételek, tenger gyümölcsei, hangulatos terasz.`]:[`Authentic Dalmatian dishes, seafood, a cosy terrace.`,`Authentische dalmatinische Küche, Meeresfrüchte, gemütliche Terrasse.`],
+[`Központi elhelyezkedés, kiváló pizzák, grillételek és halak.`]:[`Central location, excellent pizzas, grilled dishes and fish.`,`Zentrale Lage, ausgezeichnete Pizzen, Grillgerichte und Fisch.`],
+[`Bistro Ibiza és tengerparti büfék`]:[`Bistro Ibiza & beach snack bars`,`Bistro Ibiza & Strandbuden`],
+[`Gyors ebéd, csevap és hideg csapolt sör a parton.`]:[`Quick lunch, ćevapi and cold draught beer on the shore.`,`Schnelles Mittagessen, Ćevapi und kühles Fassbier am Strand.`],
+[`Legjobb strandok`]:[`Best beaches`,`Die schönsten Strände`],
+[`Jadro strand`]:[`Jadro beach`,`Strand Jadro`],
+[`A sziget legnépszerűbb, lassan mélyülő, aprókavicsos-homokos strandja – kisgyerekeseknek tökéletes.`]:[`The island's most popular beach: gently sloping, fine pebbles and sand – perfect for families with small children.`,`Der beliebteste Strand der Insel: flach abfallend, Feinkies und Sand – perfekt für Familien mit kleinen Kindern.`],
+[`Duboka Draga és a Vörös sziklák`]:[`Duboka Draga & the Red Rocks`,`Duboka Draga & die Roten Felsen`],
+[`Vadregényes vörös sziklafalak (Crvene stijene), kristálytiszta víz – fotózáshoz és búvárkodáshoz.`]:[`Wild red cliffs (Crvene stijene) and crystal-clear water – great for photos and snorkelling.`,`Wildromantische rote Felswände (Crvene stijene), kristallklares Wasser – ideal zum Fotografieren und Schnorcheln.`],
+[`Kastelina strand`]:[`Kastelina beach`,`Strand Kastelina`],
+[`A 16. századi velencei erődrom mellett, festői környezetben.`]:[`Next to the ruins of a 16th-century Venetian fortress, in a picturesque setting.`,`Neben der Ruine einer venezianischen Festung aus dem 16. Jahrhundert, in malerischer Umgebung.`],
+[`Hasznos tippek`]:[`Useful tips`,`Nützliche Tipps`],
+[`🛒 Bevásárlás`]:[`🛒 Shopping`,`🛒 Einkaufen`],
+[`Plodine, Konzum, Tommy, pékségek, reggeli hal- és gyümölcspiac a szigeten.`]:[`Plodine, Konzum, Tommy, bakeries and a morning fish and fruit market on the island.`,`Plodine, Konzum, Tommy, Bäckereien und ein morgendlicher Fisch- und Obstmarkt auf der Insel.`],
+[`Homokos Királynő strandja és óváros – kb. 15 perc autóval.`]:[`Queen's Beach (sandy) and the old town – about 15 min by car.`,`Sandstrand „Königinnenstrand“ und Altstadt – ca. 15 Min. mit dem Auto.`],
+[`Tengeri orgona és óváros – kb. 30 perc autóval.`]:[`Sea organ and old town – about 30 min by car.`,`Meeresorgel und Altstadt – ca. 30 Min. mit dem Auto.`],
+[`Kapcsolat és ajánlatkérés`]:[`Contact and enquiry`,`Kontakt und Anfrage`],
+[`Add meg az utazás adatait, és hamarosan jelentkezünk.`]:[`Enter your travel details and we'll get back to you shortly.`,`Geben Sie Ihre Reisedaten an, wir melden uns in Kürze.`],
+[`Név`]:[`Name`,`Name`],[`Email cím`]:[`Email address`,`E-Mail-Adresse`],[`Telefonszám`]:[`Phone number`,`Telefonnummer`],[`Apartman`]:[`Apartment`,`Apartment`],[`Érkezés`]:[`Arrival`,`Anreise`],[`Távozás`]:[`Departure`,`Abreise`],[`Vendégek száma`]:[`Number of guests`,`Anzahl der Gäste`],[`Üzenet`]:[`Message`,`Nachricht`],[`Ajánlatkérés küldése`]:[`Send enquiry`,`Anfrage senden`],
+[`Telefon`]:[`Phone`,`Telefon`],[`Írj nekünk üzenetet`]:[`Send us a message`,`Schreiben Sie uns`],[`Vir-sziget, Horvátország`]:[`Vir island, Croatia`,`Insel Vir, Kroatien`],[`Megnyitás térképen`]:[`Open on map`,`Auf Karte öffnen`],
+[`© Vir Apartmanok – Vir-sziget, Horvátország`]:[`© Vir Apartments – Vir island, Croatia`,`© Vir Apartments – Insel Vir, Kroatien`],
+[`Vir-sziget apartmanok – Horvátország`]:[`Vir island apartments – Croatia`,`Apartments auf der Insel Vir – Kroatien`],
+[`Menü`]:[`Menu`,`Menü`],
+[`Fejlesztés alatt`]:[`Under construction`,`Im Aufbau`],
+[`Ez a weboldal fejlesztés alatt van. Ha bármilyen hibát észrevesz, kérjük, írjon emailben – megértésüket köszönjük!`]:[`This website is still under development. If you notice any errors, please let us know by email – thank you for your understanding!`,`Diese Website befindet sich noch in der Entwicklung. Sollten Sie Fehler bemerken, schreiben Sie uns bitte eine E-Mail – vielen Dank für Ihr Verständnis!`],
+[`Rendben, értem`]:[`Got it`,`Verstanden`],
+[`A telefonos egyeztetés kizárólag magyar nyelven érhető el. Kérjük, érdeklődjenek emailben – megértésüket köszönjük.`]:[`Phone consultation is available in Hungarian only. Please enquire by email – thank you for your understanding.`,`Telefonische Beratung ist ausschließlich auf Ungarisch möglich. Bitte wenden Sie sich per E-Mail an uns – vielen Dank für Ihr Verständnis.`]
+};
+const tr=s=>li<0?s:(D[s]?D[s][li]:s);
+const MSG=[`Megnyitjuk az email-programodat az előkészített üzenettel. Ha nem nyílik meg, írj közvetlenül az info@hellovir.com címre.`,`We are opening your email app with the prepared message. If nothing opens, please write directly to info@hellovir.com.`,`Wir öffnen Ihr E-Mail-Programm mit der vorbereiteten Nachricht. Falls sich nichts öffnet, schreiben Sie direkt an info@hellovir.com.`];
+const E=[[`éjszaka, becsült ár:`,`turnus`,`éjszaka +20% felárral`,`teljes turnus, felár nélkül`,`A végleges árat ajánlatban küldjük.`],[`nights, estimated price:`,`week(s)`,`extra night(s) with +20% surcharge`,`full weeks, no surcharge`,`The final price will be sent in our offer.`],[`Nächte, geschätzter Preis:`,`Woche(n)`,`Zusatznacht/-nächte mit 20 % Aufschlag`,`volle Wochen, kein Aufpreis`,`Den endgültigen Preis senden wir Ihnen im Angebot.`]];
+function est(){const f=document.getElementById(`f`),el=document.getElementById(`est`),wk=APTS.find(x=>x.id===f.apt.value).wk,n=Math.round((new Date(f.tav.value)-new Date(f.erk.value))/864e5);if(!(n>0)){el.style.display=`none`;return ``}const e=E[li+1],w=Math.floor(n/7),x=n%7,p=Math.round(w*wk+x*(wk/7)*1.2),txt=n+` `+e[0]+` `+p+` €`+(x?` (`+(w?w+` `+e[1]+` + `:``)+x+` `+e[2]+`)`:` (`+e[3]+`)`);el.style.display=`block`;el.textContent=txt+`. `+e[4];return txt}
+function apply(){
+const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;
+while(n=w.nextNode()){if(n.parentNode.closest(`script,style,option,#msgTxt`))continue;if(n._o===undefined)n._o=n.nodeValue;const t=n._o.trim();n.nodeValue=(li>=0&&D[t])?n._o.replace(t,D[t][li]):n._o}
+document.querySelectorAll(`.d[title]`).forEach(x=>{x.dataset.h=x.dataset.h||x.title;x.title=tr(x.dataset.h)});
+document.documentElement.lang=lang;document.title=tr(`Vir-sziget apartmanok – Horvátország`);
+document.querySelector(`.burger`).setAttribute(`aria-label`,tr(`Menü`));
+document.querySelectorAll(`.lang button`).forEach(b=>b.setAttribute(`aria-pressed`,b.dataset.l===lang));
+const s=document.getElementById(`aptSel`),v=s.value;s.innerHTML=APTS.map(a=>`<option value="${a.id}">${tr(a.name)} –${tr(a.tag)}</option>`).join(``);s.value=v||`viric1`;
+const mt=document.getElementById(`msgTxt`);if(mt&&mt.textContent)mt.textContent=MSG[li+1];
+est()}
+document.querySelectorAll(`.lang`).forEach(g=>g.onclick=e=>{const b=e.target.closest(`button`);if(!b)return;lang=b.dataset.l;li=[`hu`,`en`,`de`].indexOf(lang)-1;apply();try{localStorage.setItem(`vl`,lang)}catch(_){}});
+{let sv=``;try{sv=localStorage.getItem(`vl`)||``}catch(_){}sv=sv||(navigator.language||`hu`).slice(0,2);const k=[`hu`,`en`,`de`].indexOf(sv);if(k>0){lang=sv;li=k-1}}
+render();
+const wip=document.getElementById(`wip`),okb=wip.querySelector(`.ok`),cl=()=>{wip.classList.remove(`show`);document.body.style.overflow=``};
+document.body.style.overflow=`hidden`;okb.onclick=cl;wip.onclick=e=>{if(e.target===wip)cl()};document.addEventListener(`keydown`,e=>{if(e.key===`Escape`)cl()});okb.focus();
+</script>
 </body>
 </html>
