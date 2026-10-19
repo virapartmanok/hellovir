@@ -106,7 +106,7 @@ html:not([lang=hu]) .warn{display:flex}
 .mbody{padding:24px 26px 28px;text-align:center}.mbody p{margin:0 0 12px;color:var(--mute)}
 .mail{display:inline-block;margin:0 0 18px;font-weight:700;color:var(--sea);text-decoration:none}
 @keyframes fi{from{opacity:0}}@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.94)}}@keyframes bob{50%{transform:translateY(-8px) rotate(-6deg)}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.w1,.w2,.warn,.modal,.mbox,.mico,.hero .wrap,.m,.msg.show,.msg-ico{animation:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.w1,.w2,.warn,.modal,.mbox,.mico,.hero .wrap,.m,.msg.show,.msg-ico,.ph-img,#limg{animation:none;transition:none!important}}
 #apts{grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr))}
 .cb .wk{font-size:15px}.cb .wk b{color:var(--ink)}
 .d{font-weight:700}
@@ -116,22 +116,25 @@ html:not([lang=hu]) .warn{display:flex}
 .hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(4,40,60,.45),rgba(4,40,60,.5) 55%,rgba(4,40,60,.72))}
 .hero .wrap{z-index:2}.hero h1,.hero p{text-shadow:0 2px 18px rgba(0,0,0,.45)}
 #apts .ph{height:280px;background-size:cover;cursor:pointer}
-.ph-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .28s ease,transform .4s ease}
-.card:hover .ph-img{transform:scale(1.03)}
+.ph-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity .45s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1);pointer-events:none;will-change:opacity,transform}
+.ph-img.on{opacity:1;transform:scale(1);z-index:1}
+.card:hover .ph-img.on{transform:scale(1.03)}
 .snav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:38px;height:38px;border-radius:50%;border:0;background:rgba(6,42,64,.68);color:#fff;font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;backdrop-filter:blur(6px);transition:background .2s ease,transform .2s ease}
 .snav:hover{background:rgba(6,42,64,.92);transform:translateY(-50%) scale(1.08)}
+.snav:active{transform:translateY(-50%) scale(.95)}
 .snav.prev{left:10px}.snav.next{right:10px}
 .scnt{position:absolute;top:12px;right:12px;z-index:3;background:rgba(6,42,64,.72);color:#fff;border-radius:999px;padding:3px 11px;font-size:12px;font-weight:700;backdrop-filter:blur(6px);pointer-events:none}
 .sdots{position:absolute;bottom:12px;right:14px;z-index:3;display:flex;gap:5px;align-items:center;background:rgba(6,42,64,.55);padding:5px 9px;border-radius:999px;backdrop-filter:blur(6px)}
-.sdot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.45);transition:all .2s ease}
+.sdot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.45);transition:all .25s ease}
 .sdot.on{width:18px;border-radius:999px;background:#fff}
 .lbox{position:fixed;inset:0;z-index:120;display:none;align-items:center;justify-content:center;background:rgba(4,22,32,.92);backdrop-filter:blur(10px);padding:20px}
 .lbox.show{display:flex;animation:fi .25s ease}
-.lbox img{max-width:min(92vw,1100px);max-height:84vh;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.6);object-fit:contain;user-select:none}
+#limg{max-width:min(92vw,1100px);max-height:84vh;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.6);object-fit:contain;user-select:none;opacity:1;transform:scale(1);transition:opacity .22s ease,transform .26s cubic-bezier(.22,1,.36,1)}
+#limg.fade{opacity:0;transform:scale(.97)}
 .lbox .snav{width:48px;height:48px;font-size:26px;background:rgba(255,255,255,.16)}
 .lbox .snav:hover{background:rgba(255,255,255,.3)}
 .lbox .snav.prev{left:20px}.lbox .snav.next{right:20px}
-.lclose{position:absolute;top:18px;right:20px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.16);color:#fff;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lclose{position:absolute;top:18px;right:20px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.16);color:#fff;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s ease}
 .lclose:hover{background:rgba(255,255,255,.3)}
 .lcap{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:#fff;background:rgba(6,42,64,.75);padding:6px 16px;border-radius:999px;font-size:14px;font-weight:600}
 </style>
@@ -237,7 +240,7 @@ html:not([lang=hu]) .warn{display:flex}
 
 <script>
 const APTS=[
-{id:"viric1",imgs:["viric1.jpg"],pos:"center 85%",tab:"Viric 1 (4 fős)",name:"„Viric 1” Apartman",n:130,cls:"i1",tag:"4 személyes",desc:"Ideális kisebb családoknak vagy pároknak: 1 hálószoba, nappali kihúzható kanapéval, amerikai konyha, saját erkély.",extra:"Saját erkély"},
+{id:"viric1",imgs:["terasz1_2.jpg","nappali3_2.jpg","nappali1_2.jpg","nappali2_2.jpg","halo2_2.jpg","halo1_2.jpg","furdo1_2.jpg","furdo2_2.jpg"],pos:"center",tab:"Viric 1 (4 fős)",name:"„Viric 1” Apartman",n:130,cls:"i1",tag:"4 személyes",desc:"Ideális kisebb családoknak vagy pároknak: 1 hálószoba, nappali kihúzható kanapéval, amerikai konyha, saját erkély.",extra:"Saját erkély"},
 {id:"viric3",imgs:["terasz3.jpg","ház.jpg","nappali1.jpg","nappali4.jpg","nappali2.jpg","nappali3.jpg","halo1.jpg","halo2.jpg","terasz2.jpg","terasz1.jpg","ház3.jpg","ház4.jpg","furdo1.jpg","furdo2.jpg","furdo3.jpg","ajto3.jpg","ajto2.jpg","ajto1.jpg","grill1.jpg"],pos:"center",tab:"Viric 3 (4 fős)",name:"„Viric 3” Apartman",n:130,cls:"i2",tag:"4 személyes",desc:"Kényelmes, világos elrendezés 4 fő részére: 2 külön légtér, felszerelt konyha, saját terasz.",extra:"Saját terasz"},
 {id:"horizont",imgs:["miljkovica.jpg"],pos:"center",tab:"Horizont (6–8 fős)",name:"„Horizont” Apartman",n:170,cls:"i3",tag:"6–8 személyes",hl:"🌊 Tengerre néző kilátás",desc:"A Miljkovica apartmanház emeleti apartmanja, ahonnan látható a tenger. 3 hálószoba és nappali, kb. 6–8 főnek ideális.",extra:"Saját udvarrész és privát terasz"},
 {id:"harmonia",imgs:["miljkovica.jpg"],pos:"center",tab:"Harmónia (4–6 fős)",name:"„Harmónia” Apartman",n:170,cls:"i1",tag:"4–6 személyes",desc:"A Miljkovica apartmanház alsó szinti apartmanja. 2 hálószoba és nappali, kb. 4–6 főnek ideális.",extra:"Saját udvarrész és privát terasz"}];
@@ -246,22 +249,51 @@ const FE=["❄️|Légkondicionáló (klíma)","📶|Ingyenes, gyors Wi-Fi","�
 const BUSY={viric1:[],viric3:[],horizont:[],harmonia:[]};
 const MN=["","","","","","Május","Június","Július","Augusztus","Szeptember"],YEAR=2027;
 let cur="viric1",sIdx={viric1:0,viric3:0,horizont:0,harmonia:0},lbApt=null;
+
+const preCache={};
+function preload(src){if(!src||preCache[src])return;const im=new Image();im.src=src;preCache[src]=im}
+
 document.getElementById("apts").innerHTML=APTS.map(a=>{
 const m=a.imgs.length>1;
-return`<article class="card"><div class="ph ${a.cls}" data-apt="${a.id}" onclick="openLb('${a.id}')"><img class="ph-img" id="img-${a.id}" src="${a.imgs[0]}" alt="${a.name}" style="object-position:${a.pos}" loading="lazy" onerror="this.style.display='none'">${m?`<button class="snav prev" type="button" onclick="stepImg(event,'${a.id}',-1)" aria-label="Előző kép">‹</button><button class="snav next" type="button" onclick="stepImg(event,'${a.id}',1)" aria-label="Következő kép">›</button><span class="scnt" id="cnt-${a.id}">1 / ${a.imgs.length}</span><div class="sdots" id="dots-${a.id}">${a.imgs.slice(0,5).map((_,i)=>`<i class="sdot${i===0?' on':''}"></i>`).join("")}</div>`:``}<b>${a.tag}</b></div><div class="cb"><h3>${a.name}</h3>${a.hl?`<div class="hl">${a.hl}</div>`:``}<p class="desc">${a.desc}</p><div class="price">${a.n} € <small>/ éj + idegenforgalmi adó</small></div><p class="wk"><span>7 éjszaka:</span> <b>${a.n*7} €</b> <span>+ idegenforgalmi adó</span></p><p style="font-size:13px">Rövidebb vagy hosszabb tartózkodás esetén egyedi árat egyeztetünk.</p><ul class="feat">${FE.map(f=>{const[i,t]=f.split("|");return`<li><span>${i}</span><span>${t.replace("{x}",a.extra)}</span></li>`}).join("")}</ul><button class="btn o" onclick="pick('${a.id}')">Ajánlatkérés</button></div></article>`}).join("");
+return`<article class="card"><div class="ph ${a.cls}" data-apt="${a.id}" onclick="openLb('${a.id}')"><img class="ph-img on" id="imga-${a.id}" src="${a.imgs[0]}" alt="${a.name}" style="object-position:${a.pos}" loading="lazy" onerror="this.style.display='none'"><img class="ph-img" id="imgb-${a.id}" src="${a.imgs[0]}" alt="${a.name}" style="object-position:${a.pos}" loading="lazy" onerror="this.style.display='none'">${m?`<button class="snav prev" type="button" onclick="stepImg(event,'${a.id}',-1)" aria-label="Előző kép">‹</button><button class="snav next" type="button" onclick="stepImg(event,'${a.id}',1)" aria-label="Következő kép">›</button><span class="scnt" id="cnt-${a.id}">1 / ${a.imgs.length}</span><div class="sdots" id="dots-${a.id}">${a.imgs.slice(0,5).map((_,i)=>`<i class="sdot${i===0?' on':''}"></i>`).join("")}</div>`:``}<b>${a.tag}</b></div><div class="cb"><h3>${a.name}</h3>${a.hl?`<div class="hl">${a.hl}</div>`:``}<p class="desc">${a.desc}</p><div class="price">${a.n} € <small>/ éj + idegenforgalmi adó</small></div><p class="wk"><span>7 éjszaka:</span> <b>${a.n*7} €</b> <span>+ idegenforgalmi adó</span></p><p style="font-size:13px">Rövidebb vagy hosszabb tartózkodás esetén egyedi árat egyeztetünk.</p><ul class="feat">${FE.map(f=>{const[i,t]=f.split("|");return`<li><span>${i}</span><span>${t.replace("{x}",a.extra)}</span></li>`}).join("")}</ul><button class="btn o" onclick="pick('${a.id}')">Ajánlatkérés</button></div></article>`}).join("");
 
-function updSlide(id){
-const a=APTS.find(x=>x.id===id),i=sIdx[id],im=document.getElementById("img-"+id),cnt=document.getElementById("cnt-"+id),dots=document.getElementById("dots-"+id);
-if(im){im.style.display="";im.src=a.imgs[i]}
+APTS.forEach(a=>{if(a.imgs.length>1){preload(a.imgs[1]);preload(a.imgs[a.imgs.length-1])}});
+
+function updSlide(id,openInit){
+const a=APTS.find(x=>x.id===id),i=sIdx[id],src=a.imgs[i];
+const ia=document.getElementById("imga-"+id),ib=document.getElementById("imgb-"+id),cnt=document.getElementById("cnt-"+id),dots=document.getElementById("dots-"+id);
+if(ia&&ib){
+const aOn=ia.classList.contains("on"),curIm=aOn?ia:ib,nxtIm=aOn?ib:ia;
+if(curIm.getAttribute("src")!==src){
+const swap=()=>{nxtIm.style.display="";nxtIm.classList.add("on");curIm.classList.remove("on")};
+nxtIm.onload=swap;
+nxtIm.src=src;
+if(nxtIm.complete)swap();
+}}
+if(a.imgs.length>1){
+preload(a.imgs[(i+1)%a.imgs.length]);
+preload(a.imgs[(i-1+a.imgs.length)%a.imgs.length]);
+}
 if(cnt)cnt.textContent=(i+1)+" / "+a.imgs.length;
 if(dots){const act=Math.min(4,Math.floor(i/a.imgs.length*5));[...dots.children].forEach((d,k)=>d.classList.toggle("on",k===act))}
-if(lbApt===id){document.getElementById("limg").src=a.imgs[i];document.getElementById("lcap").textContent=tr(a.name)+" ("+(i+1)+" / "+a.imgs.length+")"}
+if(lbApt===id){
+const lm=document.getElementById("limg");
+if(openInit){lm.classList.remove("fade");lm.src=src}
+else{
+lm.classList.add("fade");
+setTimeout(()=>{
+lm.onload=()=>lm.classList.remove("fade");
+lm.src=src;
+if(lm.complete)lm.classList.remove("fade");
+},130);
 }
+document.getElementById("lcap").textContent=tr(a.name)+" ("+(i+1)+" / "+a.imgs.length+")";
+}}
 function stepImg(e,id,dir){
 if(e)e.stopPropagation();
 const a=APTS.find(x=>x.id===id);
 sIdx[id]=(sIdx[id]+dir+a.imgs.length)%a.imgs.length;
-updSlide(id);
+updSlide(id,false);
 }
 function openLb(id){
 const a=APTS.find(x=>x.id===id);if(!a)return;
@@ -269,7 +301,7 @@ lbApt=id;
 const lb=document.getElementById("lbox"),m=a.imgs.length>1;
 document.getElementById("lprev").style.display=m?"flex":"none";
 document.getElementById("lnext").style.display=m?"flex":"none";
-updSlide(id);
+updSlide(id,true);
 lb.classList.add("show");
 }
 function closeLb(){document.getElementById("lbox").classList.remove("show");lbApt=null}
@@ -403,7 +435,7 @@ document.querySelector(`.burger`).setAttribute(`aria-label`,tr(`Menü`));
 document.querySelectorAll(`.lang button`).forEach(b=>b.setAttribute(`aria-pressed`,b.dataset.l===lang));
 const s=document.getElementById(`aptSel`),v=s.value;s.innerHTML=APTS.map(a=>`<option value="${a.id}">${tr(a.name)} –${tr(a.tag)}</option>`).join(``);s.value=v||`viric1`;
 const mt=document.getElementById(`msgTxt`);if(mt&&mt.textContent)mt.textContent=MSG[li+1];
-if(lbApt)updSlide(lbApt);
+if(lbApt)updSlide(lbApt,true);
 est()}
 document.querySelectorAll(`.lang`).forEach(g=>g.onclick=e=>{const b=e.target.closest(`button`);if(!b)return;lang=b.dataset.l;li=[`hu`,`en`,`de`].indexOf(lang)-1;apply();try{localStorage.setItem(`vl`,lang)}catch(_){}});
 {let sv=``;try{sv=localStorage.getItem(`vl`)||``}catch(_){}sv=sv||(navigator.language||`hu`).slice(0,2);const k=[`hu`,`en`,`de`].indexOf(sv);if(k>0){lang=sv;li=k-1}}
