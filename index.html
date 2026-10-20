@@ -30,9 +30,7 @@ nav a:hover{background:var(--sand)}nav a.cta{background:var(--sea);color:#fff}
 .burger{display:none;background:none;border:0;font-size:26px;color:var(--ink);cursor:pointer}
 @media(max-width:860px){.burger{display:block}nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);flex-direction:column;align-items:stretch;padding:12px 20px 20px;border-bottom:1px solid var(--line)}nav.open{display:flex}nav a{padding:12px}}
 .hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;color:#fff;padding:120px 0 80px;position:relative;overflow:hidden;
-background:linear-gradient(180deg,rgba(4,40,60,.1),rgba(4,40,60,.6)),linear-gradient(180deg,#f6c98b 0%,#f2a679 22%,#5bb7d0 48%,#0b6f9a 70%,#06425f 100%)}
-.hero svg{position:absolute;left:0;right:0;bottom:0;width:100%;height:42%;opacity:.55}
-@keyframes sw{from{transform:translateX(-90px)}to{transform:translateX(90px)}}.w1{animation:sw 8s ease-in-out infinite alternate}.w2{animation:sw 12s ease-in-out infinite alternate-reverse}
+background:linear-gradient(180deg,rgba(4,40,60,.4),rgba(4,40,60,.72)),url('torony_borito.jpg') center/cover no-repeat}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 .hero .wrap{position:relative;animation:fadeUp .7s ease both}.hero h1{font-size:clamp(34px,6vw,64px);max-width:18ch}
 .hero p{font-size:clamp(17px,2vw,21px);max-width:52ch;margin:0 0 30px}.hero .btns{display:flex;gap:12px;flex-wrap:wrap}
@@ -114,8 +112,6 @@ html:not([lang=hu]) .warn{display:flex}
 .d{font-weight:700}
 .months{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}.m{flex:0 1 calc((100% - 40px)/3);min-width:280px}
 .hl{align-self:flex-start;background:linear-gradient(135deg,#0b5d8a,#1fb5b0);color:#fff;font-weight:700;font-size:14px;border-radius:999px;padding:7px 16px;box-shadow:0 4px 12px rgba(11,93,138,.25)}
-.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-.hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(4,40,60,.45),rgba(4,40,60,.5) 55%,rgba(4,40,60,.72))}
 .hero .wrap{z-index:2}.hero h1,.hero p{text-shadow:0 2px 18px rgba(0,0,0,.45)}
 #apts .ph{height:280px;background-size:cover;cursor:pointer}
 .ph-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity .45s cubic-bezier(.22,1,.36,1),transform .55s cubic-bezier(.22,1,.36,1);pointer-events:none;will-change:opacity,transform}
@@ -152,7 +148,6 @@ html:not([lang=hu]) .warn{display:flex}
 
 <main>
 <section class="hero" id="kezdolap">
-<video autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg" aria-hidden="true"><source src="hero.mp4" type="video/mp4"></video>
 <div class="wrap">
 <h1>Kikapcsolódás a napsütötte Vir-szigeten – találd meg a tökéletes apartmant!</h1>
 <p>Modern, teljesen felszerelt apartmanok családoknak és baráti társaságoknak, pár percre a kristálytiszta Adriától.</p>
@@ -249,10 +244,10 @@ html:not([lang=hu]) .warn{display:flex}
 
 <script>
 const APTS=[
-{id:"viric1",imgs:["terasz1_2.jpg","nappali3_2.jpg","nappali1_2.jpg","nappali2_2.jpg","halo2_2.jpg","halo1_2.jpg","furdo1_2.jpg","furdo2_2.jpg"],pos:"center",tab:"Viric 1 (4 fős)",name:"„Viric 1” Apartman",n:130,cls:"i1",tag:"4 személyes",desc:"Ideális kisebb családoknak vagy pároknak: 1 hálószoba, nappali kihúzható kanapéval, amerikai konyha, saját erkély.",extra:"Saját erkély"},
-{id:"viric3",imgs:["terasz3.jpg","ház.jpg","nappali1.jpg","nappali4.jpg","nappali2.jpg","nappali3.jpg","halo1.jpg","halo2.jpg","terasz2.jpg","terasz1.jpg","ház3.jpg","ház4.jpg","furdo1.jpg","furdo2.jpg","furdo3.jpg","ajto3.jpg","ajto2.jpg","ajto1.jpg","grill1.jpg"],pos:"center",tab:"Viric 3 (4 fős)",name:"„Viric 3” Apartman",n:130,cls:"i2",tag:"4 személyes",desc:"Kényelmes, világos elrendezés 4 fő részére: 2 külön légtér, felszerelt konyha, saját terasz.",extra:"Saját terasz"},
-{id:"horizont",imgs:["terasz_ho.jpg","etkezo_ho.jpg","konyha_ho.jpg","nappali_ho.jpg","halo3_ho.jpg","halo2_ho.jpg","halo_ho.jpg","halo4_ho.jpg","furdo_ho.jpg"],pos:"center",tab:"Horizont (6–8 fős)",name:"„Horizont” Apartman",n:170,cls:"i3",tag:"6–8 személyes",hl:"🌊 Tengerre néző kilátás",desc:"A Miljkovica apartmanház emeleti apartmanja, ahonnan látható a tenger. 3 hálószoba és nappali, kb. 6–8 főnek ideális.",extra:"Saját udvarrész és privát terasz"},
-{id:"harmonia",imgs:["terasz2_ha.jpg","etkezo_ha.jpg","konyha_ha.jpg","etkezo2_ha.jpg","halo_ha.jpg","halo1_ha.jpg","furdo_ha.jpg","terasz_ha.jpg","grill_ha.jpg"],pos:"center",tab:"Harmónia (4–6 fős)",name:"„Harmónia” Apartman",n:170,cls:"i1",tag:"4–6 személyes",desc:"A Miljkovica apartmanház alsó szinti apartmanja. 2 hálószoba és nappali, kb. 4–6 főnek ideális.",extra:"Saját udvarrész és privát terasz"}];
+{id:"viric1",imgs:["viric1.jpg","terasz1_2.jpg","nappali3_2.jpg","nappali1_2.jpg","nappali2_2.jpg","halo2_2.jpg","halo1_2.jpg","furdo1_2.jpg","furdo2_2.jpg"],pos:"center 85%",tab:"Viric 1 (4 fős)",name:"„Viric 1” Apartman",n:130,cls:"i1",tag:"4 személyes",desc:"Ideális kisebb családoknak vagy pároknak: 1 hálószoba, nappali kihúzható kanapéval, amerikai konyha, saját erkély.",extra:"Saját erkély"},
+{id:"viric3",imgs:["viric2.jpg","terasz3.jpg","ház.jpg","nappali1.jpg","nappali4.jpg","nappali2.jpg","nappali3.jpg","halo1.jpg","halo2.jpg","terasz2.jpg","terasz1.jpg","ház3.jpg","ház4.jpg","furdo1.jpg","furdo2.jpg","furdo3.jpg","ajto3.jpg","ajto2.jpg","ajto1.jpg","grill1.jpg"],pos:"center 80%",tab:"Viric 3 (4 fős)",name:"„Viric 3” Apartman",n:130,cls:"i2",tag:"4 személyes",desc:"Kényelmes, világos elrendezés 4 fő részére: 2 külön légtér, felszerelt konyha, saját terasz.",extra:"Saját terasz"},
+{id:"horizont",imgs:["miljkovica.jpg","terasz_ho.jpg","etkezo_ho.jpg","konyha_ho.jpg","nappali_ho.jpg","halo3_ho.jpg","halo2_ho.jpg","halo_ho.jpg","halo4_ho.jpg","furdo_ho.jpg"],pos:"center",tab:"Horizont (6–8 fős)",name:"„Horizont” Apartman",n:170,cls:"i3",tag:"6–8 személyes",hl:"🌊 Tengerre néző kilátás",desc:"A Miljkovica apartmanház emeleti apartmanja, ahonnan látható a tenger. 3 hálószoba és nappali, kb. 6–8 főnek ideális.",extra:"Saját udvarrész és privát terasz"},
+{id:"harmonia",imgs:["miljkovica.jpg","terasz2_ha.jpg","etkezo_ha.jpg","konyha_ha.jpg","etkezo2_ha.jpg","halo_ha.jpg","halo1_ha.jpg","furdo_ha.jpg","terasz_ha.jpg","grill_ha.jpg"],pos:"center",tab:"Harmónia (4–6 fős)",name:"„Harmónia” Apartman",n:170,cls:"i1",tag:"4–6 személyes",desc:"A Miljkovica apartmanház alsó szinti apartmanja. 2 hálószoba és nappali, kb. 4–6 főnek ideális.",extra:"Saját udvarrész és privát terasz"}];
 const FE=["❄️|Légkondicionáló (klíma)","📶|Ingyenes, gyors Wi-Fi","🚗|Saját, zárt parkolóhely az udvarban","🍳|Teljesen felszerelt konyha (hűtő, főzőlap, mikró, kávéfőző)","🔥|Kerti grillezés és bográcsozás","🌿|{x} kerti bútorokkal","🏖️|Strand: 250 m, kényelmes séta"];
 // Foglalások: [érkezés hó, érkezés nap, távozás hó, távozás nap], pl. [7,3,7,10]
 const BUSY={viric1:[],viric3:[],horizont:[],harmonia:[]};
@@ -335,7 +330,7 @@ const a=APTS.find(x=>x.id===cur);document.getElementById("calName").innerHTML="K
 let h="";
 for(let m=5;m<=9;m++){
 const first=(new Date(YEAR,m-1,1).getDay()+6)%7,days=new Date(YEAR,m,0).getDate();
-h+=`<div class="m"><h3>${MN[m]} ${YEAR}</h3><div class="dg">${["H","K","Sze","Cs","P","Szo","V"].map(d=>`<div class="h">${d}</div>`).join("")}${"<div></div>".repeat(first)}`;
+h+=`<div class="m"><h3>${MN[m]}${YEAR}</h3><div class="dg">${["H","K","Sze","Cs","P","Szo","V"].map(d=>`<div class="h">${d}</div>`).join("")}${"<div></div>".repeat(first)}`;
 const bk=BUSY[cur].map(r=>[new Date(YEAR,r[0]-1,r[1]).getTime(),new Date(YEAR,r[2]-1,r[3]).getTime()]);
 for(let d=1;d<=days;d++){const t=new Date(YEAR,m-1,d).getTime(),ar=bk.some(r=>r[0]===t),dp=bk.some(r=>r[1]===t),md=bk.some(r=>r[0]<t&&t<r[1]);const c=md?"b":ar&&dp?"c":ar?"a":dp?"p":"f";const tt={b:"Foglalt",c:"Turnusváltás: távozás és érkezés",a:"Érkezés napja",p:"Távozás napja",f:"Szabad"}[c];h+=`<div class="d ${c}" title="${tt}">${d}</div>`}
 h+="</div></div>"}
@@ -383,7 +378,7 @@ const D={
 [`„Viric 1” Apartman`]:[`“Viric 1” Apartment`,`Apartment „Viric 1“`],[`„Viric 3” Apartman`]:[`“Viric 3” Apartment`,`Apartment „Viric 3“`],[`„Horizont” Apartman`]:[`“Horizont” Apartment`,`Apartment „Horizont“`],[`„Harmónia” Apartman`]:[`“Harmónia” Apartment`,`Apartment „Harmónia“`],
 [`4 személyes`]:[`Sleeps 4`,`4 Personen`],[`6–8 személyes`]:[`Sleeps 6–8`,`6–8 Personen`],[`4–6 személyes`]:[`Sleeps 4–6`,`4–6 Personen`],
 [`Ideális kisebb családoknak vagy pároknak: 1 hálószoba, nappali kihúzható kanapéval, amerikai konyha, saját erkély.`]:[`Ideal for small families or couples: 1 bedroom, living room with sofa bed, open-plan kitchen, private balcony.`,`Ideal für kleine Familien oder Paare: 1 Schlafzimmer, Wohnzimmer mit Schlafsofa, offene Küche, eigener Balkon.`],
-[`Kényelmes, világos elrendezés 4 fő részére: 2 külön légtér, felszerelt konyha, saját terasz.`]:[`Comfortable, bright layout for 4 guests: 2 separate living areas, equipped kitchen, private terrace.`,`Bequeme, helle Aufteilung für 4 Personen: 2 getrennte Bereiche, ausgestattete Küche, eigene Terrasse.`],
+[`Kényelmes, világos elrendezés 4 fő részére: 2 külön légtér, felszerelt konyha, saját terasz.`]:[`Comfortable, bright layout for 4 guests: 2 separate living areas, equipped kitchen, private terrace.`,`Bequeme, helle Aufteilung für 4 Personen: 2 getrennte Bereiche, eigene Terrasse.`],
 [`A Miljkovica apartmanház emeleti apartmanja, ahonnan látható a tenger. 3 hálószoba és nappali, kb. 6–8 főnek ideális.`]:[`The upper-floor apartment of the Miljkovica house, with a view of the sea. 3 bedrooms and a living room, ideal for approx. 6–8 guests.`,`Das Apartment im Obergeschoss des Hauses Miljkovica, mit Blick aufs Meer. 3 Schlafzimmer und Wohnzimmer, ideal für ca. 6–8 Personen.`],
 [`A Miljkovica apartmanház alsó szinti apartmanja. 2 hálószoba és nappali, kb. 4–6 főnek ideális.`]:[`The lower-floor apartment of the Miljkovica house. 2 bedrooms and a living room, ideal for approx. 4–6 guests.`,`Das Apartment im Erdgeschoss des Hauses Miljkovica. 2 Schlafzimmer und Wohnzimmer, ideal für ca. 4–6 Personen.`],
 [`/ éj + idegenforgalmi adó`]:[`/ night + tourist tax`,`/ Nacht + Kurtaxe`],[`+ idegenforgalmi adó`]:[`+ tourist tax`,`+ Kurtaxe`],[`🌊 Tengerre néző kilátás`]:[`🌊 Sea view`,`🌊 Meerblick`],[`7 éjszaka:`]:[`7 nights:`,`7 Nächte:`],
@@ -437,7 +432,9 @@ const D={
 [`Kapcsolat és ajánlatkérés`]:[`Contact and enquiry`,`Kontakt und Anfrage`],
 [`Add meg az utazás adatait, és hamarosan jelentkezünk.`]:[`Enter your travel details and we'll get back to you shortly.`,`Geben Sie Ihre Reisedaten an, wir melden uns in Kürze.`],
 [`Név`]:[`Name`,`Name`],[`Email cím`]:[`Email address`,`E-Mail-Adresse`],[`Telefonszám`]:[`Phone number`,`Telefonnummer`],[`Apartman`]:[`Apartment`,`Apartment`],[`Érkezés`]:[`Arrival`,`Anreise`],[`Távozás`]:[`Departure`,`Abreise`],[`Vendégek száma`]:[`Number of guests`,`Anzahl der Gäste`],[`Üzenet`]:[`Message`,`Nachricht`],[`Ajánlatkérés küldése`]:[`Send enquiry`,`Anfrage senden`],
-[`Telefon`]:[`Phone`,`Telefon`],[`Írj nekünk üzenetet`]:[`Send us a message`,`Schreiben Sie uns`],[`Vir-sziget, Horvátország`]:[`Vir island, Croatia`,`Insel Vir, Kroatien`],[`Megnyitás térképen`]:[`Open on map`,`Auf Karte öffnen`],
+[`Telefon`]:[`Phone`,`Telefon`],[`Írj nekünk üzenetet`]:[`Send us a message`,`Schreiben Sie uns`],
+[`Vir-sziget, Horvátország`]:[`Vir island, Croatia`,`Insel Vir, Kroatien`],
+[`Megnyitás térképen`]:[`Open on map`,`Auf Karte öffnen`],
 [`© Vir Apartmanok – Vir-sziget, Horvátország`]:[`© Vir Apartments – Vir island, Croatia`,`© Vir Apartments – Insel Vir, Kroatien`],
 [`Vir-sziget apartmanok – Horvátország`]:[`Vir island apartments – Croatia`,`Apartments auf der Insel Vir – Kroatien`],
 [`Menü`]:[`Menu`,`Menü`],
@@ -471,7 +468,6 @@ if(lbApt){if(e.key===`Escape`)closeLb();else if(e.key===`ArrowLeft`)stepImg(e,lb
 if(e.key===`Escape`)cl();
 });
 okb.focus();
-{const v=document.querySelector(`.hero video`);if(v){if(matchMedia(`(prefers-reduced-motion:reduce)`).matches)v.pause();else v.play().catch(()=>{})}}
 </script>
 </body>
 </html>
