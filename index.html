@@ -67,6 +67,7 @@ background:linear-gradient(180deg,rgba(4,40,60,.1),rgba(4,40,60,.6)),linear-grad
 .why b{display:block;font-size:17px;margin:6px 0;color:var(--ink)}
 .why p{margin:0;color:var(--mute);font-size:15px}
 .gh{font-size:24px;margin:38px 0 16px}.guide h3{font-size:19px}
+.sublead{color:var(--mute);max-width:68ch;margin:-6px 0 22px;font-size:15.5px}
 .tip{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
 .tip div{background:var(--card);border-left:5px solid var(--tq);border-radius:14px;padding:18px 20px;box-shadow:var(--sh);transition:transform .25s ease}
 .tip div:hover{transform:translateX(4px)}
@@ -185,10 +186,11 @@ html:not([lang=hu]) .warn{display:flex}
 <div>🌿<b>A természetkedvelőknek is tartogat élményeket</b><p>Érdemes megnézni a híres Vörös sziklákat (Crvene stijene) és a világítótornyos részt is, ami igazi túrázós hangulatot ad.</p></div>
 </div>
 <h3 class="gh">Éttermek és gasztronómia</h3>
+<p class="sublead">Vir szigetén nemcsak a strandok miatt érdemes barangolni – a hangulatos sétányok, fagyizók, pizzázók és bárok gondoskodnak arról, hogy egy esti séta is élmény legyen.</p>
 <div class="grid">
-<div class="card"><div class="cb"><h3>Konoba Kod Spavalice</h3><p>Autentikus dalmát ételek, tenger gyümölcsei, hangulatos terasz.</p></div></div>
-<div class="card"><div class="cb"><h3>Restaurant Kotarina</h3><p>Központi elhelyezkedés, kiváló pizzák, grillételek és halak.</p></div></div>
-<div class="card"><div class="cb"><h3>Bistro Ibiza és tengerparti büfék</h3><p>Gyors ebéd, csevap és hideg csapolt sör a parton.</p></div></div>
+<div class="card"><div class="cb"><h3>🍦 Caffe Slasticarnica Bon Bon – édességrajongóknak kötelező megálló</h3><p>Aki egy esti séta közben megkóstolná Vir egyik kedvelt fagyizóját, annak érdemes betérnie ide. Finom fagylaltok, kávé és édes desszertek várják a vendégeket – tökéletes választás egy strandolós nap lezárásaként vagy egy esti kikapcsolódáshoz.</p></div></div>
+<div class="card"><div class="cb"><h3>🍕 Pizza Cut Vir – gyors és egyszerű megoldás, ha megéheztetek</h3><p>Ha egy könnyed pizzára vágytok, amit akár útközben vagy a strandra indulás előtt is elfogyaszthattok, ez egy jó választás. Praktikus hely családoknak, gyerekekkel is, amikor nem egy hosszú vacsorára, hanem egy gyors és finom étkezésre van szükség.</p></div></div>
+<div class="card"><div class="cb"><h3>🍔 Kraken Bar Vir – hangulatos esti hely hamburgerekhez és italokhoz</h3><p>Modern, tengerparti hangulatú bár, ahol főként hamburgerek, grillételek és italok miatt érdemes megállni. Jó választás baráti társaságoknak vagy egy lazább esti programhoz, amikor a strand után még maradnátok egy kicsit a nyüzsgésben.</p></div></div>
 </div>
 <h3 class="gh">Legjobb strandok</h3>
 <div class="grid">
@@ -413,10 +415,13 @@ const D={
 [`A természetkedvelőknek is tartogat élményeket`]:[`Great experiences for nature lovers too`,`Auch für Naturliebhaber voller Erlebnisse`],
 [`Érdemes megnézni a híres Vörös sziklákat (Crvene stijene) és a világítótornyos részt is, ami igazi túrázós hangulatot ad.`]:[`It is worth visiting the famous Red Rocks (Crvene stijene) as well as the lighthouse area, which offers a great hiking vibe.`,`Sehenswert sind die berühmten Roten Felsen (Crvene stijene) sowie der Bereich beim Leuchtturm, der echtes Wander-Feeling bietet.`],
 [`Éttermek és gasztronómia`]:[`Restaurants & food`,`Restaurants & Gastronomie`],
-[`Autentikus dalmát ételek, tenger gyümölcsei, hangulatos terasz.`]:[`Authentic Dalmatian dishes, seafood, a cosy terrace.`,`Authentische dalmatinische Küche, Meeresfrüchte, gemütliche Terrasse.`],
-[`Központi elhelyezkedés, kiváló pizzák, grillételek és halak.`]:[`Central location, excellent pizzas, grilled dishes and fish.`,`Zentrale Lage, ausgezeichnete Pizzen, Grillgerichte und Fisch.`],
-[`Bistro Ibiza és tengerparti büfék`]:[`Bistro Ibiza & beach snack bars`,`Bistro Ibiza & Strandbuden`],
-[`Gyors ebéd, csevap és hideg csapolt sör a parton.`]:[`Quick lunch, ćevapi and cold draught beer on the shore.`,`Schnelles Mittagessen, Ćevapi und kühles Fassbier am Strand.`],
+[`Vir szigetén nemcsak a strandok miatt érdemes barangolni – a hangulatos sétányok, fagyizók, pizzázók és bárok gondoskodnak arról, hogy egy esti séta is élmény legyen.`]:[`Vir island is worth exploring for more than just its beaches – cosy promenades, ice cream parlours, pizzerias and bars make every evening stroll a true experience.`,`Auf der Insel Vir lohnt sich ein Bummel nicht nur wegen der Strände – gemütliche Promenaden, Eisdielen, Pizzerien und Bars sorgen dafür, dass auch ein Abendspaziergang zum Erlebnis wird.`],
+[`🍦 Caffe Slasticarnica Bon Bon – édességrajongóknak kötelező megálló`]:[`🍦 Caffe Slasticarnica Bon Bon – a must-stop for sweet lovers`,`🍦 Caffe Slasticarnica Bon Bon – ein Muss für Naschkatzen`],
+[`Aki egy esti séta közben megkóstolná Vir egyik kedvelt fagyizóját, annak érdemes betérnie ide. Finom fagylaltok, kávé és édes desszertek várják a vendégeket – tökéletes választás egy strandolós nap lezárásaként vagy egy esti kikapcsolódáshoz.`]:[`If you'd like to try one of Vir's favourite ice cream parlours during an evening walk, this is the place to visit. Delicious ice creams, coffee and sweet desserts await guests – the perfect way to end a beach day or enjoy a relaxing evening.`,`Wer bei einem Abendspaziergang eine der beliebtesten Eisdielen auf Vir probieren möchte, sollte hier einkehren. Leckeres Eis, Kaffee und süße Desserts erwarten die Gäste – perfekt zum Ausklang eines Strandtages oder für einen entspannten Abend.`],
+[`🍕 Pizza Cut Vir – gyors és egyszerű megoldás, ha megéheztetek`]:[`🍕 Pizza Cut Vir – a quick and easy choice when you get hungry`,`🍕 Pizza Cut Vir – schnell und unkompliziert für den Hunger zwischendurch`],
+[`Ha egy könnyed pizzára vágytok, amit akár útközben vagy a strandra indulás előtt is elfogyaszthattok, ez egy jó választás. Praktikus hely családoknak, gyerekekkel is, amikor nem egy hosszú vacsorára, hanem egy gyors és finom étkezésre van szükség.`]:[`If you crave a light slice of pizza to enjoy on the go or before heading to the beach, this is a great option. A practical spot for families with children when you want a quick and tasty meal rather than a long sit-down dinner.`,`Wenn Sie Lust auf eine leichte Pizza haben – ob für unterwegs oder vor dem Strandbesuch –, sind Sie hier richtig. Ein praktischer Ort für Familien mit Kindern, wenn es statt eines langen Abendessens eine schnelle und leckere Mahlzeit sein soll.`],
+[`🍔 Kraken Bar Vir – hangulatos esti hely hamburgerekhez és italokhoz`]:[`🍔 Kraken Bar Vir – a cosy evening spot for burgers and drinks`,`🍔 Kraken Bar Vir – gemütlicher Abendtreff für Burger und Drinks`],
+[`Modern, tengerparti hangulatú bár, ahol főként hamburgerek, grillételek és italok miatt érdemes megállni. Jó választás baráti társaságoknak vagy egy lazább esti programhoz, amikor a strand után még maradnátok egy kicsit a nyüzsgésben.`]:[`A modern bar with a seaside vibe, well worth a stop for its burgers, grilled dishes and drinks. A great choice for groups of friends or a relaxed evening out when you want to stay in the lively atmosphere after the beach.`,`Eine moderne Bar mit maritimem Flair, in der sich ein Stopp vor allem wegen der Burger, Grillgerichte und Drinks lohnt. Ideal für Freundesgruppen oder einen entspannten Abend, wenn man nach dem Strand noch etwas im Trubel verweilen möchte.`],
 [`Legjobb strandok`]:[`Best beaches`,`Die schönsten Strände`],
 [`Jadro strand`]:[`Jadro beach`,`Strand Jadro`],
 [`A sziget legnépszerűbb, lassan mélyülő, aprókavicsos-homokos strandja – kisgyerekeseknek tökéletes.`]:[`The island's most popular beach: gently sloping, fine pebbles and sand – perfect for families with small children.`,`Der beliebteste Strand der Insel: flach abfallend, Feinkies und Sand – perfekt für Familien mit kleinen Kindern.`],
