@@ -189,7 +189,7 @@ html:not([lang=hu]) .warn{display:flex}
 <p class="sublead">Vir szigetén nemcsak a strandok miatt érdemes barangolni – a hangulatos sétányok, fagyizók, pizzázók és bárok gondoskodnak arról, hogy egy esti séta is élmény legyen.</p>
 <div class="grid">
 <div class="card"><div class="cb"><h3>🍦 Caffe Slasticarnica Bon Bon – édességrajongóknak kötelező megálló</h3><p>Aki egy esti séta közben megkóstolná Vir egyik kedvelt fagyizóját, annak érdemes betérnie ide. Finom fagylaltok, kávé és édes desszertek várják a vendégeket – tökéletes választás egy strandolós nap lezárásaként vagy egy esti kikapcsolódáshoz.</p></div></div>
-<div class="card"><div class="cb"><h3>🍕 Pizza Cut Vir – gyors és egyszerű megoldás, ha megéheztetek</h3><p>Ha egy könnyed pizzára vagy kebabra vágytok, amit akár útközben vagy a strandra indulás előtt is elfogyaszthattok, ez egy jó választás. Praktikus hely családoknak, gyerekekkel is.</p></div></div>
+<div class="card"><div class="cb"><h3>🍕 Pizza Cut Vir – gyors és egyszerű megoldás, ha megéheztetek</h3><p>Ha egy könnyed pizzára vágytok, amit akár útközben vagy a strandra indulás előtt is elfogyaszthattok, ez egy jó választás. Praktikus hely családoknak, gyerekekkel is, amikor nem egy hosszú vacsorára, hanem egy gyors és finom étkezésre van szükség.</p></div></div>
 <div class="card"><div class="cb"><h3>🍔 Kraken Bar Vir – hangulatos esti hely hamburgerekhez és italokhoz</h3><p>Modern, tengerparti hangulatú bár, ahol főként hamburgerek, grillételek és italok miatt érdemes megállni. Jó választás baráti társaságoknak vagy egy lazább esti programhoz, amikor a strand után még maradnátok egy kicsit a nyüzsgésben.</p></div></div>
 </div>
 <h3 class="gh">Legjobb strandok</h3>
@@ -251,8 +251,8 @@ html:not([lang=hu]) .warn{display:flex}
 const APTS=[
 {id:"viric1",imgs:["terasz1_2.jpg","nappali3_2.jpg","nappali1_2.jpg","nappali2_2.jpg","halo2_2.jpg","halo1_2.jpg","furdo1_2.jpg","furdo2_2.jpg"],pos:"center",tab:"Viric 1 (4 fős)",name:"„Viric 1” Apartman",n:130,cls:"i1",tag:"4 személyes",desc:"Ideális kisebb családoknak vagy pároknak: 1 hálószoba, nappali kihúzható kanapéval, amerikai konyha, saját erkély.",extra:"Saját erkély"},
 {id:"viric3",imgs:["terasz3.jpg","ház.jpg","nappali1.jpg","nappali4.jpg","nappali2.jpg","nappali3.jpg","halo1.jpg","halo2.jpg","terasz2.jpg","terasz1.jpg","ház3.jpg","ház4.jpg","furdo1.jpg","furdo2.jpg","furdo3.jpg","ajto3.jpg","ajto2.jpg","ajto1.jpg","grill1.jpg"],pos:"center",tab:"Viric 3 (4 fős)",name:"„Viric 3” Apartman",n:130,cls:"i2",tag:"4 személyes",desc:"Kényelmes, világos elrendezés 4 fő részére: 2 külön légtér, felszerelt konyha, saját terasz.",extra:"Saját terasz"},
-{id:"horizont",imgs:["miljkovica.jpg"],pos:"center",tab:"Horizont (6–8 fős)",name:"„Horizont” Apartman",n:170,cls:"i3",tag:"6–8 személyes",hl:"🌊 Tengerre néző kilátás",desc:"A Miljkovica apartmanház emeleti apartmanja, ahonnan látható a tenger. 3 hálószoba és nappali, kb. 6–8 főnek ideális.",extra:"Saját udvarrész és privát terasz"},
-{id:"harmonia",imgs:["miljkovica.jpg"],pos:"center",tab:"Harmónia (4–6 fős)",name:"„Harmónia” Apartman",n:170,cls:"i1",tag:"4–6 személyes",desc:"A Miljkovica apartmanház alsó szinti apartmanja. 2 hálószoba és nappali, kb. 4–6 főnek ideális.",extra:"Saját udvarrész és privát terasz"}];
+{id:"horizont",imgs:["terasz_ho.jpg","etkezo_ho.jpg","konyha_ho.jpg","nappali_ho.jpg","halo3_ho.jpg","halo2_ho.jpg","halo_ho.jpg","halo4_ho.jpg","furdo_ho.jpg"],pos:"center",tab:"Horizont (6–8 fős)",name:"„Horizont” Apartman",n:170,cls:"i3",tag:"6–8 személyes",hl:"🌊 Tengerre néző kilátás",desc:"A Miljkovica apartmanház emeleti apartmanja, ahonnan látható a tenger. 3 hálószoba és nappali, kb. 6–8 főnek ideális.",extra:"Saját udvarrész és privát terasz"},
+{id:"harmonia",imgs:["terasz2_ha.jpg","etkezo_ha.jpg","konyha_ha.jpg","etkezo2_ha.jpg","halo_ha.jpg","halo1_ha.jpg","furdo_ha.jpg","terasz_ha.jpg","grill_ha.jpg"],pos:"center",tab:"Harmónia (4–6 fős)",name:"„Harmónia” Apartman",n:170,cls:"i1",tag:"4–6 személyes",desc:"A Miljkovica apartmanház alsó szinti apartmanja. 2 hálószoba és nappali, kb. 4–6 főnek ideális.",extra:"Saját udvarrész és privát terasz"}];
 const FE=["❄️|Légkondicionáló (klíma)","📶|Ingyenes, gyors Wi-Fi","🚗|Saját, zárt parkolóhely az udvarban","🍳|Teljesen felszerelt konyha (hűtő, főzőlap, mikró, kávéfőző)","🔥|Kerti grillezés és bográcsozás","🌿|{x} kerti bútorokkal","🏖️|Strand: 250 m, kényelmes séta"];
 // Foglalások: [érkezés hó, érkezés nap, távozás hó, távozás nap], pl. [7,3,7,10]
 const BUSY={viric1:[],viric3:[],horizont:[],harmonia:[]};
@@ -335,7 +335,7 @@ const a=APTS.find(x=>x.id===cur);document.getElementById("calName").innerHTML="K
 let h="";
 for(let m=5;m<=9;m++){
 const first=(new Date(YEAR,m-1,1).getDay()+6)%7,days=new Date(YEAR,m,0).getDate();
-h+=`<div class="m"><h3>${MN[m]}${YEAR}</h3><div class="dg">${["H","K","Sze","Cs","P","Szo","V"].map(d=>`<div class="h">${d}</div>`).join("")}${"<div></div>".repeat(first)}`;
+h+=`<div class="m"><h3>${MN[m]} ${YEAR}</h3><div class="dg">${["H","K","Sze","Cs","P","Szo","V"].map(d=>`<div class="h">${d}</div>`).join("")}${"<div></div>".repeat(first)}`;
 const bk=BUSY[cur].map(r=>[new Date(YEAR,r[0]-1,r[1]).getTime(),new Date(YEAR,r[2]-1,r[3]).getTime()]);
 for(let d=1;d<=days;d++){const t=new Date(YEAR,m-1,d).getTime(),ar=bk.some(r=>r[0]===t),dp=bk.some(r=>r[1]===t),md=bk.some(r=>r[0]<t&&t<r[1]);const c=md?"b":ar&&dp?"c":ar?"a":dp?"p":"f";const tt={b:"Foglalt",c:"Turnusváltás: távozás és érkezés",a:"Érkezés napja",p:"Távozás napja",f:"Szabad"}[c];h+=`<div class="d ${c}" title="${tt}">${d}</div>`}
 h+="</div></div>"}
