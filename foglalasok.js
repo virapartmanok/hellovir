@@ -15,7 +15,7 @@
 // ============================================================
 window.FOGLALAS = {
   viric1:   { fizetve: [], fuggoben: [] },
-  viric3:   { fizetve: [], fuggoben: [] },
+  viric3:   { fizetve: [], fuggoben: [["2027-08-01","2027-08-07"]] },
   horizont: { fizetve: [], fuggoben: [] },
   harmonia: { fizetve: [], fuggoben: [] }
 };
