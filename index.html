@@ -7,7 +7,7 @@
 <title>Vir-sziget apartmanok – Horvátország</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
 <style>
-:root{--cf:#2fd36b;--cfi:#053b1c;--cb:#ff4d4f;--cbi:#fff;--cy:#ffd23f;--bg:#fffdf9;--sand:#f4ece0;--card:#fff;--ink:#16303d;--mute:#5d7480;--sea:#0b5d8a;--sea2:#06425f;--tq:#1fb5b0;--line:#e6dccb;--free:#d9f3ea;--freeInk:#146b55;--busy:#f1e4e4;--busyInk:#a14a4a;--sh:0 10px 30px rgba(11,70,100,.10);
+:root{--cf:#2fd36b;--cfi:#053b1c;--cb:#ff4d4f;--cbi:#fff;--cy:#ffd23f;--cp:#ffb52e;--bg:#fffdf9;--sand:#f4ece0;--card:#fff;--ink:#16303d;--mute:#5d7480;--sea:#0b5d8a;--sea2:#06425f;--tq:#1fb5b0;--line:#e6dccb;--free:#d9f3ea;--freeInk:#146b55;--busy:#f1e4e4;--busyInk:#a14a4a;--sh:0 10px 30px rgba(11,70,100,.10);
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1a21;--sand:#14252e;--card:#182c36;--ink:#eaf2f5;--mute:#9bb3bf;--sea:#59b6e3;--sea2:#0a2f42;--tq:#3fd0c9;--line:#27414d;--free:#12372f;--freeInk:#6fe0bd;--busy:#3a2428;--busyInk:#e69a9a;--sh:0 10px 30px rgba(0,0,0,.35)}}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:calc(76px + env(safe-area-inset-top,0px))}
@@ -57,7 +57,12 @@ background:linear-gradient(180deg,rgba(4,40,60,.4),rgba(4,40,60,.72)),url('toron
 .dg .h{font-size:12px;color:var(--mute);padding-bottom:4px}
 .d{aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-radius:9px;font-size:14px;font-weight:500;transition:transform .15s ease}
 .d:hover{transform:scale(1.08)}
-.d.f{background:var(--cf);color:var(--cfi)}.d.b{background:var(--cb);color:var(--cbi);text-decoration:line-through}.d.a,.d.p,.d.c{color:#0b1a22}.d.a{background:linear-gradient(135deg,var(--cf) 50%,var(--cb) 50%)}.d.p{background:linear-gradient(135deg,var(--cb) 50%,var(--cf) 50%)}.d.c{background:linear-gradient(135deg,var(--cb) 46%,#fff 46% 54%,var(--cb) 54%)}.est{display:none;padding:12px 14px;border-radius:12px;background:var(--sand);font-size:14px}
+.d{position:relative;background:linear-gradient(135deg,var(--a,var(--cf)) 50%,var(--b,var(--cf)) 50%);color:#0b1a22}
+.d.A-r{--a:var(--cb)}.d.B-r{--b:var(--cb)}.d.A-y{--a:var(--cp)}.d.B-y{--b:var(--cp)}
+.d.A-f.B-f{color:var(--cfi)}.d.A-r.B-r{color:var(--cbi);text-decoration:line-through}
+.d.A-y::after,.d.B-y::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:repeating-linear-gradient(45deg,rgba(90,55,0,.28) 0 3px,transparent 3px 7px)}
+.d.A-y::after{clip-path:polygon(0 0,100% 0,0 100%)}.d.B-y::after{clip-path:polygon(100% 0,100% 100%,0 100%)}.d.A-y.B-y::after{clip-path:none}
+.est{display:none;padding:12px 14px;border-radius:12px;background:var(--sand);font-size:14px}
 .calcta{margin-top:26px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}.calcta span{color:var(--mute);font-size:14px}
 .why{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-bottom:40px}
 .why div{background:var(--card);border-radius:18px;padding:22px;border:1px solid var(--line);transition:transform .25s ease,box-shadow .25s ease}
@@ -136,13 +141,11 @@ html:not([lang=hu]) .warn{display:flex}
 .lclose{position:absolute;top:18px;right:20px;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.16);color:#fff;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s ease}
 .lclose:hover{background:rgba(255,255,255,.3)}
 .lcap{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);color:#fff;background:rgba(6,42,64,.75);padding:6px 16px;border-radius:999px;font-size:14px;font-weight:600}
-.d.f,.d.p,.d.a{cursor:pointer}
+.d.ok{cursor:pointer}.legend i.pdsw{background:repeating-linear-gradient(45deg,var(--cp) 0 3px,#c98300 3px 6px)}
 .d.s,.d.sa,.d.sd{color:#3a2e00!important;text-decoration:none!important;box-shadow:inset 0 0 0 2px #e0a800}
 .d.s{background:var(--cy)!important}
-.d.sa{background:linear-gradient(135deg,var(--cf) 50%,var(--cy) 50%)!important}
-.d.sa.p{background:linear-gradient(135deg,var(--cb) 50%,var(--cy) 50%)!important}
-.d.sd{background:linear-gradient(135deg,var(--cy) 50%,var(--cf) 50%)!important}
-.d.sd.a{background:linear-gradient(135deg,var(--cy) 50%,var(--cb) 50%)!important}
+.d.sa{background:linear-gradient(135deg,var(--a,var(--cf)) 50%,var(--cy) 50%)!important}
+.d.sd{background:linear-gradient(135deg,var(--cy) 50%,var(--b,var(--cf)) 50%)!important}
 .sel{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-top:22px;padding:14px 18px;border-radius:14px;background:var(--card);border:1.5px solid var(--line);border-left:6px solid var(--cy)}
 .sel.bad{border-left-color:var(--cb)}
 #selTxt{flex:1;min-width:220px;font-weight:600;font-size:15px}
@@ -184,7 +187,7 @@ html:not([lang=hu]) .warn{display:flex}
 <section class="alt" id="naptar"><div class="wrap">
 <h2>Foglaltsági naptár – 2027</h2><p class="lead">Válts az apartmanok között, és nézd meg, mikor szabad. A félbevágott napok az érkezést és a távozást jelölik, így látszik, mikor van turnusváltás.</p>
 <div class="tabs" role="tablist" id="tabs"></div>
-<div class="legend"><span><i style="background:var(--cf)"></i>Szabad</span><span><i style="background:var(--cb)"></i>Foglalt</span><span><i style="background:var(--cy)"></i>Kiválasztott</span><span><i style="background:linear-gradient(135deg,var(--cf) 50%,var(--cb) 50%)"></i>Érkezés napja</span><span><i style="background:linear-gradient(135deg,var(--cb) 50%,var(--cf) 50%)"></i>Távozás napja</span><span><i style="background:linear-gradient(135deg,var(--cb) 46%,#fff 46% 54%,var(--cb) 54%)"></i>Turnusváltás</span></div>
+<div class="legend"><span><i style="background:var(--cf)"></i>Szabad</span><span><i style="background:var(--cb)"></i>Foglalt</span><span><i style="background:var(--cy)"></i>Kiválasztott</span><span><i class="pdsw"></i>Függőben</span><span><i style="background:linear-gradient(135deg,var(--cf) 50%,var(--cb) 50%)"></i>Érkezés napja</span><span><i style="background:linear-gradient(135deg,var(--cb) 50%,var(--cf) 50%)"></i>Távozás napja</span><span><i style="background:linear-gradient(135deg,var(--cb) 46%,#fff 46% 54%,var(--cb) 54%)"></i>Turnusváltás</span></div>
 <div class="months" id="months"></div>
 <div class="sel" id="sel"><div id="selTxt"></div><button class="btn o" id="selClr" type="button" style="display:none">Törlés</button></div>
 <div class="calcta"><button class="btn p" id="calBtn">Ajánlatkérés erre az apartmanra</button><span id="calName"></span></div>
@@ -274,16 +277,19 @@ html:not([lang=hu]) .warn{display:flex}
 <div class="mbody"><p>Ez a weboldal fejlesztés alatt van. Ha bármilyen hibát észrevesz, kérjük, írjon emailben – megértésüket köszönjük!</p><a class="mail" href="mailto:info@hellovir.com">✉️ info@hellovir.com</a><br><button class="btn p ok">Rendben, értem</button></div>
 </div></div>
 
+<script src="foglalasok.js"></script>
 <script>
 const APTS=[
 {id:"viric1",imgs:["viric1.jpg","terasz1_2.jpg","nappali3_2.jpg","nappali1_2.jpg","nappali2_2.jpg","halo2_2.jpg","halo1_2.jpg","furdo1_2.jpg","furdo2_2.jpg"],pos:"center 85%",tab:"Viric 1 (4 fős)",name:"„Viric 1” Apartman",n:130,cls:"i1",tag:"4 személyes",desc:"Ideális kisebb családoknak vagy pároknak: 1 hálószoba, nappali kihúzható kanapéval, amerikai konyha, saját erkély.",extra:"Saját erkély"},
 {id:"viric3",imgs:["viric2.jpg","terasz3.jpg","ház.jpg","nappali1.jpg","nappali4.jpg","nappali2.jpg","nappali3.jpg","halo1.jpg","halo2.jpg","terasz2.jpg","terasz1.jpg","ház3.jpg","ház4.jpg","furdo1.jpg","furdo2.jpg","furdo3.jpg","ajto3.jpg","ajto2.jpg","ajto1.jpg","grill1.jpg"],pos:"center 80%",tab:"Viric 3 (4 fős)",name:"„Viric 3” Apartman",n:130,cls:"i2",tag:"4 személyes",desc:"Kényelmes, világos elrendezés 4 fő részére: 2 külön légtér, felszerelt konyha, saját terasz.",extra:"Saját terasz"},
-{id:"horizont",imgs:["miljkovica.jpg","terasz_ho.jpg","etkezo_ho.jpg","konyha_ho.jpg","nappali_ho.jpg","halo3_ho.jpg","halo2_ho.jpg","halo_ho.jpg","halo4_ho.jpg","furdo_ho.jpg"],pos:"center",tab:"Horizont (6–8 fős)",name:"„Horizont” Apartman",n:170,cls:"i3",tag:"6–8 személyes",hl:"🌊 A teraszról látszik a tenger",desc:"A Miljkovica apartmanház emeleti apartmanja. 3 hálószoba és nappali, kb. 6–8 főnek ideális.",extra:"Saját udvarrész és privát terasz"},
-{id:"harmonia",imgs:["miljkovica.jpg","terasz2_ha.jpg","etkezo_ha.jpg","konyha_ha.jpg","etkezo2_ha.jpg","halo_ha.jpg","halo1_ha.jpg","furdo_ha.jpg","terasz_ha.jpg","grill_ha.jpg"],pos:"center",tab:"Harmónia (4–6 fős)",name:"„Harmónia” Apartman",n:170,cls:"i1",tag:"4–6 személyes",desc:"A Miljkovica apartmanház alsó szinti apartmanja. 2 hálószoba és nappali, kb. 4–6 főnek ideális.",extra:"Saját udvarrész és privát terasz"}];
+{id:"horizont",per4:1,imgs:["miljkovica.jpg","terasz_ho.jpg","etkezo_ho.jpg","konyha_ho.jpg","nappali_ho.jpg","halo3_ho.jpg","halo2_ho.jpg","halo_ho.jpg","halo4_ho.jpg","furdo_ho.jpg"],pos:"center",tab:"Horizont (akár 6–8 fő)",name:"„Horizont” Apartman",n:130,cls:"i3",tag:"Akár 6–8 fő",hl:"🌊 A teraszról látszik a tenger",desc:"A Miljkovica apartmanház emeleti apartmanja. 3 hálószoba és nappali, akár 6–8 fő számára.",extra:"Saját udvarrész és privát terasz"},
+{id:"harmonia",per4:1,imgs:["miljkovica.jpg","terasz2_ha.jpg","etkezo_ha.jpg","konyha_ha.jpg","etkezo2_ha.jpg","halo_ha.jpg","halo1_ha.jpg","furdo_ha.jpg","terasz_ha.jpg","grill_ha.jpg"],pos:"center",tab:"Harmónia (akár 4–6 fő)",name:"„Harmónia” Apartman",n:130,cls:"i1",tag:"Akár 4–6 fő",desc:"A Miljkovica apartmanház alsó szinti apartmanja. 2 hálószoba és nappali, akár 4–6 fő számára.",extra:"Saját udvarrész és privát terasz"}];
 const WATER="💧 Vezetékes víz és csatorna";
 const FE=["❄️|Légkondicionáló (klíma)","📶|Ingyenes, gyors Wi-Fi","🚗|Saját, zárt parkolóhely az udvarban","🍳|Teljesen felszerelt konyha (hűtő, főzőlap, mikró, kávéfőző)","🔥|Kerti grillezés és bográcsozás","🌿|{x} kerti bútorokkal","🏖️|Strand: 250 m, kényelmes séta"];
-// Foglalások: [érkezés hó, érkezés nap, távozás hó, távozás nap], pl. [7,3,7,10]
-const BUSY={viric1:[],viric3:[],horizont:[],harmonia:[]};
+const FG=window.FOGLALAS||{};
+const pTs=x=>{const a=String(x).split("-").map(Number);return new Date(a[0],a[1]-1,a[2]).getTime()};
+const BK={};
+APTS.forEach(a=>{BK[a.id]=[];const g=FG[a.id]||{};[["fizetve","r"],["fuggoben","y"]].forEach(([k,st])=>(g[k]||[]).forEach(r=>{const x=pTs(r[0]),y=pTs(r[1]);if(y>x)BK[a.id].push({s:x,e:y,st})}))});
 const MN=["","","","","","Május","Június","Július","Augusztus","Szeptember"],YEAR=2027;
 let cur="viric1",sIdx={viric1:0,viric3:0,horizont:0,harmonia:0},lbApt=null,selA=null,selD=null,selMsg=0;
 
@@ -292,7 +298,7 @@ function preload(src){if(!src||preCache[src])return;const im=new Image();im.src=
 
 document.getElementById("apts").innerHTML=APTS.map(a=>{
 const m=a.imgs.length>1;
-return`<article class="card"><div class="ph ${a.cls}" data-apt="${a.id}" onclick="openLb('${a.id}')"><img class="ph-img on" id="imga-${a.id}" src="${a.imgs[0]}" alt="${a.name}" style="object-position:${a.pos}" loading="lazy" onerror="this.style.display='none'"><img class="ph-img" id="imgb-${a.id}" src="${a.imgs[0]}" alt="${a.name}" style="object-position:${a.pos}" loading="lazy" onerror="this.style.display='none'">${m?`<button class="snav prev" type="button" onclick="stepImg(event,'${a.id}',-1)" aria-label="Előző kép">‹</button><button class="snav next" type="button" onclick="stepImg(event,'${a.id}',1)" aria-label="Következő kép">›</button><span class="scnt" id="cnt-${a.id}">1 / ${a.imgs.length}</span><div class="sdots" id="dots-${a.id}">${a.imgs.slice(0,5).map((_,i)=>`<i class="sdot${i===0?' on':''}"></i>`).join("")}</div>`:``}<b>${a.tag}</b></div><div class="cb"><h3>${a.name}</h3>${a.hl?`<div class="hl">${a.hl}</div>`:``}<div class="chip">${WATER}</div><p class="desc">${a.desc}</p><div class="price">${a.n} € <small>/ éj + idegenforgalmi adó</small></div><p class="wk"><span>7 éjszaka:</span> <b>${a.n*7} €</b> <span>+ idegenforgalmi adó</span></p><p style="font-size:13px">Rövidebb vagy hosszabb tartózkodás esetén egyedi árat egyeztetünk.</p><ul class="feat">${FE.map(f=>{const[i,t]=f.split("|");return`<li><span>${i}</span><span>${t.replace("{x}",a.extra)}</span></li>`}).join("")}</ul><button class="btn o" onclick="pick('${a.id}')">Ajánlatkérés</button></div></article>`}).join("");
+return`<article class="card"><div class="ph ${a.cls}" data-apt="${a.id}" onclick="openLb('${a.id}')"><img class="ph-img on" id="imga-${a.id}" src="${a.imgs[0]}" alt="${a.name}" style="object-position:${a.pos}" loading="lazy" onerror="this.style.display='none'"><img class="ph-img" id="imgb-${a.id}" src="${a.imgs[0]}" alt="${a.name}" style="object-position:${a.pos}" loading="lazy" onerror="this.style.display='none'">${m?`<button class="snav prev" type="button" onclick="stepImg(event,'${a.id}',-1)" aria-label="Előző kép">‹</button><button class="snav next" type="button" onclick="stepImg(event,'${a.id}',1)" aria-label="Következő kép">›</button><span class="scnt" id="cnt-${a.id}">1 / ${a.imgs.length}</span><div class="sdots" id="dots-${a.id}">${a.imgs.slice(0,5).map((_,i)=>`<i class="sdot${i===0?' on':''}"></i>`).join("")}</div>`:``}<b>${a.tag}</b></div><div class="cb"><h3>${a.name}</h3>${a.hl?`<div class="hl">${a.hl}</div>`:``}<div class="chip">${WATER}</div><p class="desc">${a.desc}</p><div class="price">${a.n} € <small>${a.per4?"/ éj / 4 fő + idegenforgalmi adó":"/ éj + idegenforgalmi adó"}</small></div><p class="wk"><span>7 éjszaka:</span> <b>${a.n*7} €</b> <span>+ idegenforgalmi adó</span></p>${a.per4?`<p style="font-size:13px;font-weight:600">4 főnél több vendég esetén egyedi árat egyeztetünk.</p>`:``}<p style="font-size:13px">Rövidebb vagy hosszabb tartózkodás esetén egyedi árat egyeztetünk.</p><ul class="feat">${FE.map(f=>{const[i,t]=f.split("|");return`<li><span>${i}</span><span>${t.replace("{x}",a.extra)}</span></li>`}).join("")}</ul><button class="btn o" onclick="pick('${a.id}')">Ajánlatkérés</button></div></article>`}).join("");
 
 APTS.forEach(a=>{if(a.imgs.length>1){preload(a.imgs[1]);preload(a.imgs[a.imgs.length-1])}});
 
@@ -371,8 +377,8 @@ bad:["Ebben az időszakban foglalt nap is van – válassz másik időpontot.","
 const nextDay=t=>{const x=new Date(t);x.setDate(x.getDate()+1);return x.getTime()};
 const ymd=t=>{const d=new Date(t);return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")};
 const fmtD=t=>new Date(t).toLocaleDateString(["hu-HU","en-GB","de-DE"][li+1],{year:"numeric",month:"long",day:"numeric"});
-const bookings=()=>BUSY[cur].map(r=>[new Date(YEAR,r[0]-1,r[1]).getTime(),new Date(YEAR,r[2]-1,r[3]).getTime()]);
-const nightFree=t=>!bookings().some(r=>r[0]<=t&&t<r[1]);
+const bookings=()=>BK[cur];
+const nightFree=t=>!bookings().some(r=>r.s<=t&&t<r.e);
 function rangeFree(a,d){for(let t=a;t<d;t=nextDay(t))if(!nightFree(t))return false;return true}
 function paintSel(){document.querySelectorAll("#months .d[data-t]").forEach(x=>{const t=+x.dataset.t,mid=selA!==null&&selD!==null&&t>selA&&t<selD;x.classList.toggle("s",mid);x.classList.toggle("sa",selA!==null&&t===selA);x.classList.toggle("sd",selD!==null&&t===selD)})}
 function renderSel(){
@@ -402,8 +408,8 @@ let h="";
 for(let m=5;m<=9;m++){
 const first=(new Date(YEAR,m-1,1).getDay()+6)%7,days=new Date(YEAR,m,0).getDate();
 h+=`<div class="m"><h3>${MN[m]} ${YEAR}</h3><div class="dg">${["H","K","Sze","Cs","P","Szo","V"].map(d=>`<div class="h">${d}</div>`).join("")}${"<div></div>".repeat(first)}`;
-const bk=BUSY[cur].map(r=>[new Date(YEAR,r[0]-1,r[1]).getTime(),new Date(YEAR,r[2]-1,r[3]).getTime()]);
-for(let d=1;d<=days;d++){const t=new Date(YEAR,m-1,d).getTime(),ar=bk.some(r=>r[0]===t),dp=bk.some(r=>r[1]===t),md=bk.some(r=>r[0]<t&&t<r[1]);const c=md?"b":ar&&dp?"c":ar?"a":dp?"p":"f";const tt={b:"Foglalt",c:"Turnusváltás: távozás és érkezés",a:"Érkezés napja",p:"Távozás napja",f:"Szabad"}[c];h+=`<div class="d ${c}" data-t="${t}" title="${tt}"${c==="b"||c==="c"?``:` tabindex="0" role="button"`}>${d}</div>`}
+const bk=BK[cur];
+for(let d=1;d<=days;d++){const t=new Date(YEAR,m-1,d).getTime(),pr=new Date(YEAR,m-1,d-1).getTime(),am=bk.find(r=>r.s<=pr&&pr<r.e),pm=bk.find(r=>r.s<=t&&t<r.e),A=am?am.st:"f",B=pm?pm.st:"f",ok=!(am&&pm);const tt=A==="f"&&B==="f"?"Szabad":A===B?(A==="r"?"Foglalt":"Függőben"):A==="f"?"Érkezés napja":B==="f"?"Távozás napja":"Turnusváltás: távozás és érkezés";h+=`<div class="d A-${A} B-${B}${A==="y"||B==="y"?" pd":""}${ok?" ok":""}" data-t="${t}" title="${tt}"${ok?` tabindex="0" role="button"`:``}>${d}</div>`}
 h+="</div></div>"}
 document.getElementById("months").innerHTML=h;paintSel();apply()}
 document.getElementById("tabs").onclick=e=>{const t=e.target.closest(".tab");if(t){cur=t.dataset.id;selA=selD=null;selMsg=0;render()}};
@@ -430,7 +436,7 @@ document.getElementById("tOk").onchange=e=>{document.getElementById("tYes").disa
 document.getElementById("tNo").onclick=closeTerms;
 document.getElementById("tYes").onclick=()=>{if(!document.getElementById("tOk").checked)return;closeTerms();sendMail()};
 document.getElementById("terms").onclick=e=>{if(e.target.id==="terms")closeTerms()};
-["erk","tav","apt"].forEach(k=>document.getElementById("f")[k].addEventListener("change",est));
+["erk","tav","apt"].forEach(k=>document.getElementById("f")[k].addEventListener("change",est));document.getElementById("f").fo.addEventListener("input",est);
 let lang=`hu`,li=-1;
 const D={
 [`Vir Apartmanok`]:[`Vir Apartments`,`Vir Apartments`],
@@ -446,18 +452,20 @@ const D={
 [`Négy apartman közül választhatsz: két kisebb (Viric 1 és Viric 3) és két nagyobb a Miljkovica apartmanházban (Horizont és Harmónia). Az alap egy 7 éjszakás turnus. Az árak éjszakánkéntiek, az idegenforgalmi adó külön fizetendő. Rövidebb vagy hosszabb tartózkodás esetén egyedi árat egyeztetünk.`]:[`Choose from four apartments: two smaller ones (Viric 1 and Viric 3) and two larger ones in the Miljkovica house (Horizont and Harmónia). The standard stay is a 7-night block. Prices are per night; tourist tax is payable in addition. For shorter or longer stays, we agree on an individual price.`,`Wählen Sie aus vier Apartments: zwei kleinere (Viric 1 und Viric 3) und zwei größere im Haus Miljkovica (Horizont und Harmónia). Basis ist ein Aufenthalt von 7 Nächten. Die Preise gelten pro Nacht; die Kurtaxe wird zusätzlich erhoben. Bei kürzerem oder längerem Aufenthalt vereinbaren wir einen individuellen Preis.`],
 [`Foglaltsági naptár – 2027`]:[`Availability calendar – 2027`,`Belegungskalender – 2027`],
 [`Válts az apartmanok között, és nézd meg, mikor szabad. A félbevágott napok az érkezést és a távozást jelölik, így látszik, mikor van turnusváltás.`]:[`Switch between apartments to see when they are free. Half-split days show arrival and departure, so you can spot the changeover days.`,`Wechseln Sie zwischen den Apartments, um freie Zeiten zu sehen. Halbierte Tage zeigen An- und Abreise, so erkennen Sie die Wechseltage.`],
-[`Szabad`]:[`Available`,`Frei`],[`Foglalt`]:[`Booked`,`Belegt`],[`Érkezés napja`]:[`Arrival day`,`Anreisetag`],[`Távozás napja`]:[`Departure day`,`Abreisetag`],[`Turnusváltás`]:[`Changeover`,`Wechseltag`],[`Turnusváltás: távozás és érkezés`]:[`Changeover: departure and arrival`,`Wechseltag: Abreise und Anreise`],
+[`Szabad`]:[`Available`,`Frei`],[`Függőben`]:[`Pending`,`Ausstehend`],[`Foglalt`]:[`Booked`,`Belegt`],[`Érkezés napja`]:[`Arrival day`,`Anreisetag`],[`Távozás napja`]:[`Departure day`,`Abreisetag`],[`Turnusváltás`]:[`Changeover`,`Wechseltag`],[`Turnusváltás: távozás és érkezés`]:[`Changeover: departure and arrival`,`Wechseltag: Abreise und Anreise`],
 [`Ajánlatkérés erre az apartmanra`]:[`Request a quote for this apartment`,`Angebot für dieses Apartment anfragen`],
 [`Kiválasztva:`]:[`Selected:`,`Ausgewählt:`],
 [`Május 2027`]:[`May 2027`,`Mai 2027`],[`Június 2027`]:[`June 2027`,`Juni 2027`],[`Július 2027`]:[`July 2027`,`Juli 2027`],[`Augusztus 2027`]:[`August 2027`,`August 2027`],[`Szeptember 2027`]:[`September 2027`,`September 2027`],
 [`H`]:[`M`,`Mo`],[`K`]:[`T`,`Di`],[`Sze`]:[`W`,`Mi`],[`Cs`]:[`T`,`Do`],[`P`]:[`F`,`Fr`],[`Szo`]:[`S`,`Sa`],[`V`]:[`S`,`So`],
-[`Viric 1 (4 fős)`]:[`Viric 1 (sleeps 4)`,`Viric 1 (4 Personen)`],[`Viric 3 (4 fős)`]:[`Viric 3 (sleeps 4)`,`Viric 3 (4 Personen)`],[`Horizont (6–8 fős)`]:[`Horizont (sleeps 6–8)`,`Horizont (6–8 Personen)`],[`Harmónia (4–6 fős)`]:[`Harmónia (sleeps 4–6)`,`Harmónia (4–6 Personen)`],
+[`Viric 1 (4 fős)`]:[`Viric 1 (sleeps 4)`,`Viric 1 (4 Personen)`],[`Viric 3 (4 fős)`]:[`Viric 3 (sleeps 4)`,`Viric 3 (4 Personen)`],[`Horizont (akár 6–8 fő)`]:[`Horizont (up to 6–8 guests)`,`Horizont (bis zu 6–8 Personen)`],[`Harmónia (akár 4–6 fő)`]:[`Harmónia (up to 4–6 guests)`,`Harmónia (bis zu 4–6 Personen)`],
 [`„Viric 1” Apartman`]:[`“Viric 1” Apartment`,`Apartment „Viric 1“`],[`„Viric 3” Apartman`]:[`“Viric 3” Apartment`,`Apartment „Viric 3“`],[`„Horizont” Apartman`]:[`“Horizont” Apartment`,`Apartment „Horizont“`],[`„Harmónia” Apartman`]:[`“Harmónia” Apartment`,`Apartment „Harmónia“`],
-[`4 személyes`]:[`Sleeps 4`,`4 Personen`],[`6–8 személyes`]:[`Sleeps 6–8`,`6–8 Personen`],[`4–6 személyes`]:[`Sleeps 4–6`,`4–6 Personen`],
+[`4 személyes`]:[`Sleeps 4`,`4 Personen`],[`Akár 6–8 fő`]:[`Up to 6–8 guests`,`Bis zu 6–8 Personen`],[`Akár 4–6 fő`]:[`Up to 4–6 guests`,`Bis zu 4–6 Personen`],
 [`Ideális kisebb családoknak vagy pároknak: 1 hálószoba, nappali kihúzható kanapéval, amerikai konyha, saját erkély.`]:[`Ideal for small families or couples: 1 bedroom, living room with sofa bed, open-plan kitchen, private balcony.`,`Ideal für kleine Familien oder Paare: 1 Schlafzimmer, Wohnzimmer mit Schlafsofa, offene Küche, eigener Balkon.`],
 [`Kényelmes, világos elrendezés 4 fő részére: 2 külön légtér, felszerelt konyha, saját terasz.`]:[`Comfortable, bright layout for 4 guests: 2 separate living areas, equipped kitchen, private terrace.`,`Bequeme, helle Aufteilung für 4 Personen: 2 getrennte Bereiche, ausgestattete Küche, eigene Terrasse.`],
-[`A Miljkovica apartmanház emeleti apartmanja. 3 hálószoba és nappali, kb. 6–8 főnek ideális.`]:[`The upper-floor apartment of the Miljkovica house. 3 bedrooms and a living room, ideal for approx. 6–8 guests.`,`Das Apartment im Obergeschoss des Hauses Miljkovica. 3 Schlafzimmer und Wohnzimmer, ideal für ca. 6–8 Personen.`],
-[`A Miljkovica apartmanház alsó szinti apartmanja. 2 hálószoba és nappali, kb. 4–6 főnek ideális.`]:[`The lower-floor apartment of the Miljkovica house. 2 bedrooms and a living room, ideal for approx. 4–6 guests.`,`Das Apartment im Erdgeschoss des Hauses Miljkovica. 2 Schlafzimmer und Wohnzimmer, ideal für ca. 4–6 Personen.`],
+[`A Miljkovica apartmanház emeleti apartmanja. 3 hálószoba és nappali, akár 6–8 fő számára.`]:[`The upper-floor apartment of the Miljkovica house. 3 bedrooms and a living room, for up to 6–8 guests.`,`Das Apartment im Obergeschoss des Hauses Miljkovica. 3 Schlafzimmer und Wohnzimmer, für bis zu 6–8 Personen.`],
+[`A Miljkovica apartmanház alsó szinti apartmanja. 2 hálószoba és nappali, akár 4–6 fő számára.`]:[`The lower-floor apartment of the Miljkovica house. 2 bedrooms and a living room, for up to 4–6 guests.`,`Das Apartment im Erdgeschoss des Hauses Miljkovica. 2 Schlafzimmer und Wohnzimmer, für bis zu 4–6 Personen.`],
+[`/ éj / 4 fő + idegenforgalmi adó`]:[`/ night / 4 guests + tourist tax`,`/ Nacht / 4 Personen + Kurtaxe`],
+[`4 főnél több vendég esetén egyedi árat egyeztetünk.`]:[`For more than 4 guests, we agree on an individual price.`,`Bei mehr als 4 Personen vereinbaren wir einen individuellen Preis.`],
 [`/ éj + idegenforgalmi adó`]:[`/ night + tourist tax`,`/ Nacht + Kurtaxe`],[`+ idegenforgalmi adó`]:[`+ tourist tax`,`+ Kurtaxe`],[`🌊 A teraszról látszik a tenger`]:[`🌊 Sea view from the terrace`,`🌊 Meerblick von der Terrasse`],
 [`💧 Vezetékes víz és csatorna`]:[`💧 Mains water and sewerage`,`💧 Wasser- und Kanalanschluss`],[`7 éjszaka:`]:[`7 nights:`,`7 Nächte:`],
 [`Rövidebb vagy hosszabb tartózkodás esetén egyedi árat egyeztetünk.`]:[`For shorter or longer stays, we agree on an individual price.`,`Bei kürzerem oder längerem Aufenthalt vereinbaren wir einen individuellen Preis.`],
@@ -523,7 +531,7 @@ mT:["Foglalási feltételek","Booking terms","Buchungsbedingungen"],
 mI:["Kérjük, küldés előtt olvasd el az alábbi feltételeket, és fogadd el őket.","Please read the terms below and accept them before sending.","Bitte lesen Sie vor dem Senden die folgenden Bedingungen und stimmen Sie ihnen zu."],
 mC:["Elolvastam, és elfogadom a fenti előleg- és lemondási feltételeket.","I have read and accept the deposit and cancellation terms above.","Ich habe die oben genannten Anzahlungs- und Stornobedingungen gelesen und akzeptiere sie."],
 no:["Mégsem","Cancel","Abbrechen"],yes:["Elfogadom és elküldöm","Accept and send","Akzeptieren und senden"]};
-function quote(){const f=document.getElementById("f"),a=APTS.find(x=>x.id===f.apt.value),n=Math.round((new Date(f.tav.value)-new Date(f.erk.value))/864e5);if(!(n>0))return null;return{n,total:n%7===0?n*a.n:null}}
+function quote(){const f=document.getElementById("f"),a=APTS.find(x=>x.id===f.apt.value),n=Math.round((new Date(f.tav.value)-new Date(f.erk.value))/864e5);if(!(n>0))return null;return{n,total:n%7===0&&!(a.per4&&+f.fo.value>4)?n*a.n:null}}
 function renderTerms(){
 const i=li+1,q=quote(),dep=q&&q.total?q.total*.25:null,fm=x=>x.toLocaleString(["hu-HU","en-GB","de-DE"][i],{minimumFractionDigits:x%1?2:0,maximumFractionDigits:2});
 const d=TT.dep[i]+(q?(dep!==null?TT.amt[i].replace("{d}",fm(dep)):TT.amtU[i]):"");
@@ -532,7 +540,8 @@ const L=row("🟢",TT.t1[i],TT.ref,dep)+row("🟠",TT.t2[i],TT.lost,dep/2)+row("
 const set=(id,h)=>{document.getElementById(id).innerHTML=h};
 set("tbT","💶 "+TT.title[i]);set("tbD",d);set("tbL",L);set("tbN",TT.note[i]);
 set("mT",TT.mT[i]);set("mI",TT.mI[i]);set("mD",d);set("mL",L);set("mN",TT.note[i]);set("mC",TT.mC[i]);set("tNo",TT.no[i]);set("tYes",TT.yes[i])}
-function est(){renderTerms();const f=document.getElementById(`f`),el=document.getElementById(`est`),a=APTS.find(x=>x.id===f.apt.value),n=Math.round((new Date(f.tav.value)-new Date(f.erk.value))/864e5);if(!(n>0)){el.style.display=`none`;return ``}const e=E[li+1],txt=(n%7===0?e[0].replace(`{p}`,n*a.n):e[1]).replace(`{n}`,n);el.style.display=`block`;el.textContent=txt+` `+e[2];return txt}
+const G=[`{n} éjszaka, {g} vendég: 4 főnél több vendég esetén egyedi árat egyeztetünk.`,`{n} nights, {g} guests: for more than 4 guests, we agree on an individual price.`,`{n} Nächte, {g} Gäste: bei mehr als 4 Personen vereinbaren wir einen individuellen Preis.`];
+function est(){renderTerms();const f=document.getElementById(`f`),el=document.getElementById(`est`),a=APTS.find(x=>x.id===f.apt.value),n=Math.round((new Date(f.tav.value)-new Date(f.erk.value))/864e5);if(!(n>0)){el.style.display=`none`;return ``}const e=E[li+1],g=+f.fo.value,many=a.per4&&g>4,txt=many?G[li+1].replace(`{n}`,n).replace(`{g}`,g):(n%7===0?e[0].replace(`{p}`,n*a.n):e[1]).replace(`{n}`,n);el.style.display=`block`;el.textContent=txt+` `+e[2];return txt}
 function apply(){
 const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;
 while(n=w.nextNode()){if(n.parentNode.closest(`script,style,option,#msgTxt,#lcap,.scnt,#selTxt,.tx`))continue;if(n._o===undefined)n._o=n.nodeValue;const t=n._o.trim();n.nodeValue=(li>=0&&D[t])?n._o.replace(t,D[t][li]):n._o}
