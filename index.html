@@ -160,6 +160,9 @@ html:not([lang=hu]) .warn{display:flex}
 .mbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
 #tYes[disabled]{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none;filter:none}
 #terms .mbody{text-align:left}#terms .mbody>p{color:var(--ink);font-weight:600}
+.months{transition:opacity .3s}.months.ld{opacity:.45;pointer-events:none}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;padding:0;border:0}
+.priv{margin:0;font-size:13px;color:var(--mute)}
 </style>
 </head>
 <body>
@@ -243,6 +246,8 @@ html:not([lang=hu]) .warn{display:flex}
 <div class="full tbox"><b class="tt tx" id="tbT"></b><p class="tx" id="tbD"></p><ul class="tx" id="tbL"></ul><small class="tx" id="tbN"></small></div>
 <div class="full est" id="est"></div>
 <div class="full msg" id="msg"><span class="msg-ico">✈️</span><span id="msgTxt"></span></div>
+<input class="hp" name="web" tabindex="-1" autocomplete="off" aria-hidden="true">
+<p class="full priv">A megadott adataidat kizárólag a foglalás egyeztetéséhez használjuk fel.</p>
 <button class="btn p full" id="subBtn" type="submit">Ajánlatkérés küldése</button>
 </form>
 <div class="info">
@@ -286,10 +291,12 @@ const APTS=[
 {id:"harmonia",per4:1,imgs:["miljkovica.jpg","terasz2_ha.jpg","etkezo_ha.jpg","konyha_ha.jpg","etkezo2_ha.jpg","halo_ha.jpg","halo1_ha.jpg","furdo_ha.jpg","terasz_ha.jpg","grill_ha.jpg"],pos:"center",tab:"Harmónia (akár 4–6 fő)",name:"„Harmónia” Apartman",n:130,cls:"i1",tag:"Akár 4–6 fő",desc:"A Miljkovica apartmanház alsó szinti apartmanja. 2 hálószoba és nappali, akár 4–6 fő számára.",extra:"Saját udvarrész és privát terasz"}];
 const WATER="💧 Vezetékes víz és csatorna";
 const FE=["❄️|Légkondicionáló (klíma)","📶|Ingyenes, gyors Wi-Fi","🚗|Saját, zárt parkolóhely az udvarban","🍳|Teljesen felszerelt konyha (hűtő, főzőlap, mikró, kávéfőző)","🔥|Kerti grillezés és bográcsozás","🌿|{x} kerti bútorokkal","🏖️|Strand: 250 m, kényelmes séta"];
+const API="";   // <- ide kerül a Google-szkript webcíme (https://script.google.com/macros/s/.../exec); üresen a foglalasok.js fájl működik
 const FG=window.FOGLALAS||{};
 const pTs=x=>{const a=String(x).split("-").map(Number);return new Date(a[0],a[1]-1,a[2]).getTime()};
 const BK={};
-APTS.forEach(a=>{BK[a.id]=[];const g=FG[a.id]||{};[["fizetve","r"],["fuggoben","y"]].forEach(([k,st])=>(g[k]||[]).forEach(r=>{const x=pTs(r[0]),y=pTs(r[1]);if(y>x)BK[a.id].push({s:x,e:y,st})}))});
+function setBK(src){APTS.forEach(a=>{BK[a.id]=[];const g=(src||{})[a.id]||{};[["fizetve","r"],["fuggoben","y"]].forEach(([k,st])=>(g[k]||[]).forEach(r=>{const x=pTs(r[0]),y=pTs(r[1]);if(y>x)BK[a.id].push({s:x,e:y,st})}))})}
+setBK(API?{}:FG);
 const MN=["","","","","","Május","Június","Július","Augusztus","Szeptember"],YEAR=2027;
 let cur="viric1",sIdx={viric1:0,viric3:0,horizont:0,harmonia:0},lbApt=null,selA=null,selD=null,selMsg=0;
 
@@ -416,16 +423,35 @@ document.getElementById("tabs").onclick=e=>{const t=e.target.closest(".tab");if(
 function pick(id){document.getElementById("aptSel").value=id;if(selA!==null&&selD!==null&&id===cur)fillForm();document.getElementById("kapcsolat").scrollIntoView();est()}
 document.getElementById("calBtn").onclick=()=>pick(cur);
 document.getElementById("f").onsubmit=e=>{e.preventDefault();openTerms()};
+let lastMsg=null;
+function showMsg(arr){lastMsg=arr;const m=document.getElementById("msg"),mt=document.getElementById("msgTxt");mt.textContent=arr[li+1];m.classList.remove("show");void m.offsetWidth;m.classList.add("show")}
+function burst(){const btn=document.getElementById("subBtn"),r=btn.getBoundingClientRect(),fl=document.createElement("div");fl.className="plane-burst";fl.textContent="✈️";fl.style.left=(r.left+r.width/2-16)+"px";fl.style.top=(r.top-10)+"px";document.body.appendChild(fl);setTimeout(()=>fl.remove(),950)}
+const AM={
+snd:["Küldés…","Sending…","Wird gesendet…"],
+ok:["Köszönjük! A kérésedet megkaptuk, az időpontot függőben tartjuk. Hamarosan emailben jelentkezünk az előleg részleteivel.","Thank you! We have received your request and are holding the dates. We will email you shortly with the deposit details.","Vielen Dank! Wir haben Ihre Anfrage erhalten und halten die Termine vorläufig frei. Wir melden uns in Kürze per E-Mail mit den Details zur Anzahlung."],
+conf:["Sajnos erre az időszakra időközben más kérés érkezett. Kérjük, válassz másik időpontot a naptárban.","Unfortunately another request has just come in for these dates. Please choose other dates in the calendar.","Leider ist für diesen Zeitraum soeben eine andere Anfrage eingegangen. Bitte wählen Sie andere Termine im Kalender."],
+lim:["Ezzel az email-címmel már több függőben lévő kérés van. Kérjük, írj nekünk közvetlenül az info@hellovir.com címre.","There are already several pending requests with this email address. Please write to us directly at info@hellovir.com.","Mit dieser E-Mail-Adresse liegen bereits mehrere offene Anfragen vor. Bitte schreiben Sie uns direkt an info@hellovir.com."]};
+async function sendApi(){
+const fm=document.getElementById("f"),f=new FormData(fm),btn=document.getElementById("subBtn");
+if(f.get("web"))return;
+const q=quote(),a=APTS.find(x=>x.id===f.get("apt"));
+showMsg(AM.snd);btn.classList.add("sending");btn.disabled=true;
+const payload={apt:a.id,erk:f.get("erk"),tav:f.get("tav"),nev:f.get("nev"),email:f.get("email"),tel:f.get("tel"),fo:+f.get("fo"),uz:f.get("uz"),lang:lang,total:q&&q.total?q.total:null,deposit:q&&q.total?q.total*.25:null,elfogadva:true};
+try{
+const c=new AbortController(),tm=setTimeout(()=>c.abort(),20000);
+const r=await fetch(API,{method:"POST",body:JSON.stringify(payload),signal:c.signal});clearTimeout(tm);
+const j=await r.json();
+if(j.ok){showMsg(AM.ok);burst();fm.reset();selA=selD=null;paintSel();renderSel();est();loadBK()}
+else if(j.error==="conflict"){showMsg(AM.conf);loadBK()}
+else if(j.error==="limit")showMsg(AM.lim);
+else throw new Error(j.error||"err")
+}catch(_){btn.classList.remove("sending");btn.disabled=false;sendMail();return}
+btn.classList.remove("sending");btn.disabled=false}
 function sendMail(){
 const f=new FormData(document.getElementById("f")),a=APTS.find(x=>x.id===f.get("apt"));
 const body=`Név: ${f.get("nev")}\nEmail: ${f.get("email")}\nTelefon: ${f.get("tel")}\nApartman: ${a.name}\nÉrkezés: ${f.get("erk")}\nTávozás: ${f.get("tav")}\nVendégek: ${f.get("fo")}\nBecsült ár: ${est()}\nVendég nyelve: ${lang.toUpperCase()}\nFeltételek: elfogadva (előleg: a teljes ár 25%-a, lemondási feltételek)\n\n${f.get("uz")}`;
-const m=document.getElementById("msg"),mt=document.getElementById("msgTxt"),btn=document.getElementById("subBtn");
-mt.textContent=MSG[li+1];
-m.classList.remove("show");void m.offsetWidth;m.classList.add("show");
-const r=btn.getBoundingClientRect(),fl=document.createElement("div");
-fl.className="plane-burst";fl.textContent="✈️";
-fl.style.left=(r.left+r.width/2-16)+"px";fl.style.top=(r.top-10)+"px";
-document.body.appendChild(fl);setTimeout(()=>fl.remove(),950);
+const btn=document.getElementById("subBtn");
+showMsg(MSG);burst();
 btn.classList.add("sending");
 setTimeout(()=>btn.classList.remove("sending"),1400);
 setTimeout(()=>{location.href="mailto:info@hellovir.com?subject="+encodeURIComponent("Ajánlatkérés – "+a.name)+"&body="+encodeURIComponent(body)},650);
@@ -434,7 +460,7 @@ function openTerms(){renderTerms();document.getElementById("tOk").checked=false;
 function closeTerms(){document.getElementById("terms").classList.remove("show");document.body.style.overflow=""}
 document.getElementById("tOk").onchange=e=>{document.getElementById("tYes").disabled=!e.target.checked};
 document.getElementById("tNo").onclick=closeTerms;
-document.getElementById("tYes").onclick=()=>{if(!document.getElementById("tOk").checked)return;closeTerms();sendMail()};
+document.getElementById("tYes").onclick=()=>{if(!document.getElementById("tOk").checked)return;closeTerms();API?sendApi():sendMail()};
 document.getElementById("terms").onclick=e=>{if(e.target.id==="terms")closeTerms()};
 ["erk","tav","apt"].forEach(k=>document.getElementById("f")[k].addEventListener("change",est));document.getElementById("f").fo.addEventListener("input",est);
 let lang=`hu`,li=-1;
@@ -452,7 +478,7 @@ const D={
 [`Négy apartman közül választhatsz: két kisebb (Viric 1 és Viric 3) és két nagyobb a Miljkovica apartmanházban (Horizont és Harmónia). Az alap egy 7 éjszakás turnus. Az árak éjszakánkéntiek, az idegenforgalmi adó külön fizetendő. Rövidebb vagy hosszabb tartózkodás esetén egyedi árat egyeztetünk.`]:[`Choose from four apartments: two smaller ones (Viric 1 and Viric 3) and two larger ones in the Miljkovica house (Horizont and Harmónia). The standard stay is a 7-night block. Prices are per night; tourist tax is payable in addition. For shorter or longer stays, we agree on an individual price.`,`Wählen Sie aus vier Apartments: zwei kleinere (Viric 1 und Viric 3) und zwei größere im Haus Miljkovica (Horizont und Harmónia). Basis ist ein Aufenthalt von 7 Nächten. Die Preise gelten pro Nacht; die Kurtaxe wird zusätzlich erhoben. Bei kürzerem oder längerem Aufenthalt vereinbaren wir einen individuellen Preis.`],
 [`Foglaltsági naptár – 2027`]:[`Availability calendar – 2027`,`Belegungskalender – 2027`],
 [`Válts az apartmanok között, és nézd meg, mikor szabad. A félbevágott napok az érkezést és a távozást jelölik, így látszik, mikor van turnusváltás.`]:[`Switch between apartments to see when they are free. Half-split days show arrival and departure, so you can spot the changeover days.`,`Wechseln Sie zwischen den Apartments, um freie Zeiten zu sehen. Halbierte Tage zeigen An- und Abreise, so erkennen Sie die Wechseltage.`],
-[`Szabad`]:[`Available`,`Frei`],[`Függőben`]:[`Pending`,`Ausstehend`],[`Foglalt`]:[`Booked`,`Belegt`],[`Érkezés napja`]:[`Arrival day`,`Anreisetag`],[`Távozás napja`]:[`Departure day`,`Abreisetag`],[`Turnusváltás`]:[`Changeover`,`Wechseltag`],[`Turnusváltás: távozás és érkezés`]:[`Changeover: departure and arrival`,`Wechseltag: Abreise und Anreise`],
+[`Szabad`]:[`Available`,`Frei`],[`A megadott adataidat kizárólag a foglalás egyeztetéséhez használjuk fel.`]:[`We use the details you provide solely to arrange your booking.`,`Ihre Angaben verwenden wir ausschließlich zur Abwicklung Ihrer Buchung.`],[`Függőben`]:[`Pending`,`Ausstehend`],[`Foglalt`]:[`Booked`,`Belegt`],[`Érkezés napja`]:[`Arrival day`,`Anreisetag`],[`Távozás napja`]:[`Departure day`,`Abreisetag`],[`Turnusváltás`]:[`Changeover`,`Wechseltag`],[`Turnusváltás: távozás és érkezés`]:[`Changeover: departure and arrival`,`Wechseltag: Abreise und Anreise`],
 [`Ajánlatkérés erre az apartmanra`]:[`Request a quote for this apartment`,`Angebot für dieses Apartment anfragen`],
 [`Kiválasztva:`]:[`Selected:`,`Ausgewählt:`],
 [`Május 2027`]:[`May 2027`,`Mai 2027`],[`Június 2027`]:[`June 2027`,`Juni 2027`],[`Július 2027`]:[`July 2027`,`Juli 2027`],[`Augusztus 2027`]:[`August 2027`,`August 2027`],[`Szeptember 2027`]:[`September 2027`,`September 2027`],
@@ -550,12 +576,19 @@ document.documentElement.lang=lang;document.title=tr(`Vir-sziget apartmanok – 
 document.querySelector(`.burger`).setAttribute(`aria-label`,tr(`Menü`));
 document.querySelectorAll(`.lang button`).forEach(b=>b.setAttribute(`aria-pressed`,b.dataset.l===lang));
 const s=document.getElementById(`aptSel`),v=s.value;s.innerHTML=APTS.map(a=>`<option value="${a.id}">${tr(a.name)} –${tr(a.tag)}</option>`).join(``);s.value=v||`viric1`;
-const mt=document.getElementById(`msgTxt`);if(mt&&mt.textContent)mt.textContent=MSG[li+1];
+const mt=document.getElementById(`msgTxt`);if(mt&&mt.textContent&&lastMsg)mt.textContent=lastMsg[li+1];
 if(lbApt)updSlide(lbApt,true);
 renderSel();est()}
 document.querySelectorAll(`.lang`).forEach(g=>g.onclick=e=>{const b=e.target.closest(`button`);if(!b)return;lang=b.dataset.l;li=[`hu`,`en`,`de`].indexOf(lang)-1;apply();try{localStorage.setItem(`vl`,lang)}catch(_){}});
 {let sv=``;try{sv=localStorage.getItem(`vl`)||``}catch(_){}sv=sv||(navigator.language||`hu`).slice(0,2);const k=[`hu`,`en`,`de`].indexOf(sv);if(k>0){lang=sv;li=k-1}}
 render();
+let lastKey="";
+async function loadBK(first){
+const mo=document.getElementById("months");
+try{const c=new AbortController(),tm=setTimeout(()=>c.abort(),8000);const r=await fetch(API+"?action=list&t="+Date.now(),{signal:c.signal});clearTimeout(tm);const j=await r.json();if(!j||!j.ok)throw 0;const k=JSON.stringify(j.data);if(k!==lastKey){lastKey=k;setBK(j.data);if((selA!==null&&!nightFree(selA))||(selD!==null&&!rangeFree(selA,selD)))selA=selD=null;render()}}
+catch(_){if(first&&!lastKey){setBK(FG);render()}}
+mo.classList.remove("ld")}
+if(API){document.getElementById("months").classList.add("ld");loadBK(true);setInterval(()=>{if(!document.hidden)loadBK()},120000);document.addEventListener("visibilitychange",()=>{if(!document.hidden)loadBK()})}
 const wip=document.getElementById(`wip`),okb=wip.querySelector(`.ok`),cl=()=>{wip.classList.remove(`show`);document.body.style.overflow=``};
 document.body.style.overflow=`hidden`;okb.onclick=cl;wip.onclick=e=>{if(e.target===wip)cl()};
 document.addEventListener(`keydown`,e=>{
