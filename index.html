@@ -32,8 +32,8 @@ nav{display:flex;gap:6px;align-items:center}nav a{text-decoration:none;padding:8
 nav a:hover{background:var(--sand)}nav a.cta{background:var(--sea);color:#fff}
 .burger{display:none;background:none;border:0;font-size:26px;color:var(--ink);cursor:pointer}
 .hero{min-height:92vh;min-height:92svh;display:flex;align-items:center;color:#fff;padding:130px 0 90px;position:relative;overflow:hidden;
-background:linear-gradient(180deg,rgba(4,40,60,.38),rgba(4,40,60,.74)),url('torony_borito.jpg') center 45%/cover no-repeat}
-@media(max-width:768px){.hero{min-height:86svh;padding:115px 0 70px;background-position:38% center}}
+background:linear-gradient(180deg,rgba(4,40,60,.38),rgba(4,40,60,.74)),url('torony_borito.jpg') center 45%/cover no-repeat !important}
+@media(max-width:768px){.hero{min-height:88svh;padding:115px 0 70px;background:linear-gradient(180deg,rgba(4,40,60,.35),rgba(4,40,60,.72)),url('sunset_mobil.jpg') center/cover no-repeat !important}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 .hero .wrap{position:relative;animation:fadeUp .7s ease both}.hero h1{font-size:clamp(34px,6vw,64px);max-width:18ch}
 .hero p{font-size:clamp(17px,2vw,21px);max-width:52ch;margin:0 0 30px}.hero .btns{display:flex;gap:12px;flex-wrap:wrap}
@@ -173,7 +173,7 @@ html:not([lang=hu]) .warn{display:flex}
 .mbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
 #tYes[disabled]{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none;filter:none}
 #terms .mbody{text-align:left}#terms .mbody>p{color:var(--ink);font-weight:600}
-.months{transition:opacity .3s}.months.ld{opacity:.45;pointer-events:none}
+.months{transition:opacity .3s}.months.ld{opacity:45%;pointer-events:none}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;padding:0;border:0}
 .priv{margin:0;font-size:13px;color:var(--mute)}
 </style>
@@ -572,10 +572,10 @@ const D={
 [`Viric 1 (4 fős)`]:[`Viric 1 (sleeps 4)`,`Viric 1 (4 Personen)`],[`Viric 3 (4 fős)`]:[`Viric 3 (sleeps 4)`,`Viric 3 (4 Personen)`],[`Horizont (akár 6–8 fő)`]:[`Horizont (up to 6–8 guests)`,`Horizont (bis zu 6–8 Personen)`],[`Harmónia (akár 4–6 fő)`]:[`Harmónia (up to 4–6 guests)`,`Harmónia (bis zu 4–6 Personen)`],
 [`„Viric 1” Apartman`]:[`“Viric 1” Apartment`,`Apartment „Viric 1“`],[`„Viric 3” Apartman`]:[`“Viric 3” Apartment`,`Apartment „Viric 3“`],[`„Horizont” Apartman`]:[`“Horizont” Apartment`,`Apartment „Horizont“`],[`„Harmónia” Apartman`]:[`“Harmónia” Apartment`,`Apartment „Harmónia“`],
 [`4 személyes`]:[`Sleeps 4`,`4 Personen`],[`Akár 6–8 fő`]:[`Up to 6–8 guests`,`Bis zu 6–8 Personen`],[`Akár 4–6 fő`]:[`Up to 4–6 guests`,`Bis zu 4–6 Personen`],
-[`Ideális kisebb családoknak vagy pároknak: 1 hálószoba, nappali kihúzható kanapéval, amerikai konyha, saját terasz.`]:[`Ideal for small families or couples: 1 bedroom, living room with sofa bed, open-plan kitchen, private terrace.`,`Ideal für kleine Familien oder Paare: 1 Schlafzimmer, Wohnzimmer mit Schlafsofa, offene Küche, eigene Terrasse.`],
+[`Ideális kisebb családoknak vagy pároknak: 1 hálószoba, nappali kihúzható kanapéval, amerikai konyha, saját terasz.`]:[`Ideal for small families or couples: 1 bedroom, living room with sofa bed, open-plan kitchen, private balcony.`,`Ideal für kleine Familien oder Paare: 1 Schlafzimmer, Wohnzimmer mit Schlafsofa, offene Küche, eigene Terrasse.`],
 [`Kényelmes, világos elrendezés 4 fő részére: 2 külön légtér, felszerelt konyha, saját terasz.`]:[`Comfortable, bright layout for 4 guests: 2 separate living areas, equipped kitchen, private terrace.`,`Bequeme, helle Aufteilung für 4 Personen: 2 getrennte Bereiche, ausgestattete Küche, eigene Terrasse.`],
 [`A Miljkovica apartmanház emeleti apartmanja. 3 hálószoba és nappali, akár 6–8 fő számára.`]:[`The upper-floor apartment of the Miljkovica house. 3 bedrooms and a living room, for up to 6–8 guests.`,`Das Apartment im Obergeschoss des Hauses Miljkovica. 3 Schlafzimmer und Wohnzimmer, für bis zu 6–8 Personen.`],
-[`A Miljkovica apartmanház alsó szinti apartmanja. 2 hálószoba és nappali, akár 4–6 fő számára.`]:[`The lower-floor apartment of the Miljkovica house. 2 bedrooms and a living room, for up to 4–6 guests.`,`Das Apartment im Erdgeschoss des Hauses Miljkovica. 2 Schlafzimmer und Wohnzimmer, für bis zu 4–6 Personen.`],
+[`A Miljkovica apartmanház alsó szinti apartmanja. 2 hálószoba és nappali, akár 4–6 fő számára.`]:[`The lower-floor apartment of the Miljkovica house. 2 bedrooms and a living room, for up to 4–6 guests.`,`Das Apartment im Erdgeschoss des Hauses Miljkovica. 2 Schlafzimmer und Wohnzimmer, für bis zu 6–8 Personen.`],
 [`/ éj / 4 fő + idegenforgalmi adó`]:[`/ night / 4 guests + tourist tax`,`/ Nacht / 4 Personen + Kurtaxe`],
 [`4 főnél több vendég esetén egyedi árat egyeztetünk.`]:[`For more than 4 guests, we agree on an individual price.`,`Bei mehr als 4 Personen vereinbaren wir einen individuellen Preis.`],
 [`/ éj + idegenforgalmi adó`]:[`/ night + tourist tax`,`/ Nacht + Kurtaxe`],[`+ idegenforgalmi adó`]:[`+ tourist tax`,`+ Kurtaxe`],[`🌊 A teraszról látszik a tenger`]:[`🌊 Sea view from the terrace`,`🌊 Meerblick von der Terrasse`],
@@ -649,7 +649,7 @@ const D={
 [`Képek a szigetről és a strandokról`]:[`Photos of the island and beaches`,`Fotos von der Insel und den Stränden`],
 [`Látnivalók és hangulatfotók`]:[`Sights and mood photos`,`Sehenswürdigkeiten und Stimmungsfotos`],
 [`Az óváros és a Királynő strandja`]:[`The old town and Queen's beach`,`Die Altstadt und der Königinnenstrand`],
-[`Tengeri orgona és óvárosi pillanatok`]:[`Sea organ and old town moments`,`Meeresorgel und Altstadtmomente`]
+[`Tengeri orgona és óvári pillanatok`]:[`Sea organ and old town moments`,`Meeresorgel und Altstadtmomente`]
 };
 const tr=s=>li<0?s:(D[s]?D[s][li]:s);
 const MSG=[`Megnyitjuk az email-programodat az előkészített üzenettel. Ha nem nyílik meg, írj közvetlenül az info@hellovir.com címre.`,`We are opening your email app with the prepared message. If nothing opens, please write directly to info@hellovir.com.`,`Wir öffnen Ihr E-Mail-Programm mit der vorbereiteten Nachricht. Falls sich nichts öffnet, schreiben Sie direkt an info@hellovir.com.`];
