@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Vir Apartmanok – apartmanok a horvátországi Vir-szigeten: Viric 1, Viric 3, Horizont és Harmónia.">
-<title>Vir-sziget apartmanok – Horvátország</title>
+<meta name="description" content="HelloVir Apartments – apartmanok a horvátországi Vir-szigeten: Viric 1, Viric 3, Horizont és Harmónia.">
+<title>HelloVir Apartments – Vir-sziget, Horvátország</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
 <style>
 :root{--cf:#2fd36b;--cfi:#053b1c;--cb:#ff4d4f;--cbi:#fff;--cy:#ffd23f;--cp:#ffb52e;--bg:#fffdf9;--sand:#f4ece0;--card:#fff;--ink:#16303d;--mute:#5d7480;--sea:#0b5d8a;--sea2:#06425f;--tq:#1fb5b0;--line:#e6dccb;--free:#d9f3ea;--freeInk:#146b55;--busy:#f1e4e4;--busyInk:#a14a4a;--sh:0 10px 30px rgba(11,70,100,.10);
@@ -23,14 +23,14 @@ h2{font-size:clamp(28px,4vw,40px)}.lead{color:var(--mute);max-width:60ch;margin:
 .btn.g{border-color:#fff;color:#fff}.btn.o{border-color:var(--sea);color:var(--sea);background:transparent}
 :focus-visible{outline:3px solid var(--tq);outline-offset:2px}
 header{position:fixed;top:0;left:0;right:0;z-index:20;padding-top:env(safe-area-inset-top,0px);background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:12px}
-.logo{font-family:Fraunces,serif;font-weight:600;font-size:20px;text-decoration:none;color:var(--sea)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:12px}
+.logo-img{height:46px;width:auto;display:block;object-fit:contain}
 nav{display:flex;gap:6px;align-items:center}nav a{text-decoration:none;padding:8px 12px;border-radius:999px;font-size:15px;font-weight:500;transition:background-color .2s ease,color .2s ease}
 nav a:hover{background:var(--sand)}nav a.cta{background:var(--sea);color:#fff}
 .burger{display:none;background:none;border:0;font-size:26px;color:var(--ink);cursor:pointer}
 @media(max-width:860px){.burger{display:block}nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);flex-direction:column;align-items:stretch;padding:12px 20px 20px;border-bottom:1px solid var(--line)}nav.open{display:flex}nav a{padding:12px}}
-.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;color:#fff;padding:120px 0 80px;position:relative;overflow:hidden;
-background:linear-gradient(180deg,rgba(4,40,60,.4),rgba(4,40,60,.72)),url('torony_borito.jpg') center/cover no-repeat}
+.hero{min-height:90vh;min-height:90svh;display:flex;align-items:center;color:#fff;padding:130px 0 90px;position:relative;overflow:hidden;
+background:linear-gradient(180deg,rgba(4,40,60,.4),rgba(4,40,60,.75)),url('torony_borito.jpg') center/cover no-repeat}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 .hero .wrap{position:relative;animation:fadeUp .7s ease both}.hero h1{font-size:clamp(34px,6vw,64px);max-width:18ch}
 .hero p{font-size:clamp(17px,2vw,21px);max-width:52ch;margin:0 0 30px}.hero .btns{display:flex;gap:12px;flex-wrap:wrap}
@@ -75,6 +75,13 @@ background:linear-gradient(180deg,rgba(4,40,60,.4),rgba(4,40,60,.72)),url('toron
 .tip div{background:var(--card);border-left:5px solid var(--tq);border-radius:14px;padding:18px 20px;box-shadow:var(--sh);transition:transform .25s ease}
 .tip div:hover{transform:translateX(4px)}
 .tip p{margin:4px 0 0;color:var(--mute);font-size:15px}
+/* Galéria Mappák Stílus */
+.gallery-grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.folder-card{background:var(--card);border-radius:20px;padding:28px 24px;border:1px solid var(--line);box-shadow:var(--sh);cursor:pointer;text-align:center;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;display:flex;flex-direction:column;align-items:center;gap:12px}
+.folder-card:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(11,70,100,.16);border-color:var(--tq)}
+.folder-icon{font-size:48px;margin-bottom:4px}
+.folder-card h3{margin:0;font-size:22px;color:var(--sea)}
+.folder-card p{margin:0;color:var(--mute);font-size:14px}
 .contact{display:grid;gap:36px;grid-template-columns:1.3fr 1fr}@media(max-width:860px){.contact{grid-template-columns:1fr}}
 form{background:var(--card);border-radius:22px;padding:26px;box-shadow:var(--sh);border:1px solid var(--line);display:grid;gap:14px;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
 form .full{grid-column:1/-1}@media(max-width:560px){form{grid-template-columns:1fr}}
@@ -167,11 +174,11 @@ html:not([lang=hu]) .warn{display:flex}
 </head>
 <body>
 <header><div class="wrap nav">
-<a class="logo" href="#kezdolap">Vir Apartmanok</a>
+<a class="logo" href="#kezdolap"><img src="logo.png" alt="HelloVir Apartments" class="logo-img"></a>
 <div class="lang" role="group" aria-label="Language"><button data-l="hu">HU</button><button data-l="en">EN</button><button data-l="de">DE</button></div>
 <button class="burger" aria-label="Menü" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
 <nav onclick="this.classList.remove('open')">
-<a href="#kezdolap">Kezdőlap</a><a href="#apartmanok">Apartmanjaink</a><a href="#naptar">Foglaltsági naptár</a><a href="#kisokos">„Először járok itt”</a><a class="cta" href="#kapcsolat">Kapcsolat &amp; ajánlatkérés</a>
+<a href="#kezdolap">Kezdőlap</a><a href="#apartmanok">Apartmanjaink</a><a href="#galeria">Galéria</a><a href="#naptar">Foglaltsági naptár</a><a href="#kisokos">„Először járok itt”</a><a class="cta" href="#kapcsolat">Kapcsolat &amp; ajánlatkérés</a>
 </nav></div></header>
 
 <main>
@@ -183,11 +190,38 @@ html:not([lang=hu]) .warn{display:flex}
 </div></section>
 
 <section id="apartmanok"><div class="wrap">
-<h2>Apartmanjaink</h2><p class="lead">Négy apartman közül választhatsz: két kisebb (Viric 1 és Viric 3) és két nagyobb a Miljkovica apartmanházban (Horizont és Harmónia). Az alap egy 7 éjszakás turnus. Az árak éjszakánkéntiek, az idegenforgalmi adó külön fizetendő. Rövidebb vagy hosszabb tartózkodás esetén egyedi árat egyeztetünk.</p>
+<h2>Apartmanjaink</h2><p class="lead">Négy apartman közül választhatsz: két kisebb (Viric 1 és Viric 3) és két nagyobb a Miljkovica apartmanházban (Horizont és Harmónia). Az alap egy 7 éjszakás turnus. Az árak éjszakánként értendők, az idegenforgalmi adó külön fizetendő. Rövidebb vagy hosszabb tartózkodás esetén egyedi árat egyeztetünk.</p>
 <div class="grid" id="apts"></div>
 </div></section>
 
-<section class="alt" id="naptar"><div class="wrap">
+<!-- Új Galéria Szekció Mappákkal -->
+<section class="alt" id="galeria"><div class="wrap">
+<h2>Galéria</h2><p class="lead">Válassz a mappák közül, és nézd meg a helyszínen készült fotókat a környékről.</p>
+<div class="gallery-grid">
+<div class="folder-card" onclick="alert('Itt nyílik majd meg a Vir mappa galériája!')">
+<div class="folder-icon">📁</div>
+<h3>Vir</h3>
+<p>Képek a szigetről és a strandokról</p>
+</div>
+<div class="folder-card" onclick="alert('Itt nyílik majd meg a Privlaka mappa galériája!')">
+<div class="folder-icon">📁</div>
+<h3>Privlaka</h3>
+<p>Látnivalók és hangulatfotók</p>
+</div>
+<div class="folder-card" onclick="alert('Itt nyílik majd meg a Nin mappa galériája!')">
+<div class="folder-icon">📁</div>
+<h3>Nin</h3>
+<p>Az óváros és a Királynő strandja</p>
+</div>
+<div class="folder-card" onclick="alert('Itt nyílik majd meg a Zadar mappa galériája!')">
+<div class="folder-icon">📁</div>
+<h3>Zadar</h3>
+<p>Tengeri orgona és óvárosi pillanatok</p>
+</div>
+</div>
+</div></section>
+
+<section id="naptar"><div class="wrap">
 <h2>Foglaltsági naptár – 2027</h2><p class="lead">Válts az apartmanok között, és nézd meg, mikor szabad. A félbevágott napok az érkezést és a távozást jelölik, így látszik, mikor van turnusváltás.</p>
 <div class="tabs" role="tablist" id="tabs"></div>
 <div class="legend"><span><i style="background:var(--cf)"></i>Szabad</span><span><i style="background:var(--cb)"></i>Foglalt</span><span><i style="background:var(--cy)"></i>Kiválasztott</span><span><i class="pdsw"></i>Függőben</span><span><i style="background:linear-gradient(135deg,var(--cf) 50%,var(--cb) 50%)"></i>Érkezés napja</span><span><i style="background:linear-gradient(135deg,var(--cb) 50%,var(--cf) 50%)"></i>Távozás napja</span><span><i style="background:linear-gradient(135deg,var(--cb) 46%,#fff 46% 54%,var(--cb) 54%)"></i>Turnusváltás</span></div>
@@ -259,7 +293,7 @@ html:not([lang=hu]) .warn{display:flex}
 </div></div>
 </div></section>
 </main>
-<footer>© Vir Apartmanok – Vir-sziget, Horvátország</footer>
+<footer>© HelloVir Apartments – Vir-sziget, Horvátország</footer>
 
 <div class="lbox" id="lbox" role="dialog" aria-modal="true">
 <button class="lclose" id="lclose" aria-label="Bezárás">✕</button>
@@ -285,13 +319,13 @@ html:not([lang=hu]) .warn{display:flex}
 <script src="foglalasok.js"></script>
 <script>
 const APTS=[
-{id:"viric1",imgs:["viric1.jpg","terasz1_2.jpg","nappali3_2.jpg","nappali1_2.jpg","nappali2_2.jpg","halo2_2.jpg","halo1_2.jpg","furdo1_2.jpg","furdo2_2.jpg"],pos:"center 85%",tab:"Viric 1 (4 fős)",name:"„Viric 1” Apartman",n:130,cls:"i1",tag:"4 személyes",desc:"Ideális kisebb családoknak vagy pároknak: 1 hálószoba, nappali kihúzható kanapéval, amerikai konyha, saját erkély.",extra:"Saját erkély"},
+{id:"viric1",imgs:["viric1.jpg","terasz1_2.jpg","nappali3_2.jpg","nappali1_2.jpg","nappali2_2.jpg","halo2_2.jpg","halo1_2.jpg","furdo1_2.jpg","furdo2_2.jpg"],pos:"center 85%",tab:"Viric 1 (4 fős)",name:"„Viric 1” Apartman",n:130,cls:"i1",tag:"4 személyes",desc:"Ideális kisebb családoknak vagy pároknak: 1 hálószoba, nappali kihúzható kanapéval, amerikai konyha, saját terasz.",extra:"Saját terasz"},
 {id:"viric3",imgs:["viric2.jpg","terasz3.jpg","ház.jpg","nappali1.jpg","nappali4.jpg","nappali2.jpg","nappali3.jpg","halo1.jpg","halo2.jpg","terasz2.jpg","terasz1.jpg","ház3.jpg","ház4.jpg","furdo1.jpg","furdo2.jpg","furdo3.jpg","ajto3.jpg","ajto2.jpg","ajto1.jpg","grill1.jpg"],pos:"center 80%",tab:"Viric 3 (4 fős)",name:"„Viric 3” Apartman",n:130,cls:"i2",tag:"4 személyes",desc:"Kényelmes, világos elrendezés 4 fő részére: 2 külön légtér, felszerelt konyha, saját terasz.",extra:"Saját terasz"},
 {id:"horizont",per4:1,imgs:["miljkovica.jpg","terasz_ho.jpg","etkezo_ho.jpg","konyha_ho.jpg","nappali_ho.jpg","halo3_ho.jpg","halo2_ho.jpg","halo_ho.jpg","halo4_ho.jpg","furdo_ho.jpg"],pos:"center",tab:"Horizont (akár 6–8 fő)",name:"„Horizont” Apartman",n:130,cls:"i3",tag:"Akár 6–8 fő",hl:"🌊 A teraszról látszik a tenger",desc:"A Miljkovica apartmanház emeleti apartmanja. 3 hálószoba és nappali, akár 6–8 fő számára.",extra:"Saját udvarrész és privát terasz"},
 {id:"harmonia",per4:1,imgs:["miljkovica.jpg","terasz2_ha.jpg","etkezo_ha.jpg","konyha_ha.jpg","etkezo2_ha.jpg","halo_ha.jpg","halo1_ha.jpg","furdo_ha.jpg","terasz_ha.jpg","grill_ha.jpg"],pos:"center",tab:"Harmónia (akár 4–6 fő)",name:"„Harmónia” Apartman",n:130,cls:"i1",tag:"Akár 4–6 fő",desc:"A Miljkovica apartmanház alsó szinti apartmanja. 2 hálószoba és nappali, akár 4–6 fő számára.",extra:"Saját udvarrész és privát terasz"}];
 const WATER="💧 Vezetékes víz és csatorna";
-const FE=["❄️|Légkondicionáló (klíma)","📶|Ingyenes, gyors Wi-Fi","🚗|Saját, zárt parkolóhely az udvarban","🍳|Teljesen felszerelt konyha (hűtő, főzőlap, mikró, kávéfőző)","🔥|Kerti grillezés és bográcsozás","🌿|{x} kerti bútorokkal","🏖️|Strand: 250 m, kényelmes séta"];
-const API="https://script.google.com/macros/s/AKfycbytT5JS16OTfLmyn0300M7Ec_9EtmGRW_PxZO-0QuLfcKvV4Dj9Rl9Q0Ldo_erZ6HDD/exec";   // <- ide kerül a Google-szkript webcíme (https://script.google.com/macros/s/.../exec); üresen a foglalasok.js fájl működik
+const FE=["❄️|Légkondicionáló (klíma)","📶|Ingyenes, gyors Wi-Fi","🚗|Saját, zárt parkolóhely az udvarban","🍳|Teljesen felszerelt konyha (hűtő, főzőlap, mikró, kávéfőző)","🔥|Kerti grillezés","🌿|{x} kerti bútorokkal","🏖️|Strand: 250 m, kényelmes séta"];
+const API="https://script.google.com/macros/s/AKfycbytT5JS16OTfLmyn0300M7Ec_9EtmGRW_PxZO-0QuLfcKvV4Dj9Rl9Q0Ldo_erZ6HDD/exec";
 const FG=window.FOGLALAS||{};
 const pTs=x=>{const a=String(x).split("-").map(Number);return new Date(a[0],a[1]-1,a[2]).getTime()};
 const BK={};
@@ -371,7 +405,6 @@ lb.addEventListener("touchend",e=>{const dx=e.changedTouches[0].clientX-sx;if(lb
 document.getElementById("aptSel").innerHTML=APTS.map(a=>`<option value="${a.id}">${a.name} –${a.tag}</option>`).join("");
 document.getElementById("tabs").innerHTML=APTS.map(a=>`<button class="tab" role="tab" data-id="${a.id}">${a.tab}</button>`).join("");
 
-/* ---- Naptár: időszak kiválasztása (csak szabad napok) ---- */
 const SELT={
 hint:["Kattints az érkezés napjára, majd a távozás napjára a szabad (zöld) napok közül.","Click your arrival day, then your departure day among the free (green) days.","Klicken Sie auf Ihren Anreisetag und dann auf Ihren Abreisetag unter den freien (grünen) Tagen."],
 from:["Érkezés","Arrival","Anreise"],
@@ -465,9 +498,10 @@ document.getElementById("terms").onclick=e=>{if(e.target.id==="terms")closeTerms
 ["erk","tav","apt"].forEach(k=>document.getElementById("f")[k].addEventListener("change",est));document.getElementById("f").fo.addEventListener("input",est);
 let lang=`hu`,li=-1;
 const D={
-[`Vir Apartmanok`]:[`Vir Apartments`,`Vir Apartments`],
+[`HelloVir Apartments`]:[`HelloVir Apartments`,`HelloVir Apartments`],
 [`Kezdőlap`]:[`Home`,`Startseite`],
 [`Apartmanjaink`]:[`Our apartments`,`Unsere Apartments`],
+[`Galéria`]:[`Gallery`,`Galerie`],
 [`Foglaltsági naptár`]:[`Availability calendar`,`Belegungskalender`],
 [`„Először járok itt”`]:[`“First time here”`,`„Zum ersten Mal hier“`],
 [`Kapcsolat & ajánlatkérés`]:[`Contact & enquiry`,`Kontakt & Anfrage`],
@@ -475,7 +509,9 @@ const D={
 [`Modern, teljesen felszerelt apartmanok családoknak és baráti társaságoknak, pár percre a kristálytiszta Adriától.`]:[`Modern, fully equipped apartments for families and groups of friends, just minutes from the crystal-clear Adriatic.`,`Moderne, voll ausgestattete Apartments für Familien und Freundesgruppen, nur wenige Minuten von der kristallklaren Adria entfernt.`],
 [`Apartmanok megtekintése`]:[`View apartments`,`Apartments ansehen`],
 [`Szabad időpontok ellenőrzése`]:[`Check available dates`,`Freie Termine prüfen`],
-[`Négy apartman közül választhatsz: két kisebb (Viric 1 és Viric 3) és két nagyobb a Miljkovica apartmanházban (Horizont és Harmónia). Az alap egy 7 éjszakás turnus. Az árak éjszakánkéntiek, az idegenforgalmi adó külön fizetendő. Rövidebb vagy hosszabb tartózkodás esetén egyedi árat egyeztetünk.`]:[`Choose from four apartments: two smaller ones (Viric 1 and Viric 3) and two larger ones in the Miljkovica house (Horizont and Harmónia). The standard stay is a 7-night block. Prices are per night; tourist tax is payable in addition. For shorter or longer stays, we agree on an individual price.`,`Wählen Sie aus vier Apartments: zwei kleinere (Viric 1 und Viric 3) und zwei größere im Haus Miljkovica (Horizont und Harmónia). Basis ist ein Aufenthalt von 7 Nächten. Die Preise gelten pro Nacht; die Kurtaxe wird zusätzlich erhoben. Bei kürzerem oder längerem Aufenthalt vereinbaren wir einen individuellen Preis.`],
+[`Négy apartman közül választhatsz: két kisebb (Viric 1 és Viric 3) és két nagyobb a Miljkovica apartmanházban (Horizont és Harmónia). Az alap egy 7 éjszakás turnus. Az árak éjszakánként értendők, az idegenforgalmi adó külön fizetendő. Rövidebb vagy hosszabb tartózkodás esetén egyedi árat egyeztetünk.`]:[`Choose from four apartments: two smaller ones (Viric 1 and Viric 3) and two larger ones in the Miljkovica house (Horizont and Harmónia). The standard stay is a 7-night block. Prices are per night; tourist tax is payable in addition. For shorter or longer stays, we agree on an individual price.`,`Wählen Sie aus vier Apartments: zwei kleinere (Viric 1 und Viric 3) und zwei größere im Haus Miljkovica (Horizont und Harmónia). Basis ist ein Aufenthalt von 7 Nächten. Die Preise gelten pro Nacht; die Kurtaxe wird zusätzlich erhoben. Bei kürzerem oder längerem Aufenthalt vereinbaren wir einen individuellen Preis.`],
+[`Galéria`]:[`Gallery`,`Galerie`],
+[`Válassz a mappák közül, és nézd meg a helyszínen készült fotókat a környékről.`]:[`Choose from the folders and view photos taken on site around the area.`,`Wählen Sie aus den Ordnern und sehen Sie sich Fotos vor Ort in der Umgebung an.`],
 [`Foglaltsági naptár – 2027`]:[`Availability calendar – 2027`,`Belegungskalender – 2027`],
 [`Válts az apartmanok között, és nézd meg, mikor szabad. A félbevágott napok az érkezést és a távozást jelölik, így látszik, mikor van turnusváltás.`]:[`Switch between apartments to see when they are free. Half-split days show arrival and departure, so you can spot the changeover days.`,`Wechseln Sie zwischen den Apartments, um freie Zeiten zu sehen. Halbierte Tage zeigen An- und Abreise, so erkennen Sie die Wechseltage.`],
 [`Szabad`]:[`Available`,`Frei`],[`A megadott adataidat kizárólag a foglalás egyeztetéséhez használjuk fel.`]:[`We use the details you provide solely to arrange your booking.`,`Ihre Angaben verwenden wir ausschließlich zur Abwicklung Ihrer Buchung.`],[`Függőben`]:[`Pending`,`Ausstehend`],[`Foglalt`]:[`Booked`,`Belegt`],[`Érkezés napja`]:[`Arrival day`,`Anreisetag`],[`Távozás napja`]:[`Departure day`,`Abreisetag`],[`Turnusváltás`]:[`Changeover`,`Wechseltag`],[`Turnusváltás: távozás és érkezés`]:[`Changeover: departure and arrival`,`Wechseltag: Abreise und Anreise`],
@@ -486,8 +522,8 @@ const D={
 [`Viric 1 (4 fős)`]:[`Viric 1 (sleeps 4)`,`Viric 1 (4 Personen)`],[`Viric 3 (4 fős)`]:[`Viric 3 (sleeps 4)`,`Viric 3 (4 Personen)`],[`Horizont (akár 6–8 fő)`]:[`Horizont (up to 6–8 guests)`,`Horizont (bis zu 6–8 Personen)`],[`Harmónia (akár 4–6 fő)`]:[`Harmónia (up to 4–6 guests)`,`Harmónia (bis zu 4–6 Personen)`],
 [`„Viric 1” Apartman`]:[`“Viric 1” Apartment`,`Apartment „Viric 1“`],[`„Viric 3” Apartman`]:[`“Viric 3” Apartment`,`Apartment „Viric 3“`],[`„Horizont” Apartman`]:[`“Horizont” Apartment`,`Apartment „Horizont“`],[`„Harmónia” Apartman`]:[`“Harmónia” Apartment`,`Apartment „Harmónia“`],
 [`4 személyes`]:[`Sleeps 4`,`4 Personen`],[`Akár 6–8 fő`]:[`Up to 6–8 guests`,`Bis zu 6–8 Personen`],[`Akár 4–6 fő`]:[`Up to 4–6 guests`,`Bis zu 4–6 Personen`],
-[`Ideális kisebb családoknak vagy pároknak: 1 hálószoba, nappali kihúzható kanapéval, amerikai konyha, saját erkély.`]:[`Ideal for small families or couples: 1 bedroom, living room with sofa bed, open-plan kitchen, private balcony.`,`Ideal für kleine Familien oder Paare: 1 Schlafzimmer, Wohnzimmer mit Schlafsofa, offene Küche, eigener Balkon.`],
-[`Kényelmes, világos elrendezés 4 fő részére: 2 külön légtér, felszerelt konyha, saját terasz.`]:[`Comfortable, bright layout for 4 guests: 2 separate living areas, equipped kitchen, private terrace.`,`Bequeme, helle Aufteilung für 4 Personen: 2 getrennte Bereiche, ausgestattete Küche, eigene Terrasse.`],
+[`Ideális kisebb családoknak vagy pároknak: 1 hálószoba, nappali kihúzható kanapéval, amerikai konyha, saját terasz.`]:[`Ideal for small families or couples: 1 bedroom, living room with sofa bed, open-plan kitchen, private terrace.`,`Ideal für kleine Familien oder Paare: 1 Schlafzimmer, Wohnzimmer mit Schlafsofa, offene Küche, eigene Terrasse.`],
+[`Kényelmes, világos elrendezés 4 fő részére: 2 külön légtér, felszerelt konyha, saját terasz.`]:[`Comfortable, bright layout for 4 guests: 2 separate living areas, equipped kitchen, private terrace.`,`Bequeme, helle Aufteilung für 4 Personen: 2 getrennte Bereiche, eigene Terrasse.`],
 [`A Miljkovica apartmanház emeleti apartmanja. 3 hálószoba és nappali, akár 6–8 fő számára.`]:[`The upper-floor apartment of the Miljkovica house. 3 bedrooms and a living room, for up to 6–8 guests.`,`Das Apartment im Obergeschoss des Hauses Miljkovica. 3 Schlafzimmer und Wohnzimmer, für bis zu 6–8 Personen.`],
 [`A Miljkovica apartmanház alsó szinti apartmanja. 2 hálószoba és nappali, akár 4–6 fő számára.`]:[`The lower-floor apartment of the Miljkovica house. 2 bedrooms and a living room, for up to 4–6 guests.`,`Das Apartment im Erdgeschoss des Hauses Miljkovica. 2 Schlafzimmer und Wohnzimmer, für bis zu 4–6 Personen.`],
 [`/ éj / 4 fő + idegenforgalmi adó`]:[`/ night / 4 guests + tourist tax`,`/ Nacht / 4 Personen + Kurtaxe`],
@@ -497,23 +533,38 @@ const D={
 [`Rövidebb vagy hosszabb tartózkodás esetén egyedi árat egyeztetünk.`]:[`For shorter or longer stays, we agree on an individual price.`,`Bei kürzerem oder längerem Aufenthalt vereinbaren wir einen individuellen Preis.`],
 [`Légkondicionáló (klíma)`]:[`Air conditioning`,`Klimaanlage`],[`Ingyenes, gyors Wi-Fi`]:[`Free fast Wi-Fi`,`Kostenloses, schnelles WLAN`],[`Saját, zárt parkolóhely az udvarban`]:[`Private, enclosed parking space in the courtyard`,`Eigener, geschlossener Parkplatz im Hof`],
 [`Teljesen felszerelt konyha (hűtő, főzőlap, mikró, kávéfőző)`]:[`Fully equipped kitchen (fridge, hob, microwave, coffee machine)`,`Voll ausgestattete Küche (Kühlschrank, Herd, Mikrowelle, Kaffeemaschine)`],
-[`Kerti grillezés és bográcsozás`]:[`Garden grill and cauldron (bogrács) cooking`,`Gartengrill und Kesselgulasch (Bogrács)`],
+[`Kerti grillezés`]:[`Garden grill`,`Gartengrill`],
 [`Saját erkély kerti bútorokkal`]:[`Private balcony with garden furniture`,`Eigener Balkon mit Gartenmöbeln`],[`Saját terasz kerti bútorokkal`]:[`Private terrace with garden furniture`,`Eigene Terrasse mit Gartenmöbeln`],[`Saját udvarrész és privát terasz kerti bútorokkal`]:[`Own yard area and private terrace with garden furniture`,`Eigener Hofbereich und private Terrasse mit Gartenmöbeln`],
 [`Strand: 250 m, kényelmes séta`]:[`Beach: 250 m, an easy walk`,`Strand: 250 m, bequemer Spaziergang`],
 [`Ajánlatkérés`]:[`Request a quote`,`Angebot anfragen`],
 [`Először járok itt – Vir-sziget kisokos`]:[`First time here – Vir island guide`,`Zum ersten Mal hier – Inselführer Vir`],
 [`Minden, amit érdemes tudni az első látogatás előtt.`]:[`Everything worth knowing before your first visit.`,`Alles Wissenswerte vor Ihrem ersten Besuch.`],
-[`Hídon át, komp nélkül`]:[`By bridge, no ferry needed`,`Über die Brücke, ohne Fähre`],
-[`A szárazföldről ingyenes hídon érhető el a sziget.`]:[`The island is reached from the mainland by a free bridge.`,`Die Insel ist vom Festland über eine kostenlose Brücke erreichbar.`],
-[`Évi ~300 napsütés`]:[`~300 sunny days a year`,`Ca. 300 Sonnentage im Jahr`],
-[`Hosszú, stabil nyári idő, ideális strandoláshoz.`]:[`Long, stable summer weather, ideal for the beach.`,`Langer, beständiger Sommer, ideal zum Baden.`],
-[`Családbarát`]:[`Family-friendly`,`Familienfreundlich`],
-[`Lassan mélyülő partok, nyugodt környezet, rövid távolságok.`]:[`Gently sloping shores, a calm setting, short distances.`,`Flach abfallende Strände, ruhige Umgebung, kurze Wege.`],
+[`Komp nélkül, autóval is könnyen elérhető`]:[`Easy to reach by car, no ferry needed`,`Ohne Fähre bequem mit dem Auto erreichbar`],
+[`A szárazfölddel egy ingyenesen használható híd köti össze, így nem kell menetrendhez vagy kompjegyhez alkalmazkodni.`]:[`Connected to the mainland by a toll-free bridge, so there is no need to adapt to ferry schedules or buy tickets.`,`Über eine kostenlose Brücke mit dem Festland verbunden – ganz ohne Fährfahrplan oder Fährtickets.`],
+[`Ideális kiindulópont kirándulásokhoz`]:[`Ideal base for day trips`,`Idealer Ausgangspunkt für Ausflüge`],
+[`Közel van Zadar, Nin és a Kornati-szigetek, valamint több híres természeti látnivaló.`]:[`Close to Zadar, Nin and the Kornati islands, as well as several famous natural attractions.`,`Nahe Zadar, Nin und den Kornati-Inseln sowie weiteren berühmten Natursehenswürdigkeiten.`],
+[`Sokféle strand közül lehet választani`]:[`Wide variety of beaches to choose from`,`Große Auswahl an verschiedenen Stränden`],
+[`Vannak sekély, gyermekbarát partszakaszok, kavicsos, homokos és természetesebb, sziklás öblök is.`]:[`You will find shallow, child-friendly shores as well as pebble, sandy and more natural rocky coves.`,`Es gibt flache, kinderfreundliche Uferabschnitte sowie Kies-, Sand- und naturbelassene Felsbuchten.`],
+[`Nem csak strandolásról szól`]:[`More than just sunbathing`,`Mehr als nur Strandurlaub`],
+[`A szigeten számos helyen lehet hajót bérelni, SUP-ozni, búvárkodni, sznorkelezni, vagy biciklivel és quaddal felfedezni a környéket.`]:[`Across the island you can rent a boat, try SUP, dive, snorkel, or explore the area by bike or quad.`,`Auf der Insel kann man vielerorts Boote mieten, SUP fahren, tauchen, schnorcheln oder die Gegend per Rad und Quad erkunden.`],
+[`Nagyon jó esti programok vannak`]:[`Great evening entertainment and nightlife`,`Tolle Abendprogramme und Partymöglichkeiten`],
+[`A központban sétány, éttermek, fagyizók, bárok, bazárok, bulihelyek és esti programok várják a nyaralókat.`]:[`In the centre, a promenade, restaurants, ice cream parlours, bars, bazaars, party venues and evening events await holidaymakers.`,`Im Zentrum erwarten eine Promenade, Restaurants, Eisdielen, Bars, Basare, Partylocations und Abendprogramme die Urlauber.`],
+[`Látványos naplementék partról vagy hajóról`]:[`Spectacular sunsets from the shore or by boat`,`Traumhafte Sonnenuntergänge vom Ufer oder Boot`],
+[`Aszfaltos út vezet körbe a szigeten, így a sziget csücskéből gyönyörű a naplemente, de akár hajós programmal is egybeköthető.`]:[`A paved road circles the island, offering stunning sunsets from the tip of the island, or you can join a sunset boat trip.`,`Eine asphaltierte Straße führt rund um die Insel – an der Inselspitze ist der Sonnenuntergang wunderschön, oder man erlebt ihn vom Boot aus.`],
+[`Delfinlesre is van lehetőség`]:[`Dolphin watching opportunities`,`Möglichkeit zur Delfinbeobachtung`],
+[`A környéken szerveznek hajókirándulásokat, ahol gyakran felbukkannak delfinek.`]:[`Boat trips are organised in the area where dolphins are frequently spotted.`,`In der Umgebung werden Bootsausflüge angeboten, bei denen häufig Delfine zu sehen sind.`],
+[`Kisgyerekes családoknak különösen kényelmes`]:[`Especially convenient for families with young children`,`Besonders bequem für Familien mit Kleinkindern`],
+[`Sok minden rövid távolságon belül elérhető, nem kell minden nap hosszú autóutakat szervezni.`]:[`Everything is within a short distance, so there is no need to plan long car rides every day.`,`Vieles ist auf kurzen Wegen erreichbar, sodass man nicht jeden Tag lange Autofahrten planen muss.`],
+[`A természetkedvelőknek is tartogat élményeket`]:[`Great experiences for nature lovers too`,`Auch für Naturliebhaber voller Erlebnisse`],
+[`Érdemes megnézni a híres Vörös sziklákat (Crvene stijene) és a világítótornyos részt is, ami igazi túrázós hangulatot ad.`]:[`It is worth visiting the famous Red Rocks (Crvene stijene) as well as the lighthouse area, which offers a great hiking vibe.`,`Sehenswert sind die berühmten Roten Felsen (Crvene stijene) sowie der Bereich beim Leuchtturm, der echtes Wander-Feeling bietet.`],
 [`Éttermek és gasztronómia`]:[`Restaurants & food`,`Restaurants & Gastronomie`],
-[`Autentikus dalmát ételek, tenger gyümölcsei, hangulatos terasz.`]:[`Authentic Dalmatian dishes, seafood, a cosy terrace.`,`Authentische dalmatinische Küche, Meeresfrüchte, gemütliche Terrasse.`],
-[`Központi elhelyezkedés, kiváló pizzák, grillételek és halak.`]:[`Central location, excellent pizzas, grilled dishes and fish.`,`Zentrale Lage, ausgezeichnete Pizzen, Grillgerichte und Fisch.`],
-[`Bistro Ibiza és tengerparti büfék`]:[`Bistro Ibiza & beach snack bars`,`Bistro Ibiza & Strandbuden`],
-[`Gyors ebéd, csevap és hideg csapolt sör a parton.`]:[`Quick lunch, ćevapi and cold draught beer on the shore.`,`Schnelles Mittagessen, Ćevapi und kühles Fassbier am Strand.`],
+[`Vir szigetén nemcsak a strandok miatt érdemes barangolni – a hangulatos sétányok, fagyizók, pizzázók és bárok gondoskodnak arról, hogy egy esti séta is élmény legyen.`]:[`Vir island is worth exploring for more than just its beaches – cosy promenades, ice cream parlours, pizzerias and bars make every evening stroll a true experience.`,`Auf der Insel Vir lohnt sich ein Bummel nicht nur wegen der Strände – gemütliche Promenaden, Eisdielen, Pizzerien und Bars sorgen dafür, dass auch ein Abendspaziergang zum Erlebnis wird.`],
+[`🍦 Caffe Slasticarnica Bon Bon – édességrajongóknak kötelező megálló`]:[`🍦 Caffe Slasticarnica Bon Bon – a must-stop for sweet lovers`,`🍦 Caffe Slasticarnica Bon Bon – ein Muss für Naschkatzen`],
+[`Aki egy esti séta közben megkóstolná Vir egyik kedvelt fagyizóját, annak érdemes betérnie ide. Finom fagylaltok, kávé és édes desszertek várják a vendégeket – tökéletes választás egy strandolós nap lezárásaként vagy egy esti kikapcsolódáshoz.`]:[`If you'd like to try one of Vir's favourite ice cream parlours during an evening walk, this is the place to visit. Delicious ice creams, coffee and sweet desserts await guests – the perfect way to end a beach day or enjoy a relaxing evening.`,`Wer bei einem Abendspaziergang eine der beliebtesten Eisdielen auf Vir probieren möchte, sollte hier einkehren. Leckeres Eis, Kaffee und süße Desserts erwarten die Gäste – perfekt zum Ausklang eines Strandtages oder für einen entspannten Abend.`],
+[`🍕 Pizza Cut Vir – gyors és egyszerű megoldás, ha megéheztetek`]:[`🍕 Pizza Cut Vir – a quick and easy choice when you get hungry`,`🍕 Pizza Cut Vir – schnell und unkompliziert für den Hunger zwischendurch`],
+[`Ha egy könnyed pizzára vágytok, amit akár útközben vagy a strandra indulás előtt is elfogyaszthattok, ez egy jó választás. Praktikus hely családoknak, gyerekekkel is, amikor nem egy hosszú vacsorára, hanem egy gyors és finom étkezésre van szükség.`]:[`If you crave a light slice of pizza to enjoy on the go or before heading to the beach, this is a great option. A practical spot for families with children when you want a quick and tasty meal rather than a long sit-down dinner.`,`Wenn Sie Lust auf eine leichte Pizza haben – ob für unterwegs oder vor dem Strandbesuch –, sind Sie hier richtig. Ein praktischer Ort für Familien mit Kindern, wenn es statt eines langen Abendessens eine schnelle und leckere Mahlzeit sein soll.`],
+[`🍔 Kraken Bar Vir – hangulatos esti hely hamburgerekhez és italokhoz`]:[`🍔 Kraken Bar Vir – a cosy evening spot for burgers and drinks`,`🍔 Kraken Bar Vir – gemütlicher Abendtreff für Burger und Drinks`],
+[`Modern, tengerparti hangulatú bár, ahol főként hamburgerek, grillételek és italok miatt érdemes megállni. Jó választás baráti társaságoknak vagy egy lazább esti programhoz, amikor a strand után még maradnátok egy kicsit a nyüzsgésben.`]:[`A modern bar with a seaside vibe, well worth a stop for its burgers, grilled dishes and drinks. A great choice for groups of friends or a relaxed evening out when you want to stay in the lively atmosphere after the beach.`,`Eine moderne Bar mit maritimem Flair, in der sich ein Stopp vor allem wegen der Burger, Grillgerichte und Drinks lohnt. Ideal für Freundesgruppen oder einen entspannten Abend, wenn man nach dem Strand noch etwas im Trubel verweilen möchte.`],
 [`Legjobb strandok`]:[`Best beaches`,`Die schönsten Strände`],
 [`Jadro strand`]:[`Jadro beach`,`Strand Jadro`],
 [`A sziget legnépszerűbb, lassan mélyülő, aprókavicsos-homokos strandja – kisgyerekeseknek tökéletes.`]:[`The island's most popular beach: gently sloping, fine pebbles and sand – perfect for families with small children.`,`Der beliebteste Strand der Insel: flach abfallend, Feinkies und Sand – perfekt für Familien mit kleinen Kindern.`],
@@ -529,16 +580,26 @@ const D={
 [`Kapcsolat és ajánlatkérés`]:[`Contact and enquiry`,`Kontakt und Anfrage`],
 [`Add meg az utazás adatait, és hamarosan jelentkezünk.`]:[`Enter your travel details and we'll get back to you shortly.`,`Geben Sie Ihre Reisedaten an, wir melden uns in Kürze.`],
 [`Név`]:[`Name`,`Name`],[`Email cím`]:[`Email address`,`E-Mail-Adresse`],[`Telefonszám`]:[`Phone number`,`Telefonnummer`],[`Apartman`]:[`Apartment`,`Apartment`],[`Érkezés`]:[`Arrival`,`Anreise`],[`Távozás`]:[`Departure`,`Abreise`],[`Vendégek száma`]:[`Number of guests`,`Anzahl der Gäste`],[`Üzenet`]:[`Message`,`Nachricht`],[`Ajánlatkérés küldése`]:[`Send enquiry`,`Anfrage senden`],
-[`Telefon`]:[`Phone`,`Telefon`],[`Írj nekünk üzenetet`]:[`Send us a message`,`Schreiben Sie uns`],[`Vir-sziget, Horvátország`]:[`Vir island, Croatia`,`Insel Vir, Kroatien`],[`Megnyitás térképen`]:[`Open on map`,`Auf Karte öffnen`],
-[`© Vir Apartmanok – Vir-sziget, Horvátország`]:[`© Vir Apartments – Vir island, Croatia`,`© Vir Apartments – Insel Vir, Kroatien`],
-[`Vir-sziget apartmanok – Horvátország`]:[`Vir island apartments – Croatia`,`Apartments auf der Insel Vir – Kroatien`],
+[`Telefon`]:[`Phone`,`Telefon`],[`Írj nekünk üzenetet`]:[`Send us a message`,`Schreiben Sie uns`],
+[`Vir-sziget, Horvátország`]:[`Vir island, Croatia`,`Insel Vir, Kroatien`],
+[`Megnyitás térképen`]:[`Open on map`,`Auf Karte öffnen`],
+[`© HelloVir Apartments – Vir-sziget, Horvátország`]:[`© HelloVir Apartments – Vir island, Croatia`,`© HelloVir Apartments – Insel Vir, Kroatien`],
+[`HelloVir Apartments – Vir-sziget, Horvátország`]:[`HelloVir Apartments – Vir island, Croatia`,`HelloVir Apartments – Insel Vir, Kroatien`],
 [`Menü`]:[`Menu`,`Menü`],
 [`Fejlesztés alatt`]:[`Under construction`,`Im Aufbau`],
 [`Ez a weboldal fejlesztés alatt van. Ha bármilyen hibát észrevesz, kérjük, írjon emailben – megértésüket köszönjük!`]:[`This website is still under development. If you notice any errors, please let us know by email – thank you for your understanding!`,`Diese Website befindet sich noch in der Entwicklung. Sollten Sie Fehler bemerken, schreiben Sie uns bitte eine E-Mail – vielen Dank für Ihr Verständnis!`],
 [`Rendben, értem`]:[`Got it`,`Verstanden`],
 [`A telefonos egyeztetés kizárólag magyar nyelven érhető el. Kérjük, érdeklődjenek emailben – megértésüket köszönjük.`]:[`Phone consultation is available in Hungarian only. Please enquire by email – thank you for your understanding.`,`Telefonische Beratung ist ausschließlich auf Ungarisch möglich. Bitte wenden Sie sich per E-Mail an uns – vielen Dank für Ihr Verständnis.`],
 [`Kiválasztott`]:[`Selected`,`Ausgewählt`],
-[`Törlés`]:[`Clear`,`Löschen`]
+[`Törlés`]:[`Clear`,`Löschen`],
+[`Vir`]:[`Vir`,`Vir`],
+[`Privlaka`]:[`Privlaka`,`Privlaka`],
+[`Nin`]:[`Nin`,`Nin`],
+[`Zadar`]:[`Zadar`,`Zadar`],
+[`Képek a szigetről és a strandokról`]:[`Photos of the island and beaches` , `Fotos von der Insel und den Stränden`],
+[`Látnivalók és hangulatfotók`]:[`Sights and mood photos` , `Sehenswürdigkeiten und Stimmungfotos`],
+[`Az óváros és a Királynő strandja`]:[`The old town and Queen's beach` , `Die Altstadt und der Königinnenstrand`],
+[`Tengeri orgona és óvárosi pillanatok`]:[`Sea organ and old town moments` , `Meeresorgel und Altstadtmomente`]
 };
 const tr=s=>li<0?s:(D[s]?D[s][li]:s);
 const MSG=[`Megnyitjuk az email-programodat az előkészített üzenettel. Ha nem nyílik meg, írj közvetlenül az info@hellovir.com címre.`,`We are opening your email app with the prepared message. If nothing opens, please write directly to info@hellovir.com.`,`Wir öffnen Ihr E-Mail-Programm mit der vorbereiteten Nachricht. Falls sich nichts öffnet, schreiben Sie direkt an info@hellovir.com.`];
@@ -572,7 +633,7 @@ function apply(){
 const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;
 while(n=w.nextNode()){if(n.parentNode.closest(`script,style,option,#msgTxt,#lcap,.scnt,#selTxt,.tx`))continue;if(n._o===undefined)n._o=n.nodeValue;const t=n._o.trim();n.nodeValue=(li>=0&&D[t])?n._o.replace(t,D[t][li]):n._o}
 document.querySelectorAll(`.d[title]`).forEach(x=>{x.dataset.h=x.dataset.h||x.title;x.title=tr(x.dataset.h)});
-document.documentElement.lang=lang;document.title=tr(`Vir-sziget apartmanok – Horvátország`);
+document.documentElement.lang=lang;document.title=tr(`HelloVir Apartments – Vir-sziget, Horvátország`);
 document.querySelector(`.burger`).setAttribute(`aria-label`,tr(`Menü`));
 document.querySelectorAll(`.lang button`).forEach(b=>b.setAttribute(`aria-pressed`,b.dataset.l===lang));
 const s=document.getElementById(`aptSel`),v=s.value;s.innerHTML=APTS.map(a=>`<option value="${a.id}">${tr(a.name)} –${tr(a.tag)}</option>`).join(``);s.value=v||`viric1`;
