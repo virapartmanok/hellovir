@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="description" content="HelloVir Apartments – Vir nyaralás és modern, tengerpart közeli apartmanok a horvátországi Vir-szigeten (Viric 1, Viric 3, Horizont, Harmónia). Foglalás közvetlenül, komp nélkül!">
-<meta name="keywords" content="HelloVir, Hello Vir,HelloVir Apartments, Vir nyaralás, Vir-sziget apartman, Vir szállás, Horvátország apartman, Viric apartman, Miljkovica apartman, Vir-sziget nyaralás, családbarát apartman Vir">
+<meta name="keywords" content="HelloVir, Hello Vir, HelloVir Apartments, Vir nyaralás, Vir-sziget apartman, Vir szállás, Horvátország apartman, Viric apartman, Miljkovica apartman, Vir-sziget nyaralás, családbarát apartman Vir">
 <meta name="author" content="HelloVir Apartments">
 <link rel="canonical" href="https://hellovir.com/">
 <link rel="alternate" hreflang="hu" href="https://hellovir.com/">
@@ -99,13 +99,23 @@ background:linear-gradient(180deg,rgba(4,40,60,.38),rgba(4,40,60,.74)),url('toro
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 .hero .wrap{position:relative;animation:fadeUp .7s ease both}.hero h1{font-size:clamp(34px,6vw,64px);max-width:18ch}
 .hero p{font-size:clamp(17px,2vw,21px);max-width:52ch;margin:0 0 30px}.hero .btns{display:flex;gap:12px;flex-wrap:wrap}
-.wx-pill{display:none;flex-direction:column;align-items:flex-start;gap:5px;margin-top:22px;padding:11px 20px;border-radius:20px;background:rgba(6,42,64,.52);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;font-size:14.5px;width:fit-content;max-width:100%;box-shadow:0 8px 24px rgba(0,0,0,.22);animation:fadeUp .6s ease both}
-.wx-pill.show{display:inline-flex}
-.wx-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.wx-sea{display:none;align-items:center;gap:8px;font-size:13.5px;color:#b8f2ee;padding-top:4px;border-top:1px solid rgba(255,255,255,.16);width:100%}
-.wx-sea.show{display:flex}
-.wx-ico{font-size:19px;line-height:1}
-.wx-sep{opacity:.4}
+
+/* Dizájnos Időjárás & Tengerhőfok Panel */
+.wx-card{display:none;flex-direction:column;gap:12px;margin-top:26px;padding:16px 20px;border-radius:22px;background:linear-gradient(135deg,rgba(6,42,64,.72),rgba(11,93,138,.58));border:1.5px solid rgba(255,255,255,.28);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:#fff;width:fit-content;max-width:100%;box-shadow:0 14px 34px rgba(0,0,0,.32);animation:fadeUp .6s ease both}
+.wx-card.show{display:inline-flex}
+.wx-head{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#a8ece7}
+.wx-dot{width:8px;height:8px;border-radius:50%;background:#2fd36b;box-shadow:0 0 10px #2fd36b;display:inline-block}
+.wx-stats{display:flex;align-items:stretch;gap:12px;flex-wrap:wrap}
+.wx-box{display:flex;align-items:center;gap:11px;padding:10px 15px;border-radius:15px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.15);flex:1 1 auto}
+.wx-box.sea-hi{background:linear-gradient(135deg,rgba(31,181,176,.36),rgba(11,93,138,.36));border:1.5px solid rgba(63,208,201,.75);box-shadow:0 4px 16px rgba(31,181,176,.22)}
+.wx-b-ico{font-size:26px;line-height:1;filter:drop-shadow(0 2px 6px rgba(0,0,0,.25))}
+.wx-b-info{display:flex;flex-direction:column;line-height:1.2;gap:2px}
+.wx-b-lbl{font-size:11.5px;font-weight:600;color:rgba(255,255,255,.78)}
+.wx-b-val{font-size:19px;font-weight:700;color:#fff;white-space:nowrap}
+.wx-box.sea-hi .wx-b-val{color:#7ff7f1;font-size:20px}
+.wx-b-sub{font-size:12px;color:rgba(255,255,255,.85);font-weight:500}
+@media(max-width:560px){.wx-card{width:100%;padding:14px}.wx-stats{gap:8px}.wx-box{padding:9px 12px}}
+
 .grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .card{background:var(--card);border-radius:22px;box-shadow:var(--sh);overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line);transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
 .card:hover{transform:translateY(-5px);box-shadow:0 16px 36px rgba(11,70,100,.16)}
@@ -196,7 +206,7 @@ html:not([lang=hu]) .warn{display:flex}
 .mbody{padding:24px 26px 28px;text-align:center}.mbody p{margin:0 0 12px;color:var(--mute)}
 .mail{display:inline-block;margin:0 0 18px;font-weight:700;color:var(--sea);text-decoration:none}
 @keyframes fi{from{opacity:0}}@keyframes pop{from{opacity:0;transform:translateY(24px) scale(.94)}}@keyframes bob{50%{transform:translateY(-8px) rotate(-6deg)}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.w1,.w2,.warn,.modal,.mbox,.mico,.hero .wrap,.m,.msg.show,.msg-ico,.ph-img,#limg,.wx-pill{animation:none;transition:none!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.w1,.w2,.warn,.modal,.mbox,.mico,.hero .wrap,.m,.msg.show,.msg-ico,.ph-img,#limg,.wx-card{animation:none;transition:none!important}}
 #apts{grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr))}
 .cb .wk{font-size:15px}.cb .wk b{color:var(--ink)}
 .d{font-weight:700}
@@ -266,15 +276,36 @@ html:not([lang=hu]) .warn{display:flex}
 <h1>Kikapcsolódás a napsütötte Vir-szigeten – találd meg a tökéletes apartmant!</h1>
 <p>Modern, teljesen felszerelt apartmanok családoknak és baráti társaságoknak, pár percre a kristálytiszta Adriától.</p>
 <div class="btns"><a class="btn p" href="#apartmanok">Apartmanok megtekintése</a><a class="btn g" href="#naptar">Szabad időpontok ellenőrzése</a></div>
-<div class="wx-pill tx" id="wxPill" aria-live="polite">
-<div class="wx-row">
-<span class="wx-ico" id="wxIco">☀️</span>
-<span id="wxTxt"></span>
-<span class="wx-sep">|</span>
-<span id="wxWind"></span>
+
+<div class="wx-card tx" id="wxPill" aria-live="polite">
+  <div class="wx-head"><span class="wx-dot"></span><span id="wxTitle"></span></div>
+  <div class="wx-stats">
+    <div class="wx-box">
+      <span class="wx-b-ico" id="wxIco">☀️</span>
+      <div class="wx-b-info">
+        <span class="wx-b-lbl" id="wxAirLbl"></span>
+        <span class="wx-b-val" id="wxTemp">--°C</span>
+        <span class="wx-b-sub" id="wxDesc"></span>
+      </div>
+    </div>
+    <div class="wx-box sea-hi" id="wxSeaBox" style="display:none">
+      <span class="wx-b-ico">🌊</span>
+      <div class="wx-b-info">
+        <span class="wx-b-lbl" id="wxSeaLbl"></span>
+        <span class="wx-b-val" id="wxSeaVal">--°C</span>
+        <span class="wx-b-sub" id="wxSeaSub"></span>
+      </div>
+    </div>
+    <div class="wx-box">
+      <span class="wx-b-ico">💨</span>
+      <div class="wx-b-info">
+        <span class="wx-b-lbl" id="wxWindLbl"></span>
+        <span class="wx-b-val" id="wxWindVal">-- km/h</span>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="wx-sea" id="wxSea"></div>
-</div>
+
 </div></section>
 
 <section id="apartmanok"><div class="wrap">
@@ -511,9 +542,11 @@ document.getElementById("tabs").innerHTML=APTS.map(a=>`<button class="tab" role=
 /* ---- Élő időjárás + tengerhőmérséklet (Vir-sziget: Open-Meteo) ---- */
 let wxData=null,seaTemp=null;
 const WXT={
-now:["Vir-sziget most:","Vir island now:","Insel Vir aktuell:"],
-wind:["💨 Szél:","💨 Wind:","💨 Wind:"],
-sea:["🌊 Tenger hőmérséklete:","🌊 Sea temperature:","🌊 Wassertemperatur:"],
+head:["Élő időjárás – Vir-sziget","Live weather – Vir Island","Live-Wetter – Insel Vir"],
+air:["Levegő","Air","Luft"],
+sea:["Tenger hőfoka","Sea temp","Wassertemp."],
+seaSub:["Adria · Vir","Adriatic · Vir","Adria · Vir"],
+wind:["Szél","Wind","Wind"],
 c0:["Derült égbolt","Clear sky","Klarer Himmel"],
 c1:["Gyengén felhős","Mostly clear","Überwiegend klar"],
 c2:["Részben felhős","Partly cloudy","Teilweise bewölkt"],
@@ -537,13 +570,19 @@ return["⛈️",WXT.c9];
 function renderWx(){
 if(!wxData)return;
 const i=li+1,[ico,arr]=wxInfo(wxData.code);
+document.getElementById("wxTitle").textContent=WXT.head[i];
 document.getElementById("wxIco").textContent=ico;
-document.getElementById("wxTxt").innerHTML=`${WXT.now[i]} <b>${wxData.temp}°C</b> · ${arr[i]}`;
-document.getElementById("wxWind").innerHTML=`${WXT.wind[i]} <b>${wxData.wind} km/h</b>`;
-const seaEl=document.getElementById("wxSea");
+document.getElementById("wxAirLbl").textContent=WXT.air[i];
+document.getElementById("wxTemp").textContent=wxData.temp+"°C";
+document.getElementById("wxDesc").textContent=arr[i];
+document.getElementById("wxWindLbl").textContent=WXT.wind[i];
+document.getElementById("wxWindVal").textContent=wxData.wind+" km/h";
+const seaBox=document.getElementById("wxSeaBox");
 if(seaTemp!==null){
-seaEl.innerHTML=`${WXT.sea[i]} <b>${seaTemp}°C</b>`;
-seaEl.classList.add("show");
+document.getElementById("wxSeaLbl").textContent=WXT.sea[i];
+document.getElementById("wxSeaVal").textContent=seaTemp+"°C";
+document.getElementById("wxSeaSub").textContent=WXT.seaSub[i];
+seaBox.style.display="flex";
 }
 document.getElementById("wxPill").classList.add("show");
 }
@@ -765,8 +804,8 @@ dep:["Az előleg a teljes ár kb. 25%-a (kerekítve).","The deposit is approx. 2
 amt:[" Ennél a foglalásnál: kb. {d} €."," For this booking: approx. {d} €."," Für diese Buchung: ca. {d} €."],
 amtU:[" Az összeget az egyedi árajánlat alapján határozzuk meg."," The amount will be set based on the individual quote."," Der Betrag richtet sich nach dem individuellen Angebot."],
 t1:["Lemondás az érkezés előtt legalább 3 hónappal: a teljes előleg visszajár.","Cancellation at least 3 months before arrival: the full deposit is refunded.","Stornierung mindestens 3 Monate vor Anreise: die gesamte Anzahlung wird erstattet."],
-t2:["Lemondás az érkezés előtt 3 hónapon belül, de 2 hétnél korábban: az előleg fele elvész.","Cancellation within 3 months but more than 2 weeks before arrival: half of the deposit is forfeited.","Stornierung innerhalb von 3 Monaten, aber mehr als 2 Wochen vor Anreise: die Hälfte der Anzahlung verfällt."],
-t3:["Lemondás az érkezés előtti 2 héten belül: a teljes előleg elvész.","Cancellation within 2 weeks before arrival: the entire deposit is forfeited.","Stornierung innerhalb von 2 Wochen vor Anreise: die gesamte Anzahlung verfällt."],
+t2:["Lemondás az érkezés előtt 3 hónapon belül, de 1 hónapnál korábban: az előleg fele elvész.","Cancellation within 3 months but more than 1 month before arrival: half of the deposit is forfeited.","Stornierung innerhalb von 3 Monaten, aber mehr als 1 Monat vor Anreise: die Hälfte der Anzahlung verfällt."],
+t3:["Lemondás az érkezés előtti 1 hónapon belül: a teljes előleg elvész.","Cancellation within 1 month before arrival: the entire deposit is forfeited.","Stornierung innerhalb von 1 Monat vor Anreise: die gesamte Anzahlung verfällt."],
 ref:["visszajár","refunded","erstattet"],lost:["elvész","forfeited","verfällt"],
 note:["Tájékoztató jellegű összefoglaló. A további részleteket emailben egyeztetjük.","For information only. We will agree on further details by email.","Dies ist eine unverbindliche Information. Weitere Einzelheiten besprechen wir per E-Mail."],
 mT:["Foglalási feltételek","Booking terms","Buchungsbedingungen"],
