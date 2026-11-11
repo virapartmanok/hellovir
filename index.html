@@ -100,21 +100,25 @@ background:linear-gradient(180deg,rgba(4,40,60,.38),rgba(4,40,60,.74)),url('toro
 .hero .wrap{position:relative;animation:fadeUp .7s ease both}.hero h1{font-size:clamp(34px,6vw,64px);max-width:18ch}
 .hero p{font-size:clamp(17px,2vw,21px);max-width:52ch;margin:0 0 30px}.hero .btns{display:flex;gap:12px;flex-wrap:wrap}
 
-/* Dizájnos Időjárás & Tengerhőfok Panel */
-.wx-card{display:none;flex-direction:column;gap:12px;margin-top:26px;padding:16px 20px;border-radius:22px;background:linear-gradient(135deg,rgba(6,42,64,.72),rgba(11,93,138,.58));border:1.5px solid rgba(255,255,255,.28);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:#fff;width:fit-content;max-width:100%;box-shadow:0 14px 34px rgba(0,0,0,.32);animation:fadeUp .6s ease both}
+/* Dizájnos, erősebb hátterű Időjárás & Dinamikus Tengerhőfok Panel */
+.wx-card{display:none;flex-direction:column;gap:12px;margin-top:26px;padding:16px 20px;border-radius:22px;background:linear-gradient(135deg,rgba(4,24,38,.90),rgba(7,48,74,.84));border:1.5px solid rgba(255,255,255,.34);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:#fff;width:fit-content;max-width:100%;box-shadow:0 16px 40px rgba(0,0,0,.45);animation:fadeUp .6s ease both}
 .wx-card.show{display:inline-flex}
-.wx-head{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#a8ece7}
+.wx-head{display:flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#b8f5f0;text-shadow:0 1px 4px rgba(0,0,0,.4)}
 .wx-dot{width:8px;height:8px;border-radius:50%;background:#2fd36b;box-shadow:0 0 10px #2fd36b;display:inline-block}
 .wx-stats{display:flex;align-items:stretch;gap:12px;flex-wrap:wrap}
-.wx-box{display:flex;align-items:center;gap:11px;padding:10px 15px;border-radius:15px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.15);flex:1 1 auto}
-.wx-box.sea-hi{background:linear-gradient(135deg,rgba(31,181,176,.36),rgba(11,93,138,.36));border:1.5px solid rgba(63,208,201,.75);box-shadow:0 4px 16px rgba(31,181,176,.22)}
-.wx-b-ico{font-size:26px;line-height:1;filter:drop-shadow(0 2px 6px rgba(0,0,0,.25))}
-.wx-b-info{display:flex;flex-direction:column;line-height:1.2;gap:2px}
-.wx-b-lbl{font-size:11.5px;font-weight:600;color:rgba(255,255,255,.78)}
-.wx-b-val{font-size:19px;font-weight:700;color:#fff;white-space:nowrap}
-.wx-box.sea-hi .wx-b-val{color:#7ff7f1;font-size:20px}
-.wx-b-sub{font-size:12px;color:rgba(255,255,255,.85);font-weight:500}
-@media(max-width:560px){.wx-card{width:100%;padding:14px}.wx-stats{gap:8px}.wx-box{padding:9px 12px}}
+.wx-box{display:flex;align-items:center;gap:11px;padding:11px 16px;border-radius:16px;background:rgba(4,18,28,.68);border:1.5px solid rgba(255,255,255,.22);flex:1 1 auto;box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+.wx-box.sea-hi{background:rgba(4,22,34,.78);border:1.5px solid rgba(255,255,255,.32);box-shadow:0 6px 18px rgba(0,0,0,.28)}
+.wx-b-ico{font-size:26px;line-height:1;filter:drop-shadow(0 2px 6px rgba(0,0,0,.35))}
+.wx-b-info{display:flex;flex-direction:column;line-height:1.22;gap:2px}
+.wx-b-lbl{font-size:12px;font-weight:600;color:rgba(255,255,255,.88)}
+.wx-b-val{font-size:20px;font-weight:800;color:#fff;white-space:nowrap;text-shadow:0 1px 6px rgba(0,0,0,.35)}
+.wx-box.sea-hi .wx-b-val{font-size:21px;transition:color .25s ease,border-color .25s ease}
+.wx-b-val.st-green{color:#2fd36b;text-shadow:0 0 14px rgba(47,211,107,.35)}
+.wx-b-val.st-lgreen{color:#9beba8;text-shadow:0 0 12px rgba(155,235,168,.3)}
+.wx-b-val.st-lblue{color:#8ce0ff;text-shadow:0 0 12px rgba(140,224,255,.3)}
+.wx-b-val.st-blue{color:#42a5f5;text-shadow:0 0 14px rgba(66,165,245,.38)}
+.wx-b-sub{font-size:12px;color:rgba(255,255,255,.9);font-weight:500}
+@media(max-width:560px){.wx-card{width:100%;padding:14px}.wx-stats{gap:8px}.wx-box{padding:10px 13px}}
 
 .grid{display:grid;gap:24px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .card{background:var(--card);border-radius:22px;box-shadow:var(--sh);overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line);transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
@@ -539,7 +543,7 @@ lb.addEventListener("touchend",e=>{const dx=e.changedTouches[0].clientX-sx;if(lb
 document.getElementById("aptSel").innerHTML=APTS.map(a=>`<option value="${a.id}">${a.name} –${a.tag}</option>`).join("");
 document.getElementById("tabs").innerHTML=APTS.map(a=>`<button class="tab" role="tab" data-id="${a.id}">${a.tab}</button>`).join("");
 
-/* ---- Élő időjárás + tengerhőmérséklet (Vir-sziget: Open-Meteo) ---- */
+/* ---- Élő időjárás + dinamikus tengerhőmérséklet (Vir-sziget: Open-Meteo) ---- */
 let wxData=null,seaTemp=null;
 const WXT={
 head:["Élő időjárás – Vir-sziget","Live weather – Vir Island","Live-Wetter – Insel Vir"],
@@ -567,6 +571,12 @@ if(c<=67)return["🌧️",WXT.c6];
 if(c<=82)return["🌦️",WXT.c8];
 return["⛈️",WXT.c9];
 }
+function seaColor(t){
+if(t>=22)return["st-green","rgba(47,211,107,.65)"];
+if(t>=20)return["st-lgreen","rgba(155,235,168,.55)"];
+if(t>=15)return["st-lblue","rgba(140,224,255,.55)"];
+return["st-blue","rgba(66,165,245,.65)"];
+}
 function renderWx(){
 if(!wxData)return;
 const i=li+1,[ico,arr]=wxInfo(wxData.code);
@@ -577,10 +587,13 @@ document.getElementById("wxTemp").textContent=wxData.temp+"°C";
 document.getElementById("wxDesc").textContent=arr[i];
 document.getElementById("wxWindLbl").textContent=WXT.wind[i];
 document.getElementById("wxWindVal").textContent=wxData.wind+" km/h";
-const seaBox=document.getElementById("wxSeaBox");
+const seaBox=document.getElementById("wxSeaBox"),seaVal=document.getElementById("wxSeaVal");
 if(seaTemp!==null){
+const[cls,bdr]=seaColor(seaTemp);
 document.getElementById("wxSeaLbl").textContent=WXT.sea[i];
-document.getElementById("wxSeaVal").textContent=seaTemp+"°C";
+seaVal.textContent=seaTemp+"°C";
+seaVal.className="wx-b-val "+cls;
+seaBox.style.borderColor=bdr;
 document.getElementById("wxSeaSub").textContent=WXT.seaSub[i];
 seaBox.style.display="flex";
 }
