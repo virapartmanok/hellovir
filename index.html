@@ -67,7 +67,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
 <style>
 :root{--cf:#2fd36b;--cfi:#053b1c;--cb:#ff4d4f;--cbi:#fff;--cy:#ffd23f;--cp:#ffb52e;--bg:#fffdf9;--sand:#f4ece0;--card:#fff;--ink:#16303d;--mute:#5d7480;--sea:#0b5d8a;--sea2:#06425f;--tq:#1fb5b0;--line:#e6dccb;--free:#d9f3ea;--freeInk:#146b55;--busy:#f1e4e4;--busyInk:#a14a4a;--sh:0 10px 30px rgba(11,70,100,.10);
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -90,20 +90,20 @@ header{position:fixed;top:0;left:0;right:0;z-index:20;padding-top:env(safe-area-
 .logo-img{height:48px;width:auto;display:block;object-fit:contain;border-radius:10px;padding:3px 8px;transition:transform .2s ease}
 .logo:hover .logo-img{transform:scale(1.02)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .logo-img{background:rgba(255,253,249,.94);box-shadow:0 2px 10px rgba(0,0,0,.25)}}
-.santa-hat{display:none;position:absolute;top:-11px;left:-9px;width:36px;height:auto;pointer-events:none;z-index:4;transform:rotate(-12deg);filter:drop-shadow(0 2px 4px rgba(0,0,0,.28))}
+.santa-hat{display:none;position:absolute;top:-12px;left:-10px;width:36px;height:auto;pointer-events:none;z-index:4;transform:rotate(-14deg);filter:drop-shadow(0 2px 4px rgba(0,0,0,.3))}
 html.xmas .santa-hat{display:block}
-@media(max-width:480px){.santa-hat{width:28px;top:-8px;left:-6px}}
+@media(max-width:480px){.santa-hat{width:28px;top:-9px;left:-7px}}
 
 nav{display:flex;gap:6px;align-items:center}nav a{text-decoration:none;padding:8px 12px;border-radius:999px;font-size:15px;font-weight:500;transition:background-color .2s ease,color .2s ease}
 nav a:hover{background:var(--sand)}nav a.cta{background:var(--sea);color:#fff}
 .burger{display:none;background:none;border:0;font-size:26px;color:var(--ink);cursor:pointer}
 .hero{min-height:92vh;min-height:92svh;display:flex;align-items:center;color:#fff;padding:130px 0 90px;position:relative;overflow:hidden;
-background:linear-gradient(180deg,rgba(4,40,60,.38),rgba(4,40,60,.74)),url('torony_borito.jpg') center 45%/cover no-repeat !important}
-@media(max-width:768px){.hero{min-height:88svh;padding:115px 0 70px;background:linear-gradient(180deg,rgba(4,40,60,.35),rgba(4,40,60,.72)),url('sunset_mobil.jpg') center/cover no-repeat !important}}
+background:linear-gradient(180deg,rgba(4,40,60,.38),rgba(4,40,60,.74)),url('torony_borito.jpg') center 45%/cover no-repeat}
+@media(max-width:768px){.hero{min-height:88svh;padding:115px 0 70px;background:linear-gradient(180deg,rgba(4,40,60,.35),rgba(4,40,60,.72)),url('sunset_mobil.jpg') center/cover no-repeat}}
 
 /* Karácsonyi időszak (dec. 1 – dec. 31) borítóképek */
-html.xmas .hero{background:linear-gradient(180deg,rgba(4,20,36,.46),rgba(4,16,30,.78)),url('karacsony.jpg') center 55%/cover no-repeat !important}
-@media(max-width:768px){html.xmas .hero{background:linear-gradient(180deg,rgba(4,18,32,.52),rgba(4,14,26,.82)),url('karacsony2.jpg') 42% center/cover no-repeat !important}}
+html.xmas .hero{background:linear-gradient(180deg,rgba(4,20,36,.44),rgba(4,16,30,.76)),url('karacsony.jpg') center 55%/cover no-repeat}
+@media(max-width:768px){html.xmas .hero{background:linear-gradient(180deg,rgba(4,18,32,.50),rgba(4,14,26,.80)),url('karacsony2.jpg') 42% center/cover no-repeat}}
 #snowCanvas{display:none;position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
 html.xmas #snowCanvas{display:block}
 
@@ -115,16 +115,16 @@ html.xmas .hero-grid{display:grid;gap:28px;align-items:center;grid-template-colu
 .hero h1{font-size:clamp(34px,6vw,64px);max-width:18ch}
 .hero p{font-size:clamp(17px,2vw,21px);max-width:52ch;margin:0 0 30px}.hero .btns{display:flex;gap:12px;flex-wrap:wrap}
 
-/* Karácsonyi "Ajándékozz nyaralást" notesz-kártya */
-.xmas-note{display:none;position:relative;text-decoration:none;background:linear-gradient(160deg,#fffdf7 0%,#f7efe1 100%);color:#16303d;padding:24px 24px 22px;border-radius:16px;border:1.5px solid rgba(201,162,92,.55);box-shadow:0 18px 44px rgba(0,0,0,.38),inset 0 0 0 4px rgba(255,255,255,.7);transform:rotate(-1.8deg);transition:transform .28s ease,box-shadow .28s ease;max-width:340px}
+/* Karácsonyi "Ajándékozz nyaralást" notesz-kártya – letisztult, elegáns betűtípussal */
+.xmas-note{display:none;position:relative;text-decoration:none;background:linear-gradient(165deg,#fffef9 0%,#f5ece0 100%);color:#16303d;padding:24px 24px 22px;border-radius:18px;border:1.5px solid rgba(201,162,92,.55);box-shadow:0 18px 44px rgba(0,0,0,.38),inset 0 0 0 3px rgba(255,255,255,.75);transform:rotate(-1.5deg);transition:transform .28s ease,box-shadow .28s ease;max-width:345px;font-family:"Plus Jakarta Sans",system-ui,sans-serif}
 html.xmas .xmas-note{display:block}
-.xmas-note:hover{transform:rotate(0deg) translateY(-4px);box-shadow:0 24px 52px rgba(0,0,0,.46),inset 0 0 0 4px rgba(255,255,255,.85)}
-.xmas-note::before{content:"";position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:64px;height:18px;border-radius:4px;background:rgba(196,43,43,.85);box-shadow:0 2px 6px rgba(0,0,0,.22)}
-.xn-badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#9e2a2b;background:rgba(158,42,43,.10);padding:4px 10px;border-radius:999px;margin-bottom:10px}
-.xmas-note h3{font-family:Fraunces,Georgia,serif;font-style:italic;font-size:23px;color:#0b3b54;margin:0 0 8px;line-height:1.2}
-.xmas-note p{font-size:14.5px;line-height:1.5;color:#39525e;margin:0 0 14px;text-shadow:none}
-.xn-cta{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;color:#0b5d8a}
-@media(max-width:979px){.xmas-note{max-width:100%;transform:rotate(-1deg);margin-top:4px;padding:20px 20px 18px}}
+.xmas-note:hover{transform:rotate(0deg) translateY(-4px);box-shadow:0 24px 52px rgba(0,0,0,.46),inset 0 0 0 3px rgba(255,255,255,.9)}
+.xmas-note::before{content:"";position:absolute;top:-10px;left:50%;transform:translateX(-50%);width:64px;height:18px;border-radius:4px;background:rgba(196,43,43,.88);box-shadow:0 2px 6px rgba(0,0,0,.22)}
+.xn-badge{display:inline-flex;align-items:center;gap:6px;font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#9e2a2b;background:rgba(158,42,43,.10);padding:4px 10px;border-radius:999px;margin-bottom:10px}
+.xmas-note h3{font-family:Fraunces,Georgia,serif;font-style:normal;font-weight:600;font-size:22px;color:#0b3b54;margin:0 0 8px;line-height:1.22;letter-spacing:-0.01em}
+.xmas-note p{font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:14px;line-height:1.55;color:#2c4654;margin:0 0 14px;text-shadow:none;letter-spacing:0}
+.xn-cta{display:inline-flex;align-items:center;gap:6px;font-family:"Plus Jakarta Sans",system-ui,sans-serif;font-size:13.5px;font-weight:700;color:#0b5d8a}
+@media(max-width:979px){.xmas-note{max-width:100%;transform:rotate(-0.8deg);margin-top:4px;padding:20px 20px 18px}}
 
 /* Dizájnos, erősebb hátterű Időjárás & Dinamikus Tengerhőfok Panel */
 .wx-card{display:none;flex-direction:column;gap:12px;margin-top:26px;padding:16px 20px;border-radius:22px;background:linear-gradient(135deg,rgba(4,24,38,.90),rgba(7,48,74,.84));border:1.5px solid rgba(255,255,255,.34);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);color:#fff;width:fit-content;max-width:100%;box-shadow:0 16px 40px rgba(0,0,0,.45);animation:fadeUp .6s ease both}
@@ -294,7 +294,7 @@ html:not([lang=hu]) .warn{display:flex}
 <body>
 <header><div class="wrap nav">
 <a class="logo" href="#kezdolap">
-<img src="mikulas_sapka.png" alt="" class="santa-hat" aria-hidden="true">
+<img src="mikulas_sapka.png" alt="" class="santa-hat" aria-hidden="true" onerror="this.style.display='none'">
 <img src="logo.png" alt="HelloVir Apartments" class="logo-img">
 </a>
 <div class="lang" role="group" aria-label="Language"><button data-l="hu">HU</button><button data-l="en">EN</button><button data-l="de">DE</button></div>
